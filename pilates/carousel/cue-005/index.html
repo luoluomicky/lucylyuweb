@@ -43,6 +43,20 @@
   background: linear-gradient(to right, transparent, var(--section-bg) 85%);
   pointer-events: none; z-index: 10;
 }
+/* Arrow buttons */
+.viewer-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(250,248,245,0.85); border: 1px solid var(--section-border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 20;
+  font-size: 20px; color: var(--section-muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.viewer-arrow:hover { background: #fff; color: var(--section-accent); border-color: var(--section-accent); box-shadow: 0 2px 12px rgba(44,38,33,0.10); }
+.viewer-arrow-left  { left: 12px; }
+.viewer-arrow-right { right: 12px; }
 .card-viewer {
   display: flex; gap: 0;
   overflow-x: auto;
@@ -133,6 +147,8 @@
   </div>
 
   <div class="card-viewer-wrap">
+  <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
+  <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
     <div class="card-frame"><img src="../../carousel-images/005-01.png" alt="Card 1" loading="lazy"><p class="card-num">1 / 8</p></div>
     <div class="card-frame"><img src="../../carousel-images/005-02.png" alt="Card 2" loading="lazy"><p class="card-num">2 / 8</p></div>
@@ -157,5 +173,8 @@
   <span class="footer-right">低熵 · 极简 · 逻辑</span>
 </footer>
 
+<script>
+document.querySelectorAll(".viewer-arrow").forEach(btn=>{btn.addEventListener("click",()=>{const v=btn.closest(".card-viewer-wrap").querySelector(".card-viewer"),d=btn.classList.contains("viewer-arrow-left")?-1:1;v.scrollBy({left:d*420,behavior:"smooth"})})});
+</script>
 </body>
 </html>
