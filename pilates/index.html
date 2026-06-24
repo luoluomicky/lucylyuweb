@@ -162,6 +162,22 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* ── Scroll Arrow Buttons ── */
+.gallery-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(250,248,245,0.88); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 20;
+  font-size: 18px; color: var(--muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.gallery-arrow:hover { background: #fff; color: var(--accent); border-color: var(--accent); box-shadow: 0 2px 12px rgba(44,38,33,0.08); }
+.gallery-arrow-left  { left: 8px; }
+.gallery-arrow-right { right: 8px; }
+
 /* Right-edge fade to hint more content */
 .gallery-scroll-wrap::after {
   content: '';
@@ -477,6 +493,8 @@ footer {
   <p class="gallery-label">Carousel 画廊 · 横向滑动浏览</p>
 
   <div class="gallery-scroll-wrap">
+  <button class="gallery-arrow gallery-arrow-left" aria-label="向左滚动">‹</button>
+  <button class="gallery-arrow gallery-arrow-right" aria-label="向右滚动">›</button>
   <div class="gallery-track">
 
     <!-- #005 下巴找锁骨 -->
@@ -555,5 +573,14 @@ footer {
   <span class="footer-right">低熵 · 极简 · 逻辑</span>
 </footer>
 
+<script>
+document.querySelectorAll('.gallery-arrow').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const track = btn.closest('.gallery-scroll-wrap').querySelector('.gallery-track');
+    const dir = btn.classList.contains('gallery-arrow-left') ? -1 : 1;
+    track.scrollBy({ left: dir * 292, behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
