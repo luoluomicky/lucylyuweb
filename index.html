@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lucy Lyu — 古典普拉提解剖架构师 / B2B出海操盘手。在身体与商业之间，寻找底层逻辑。">
+<title>Lucy Lyu</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── Homepage Layout ── */
+.hero {
+  max-width: 800px; margin: 0 auto;
+  padding: 100px 40px 72px; text-align: center;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 48px; font-weight: 600;
+  letter-spacing: 0.05em; color: var(--shell-text);
+  margin-bottom: 12px;
+}
+.hero .subtitle {
+  font-size: 16px; color: var(--shell-muted);
+  letter-spacing: 0.04em; margin-bottom: 36px;
+}
+.hero .tagline {
+  font-size: 17px; color: var(--shell-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 48px;
+  font-style: italic;
+}
+.hero blockquote {
+  max-width: 580px; margin: 0 auto;
+  padding: 0;
+  border: none;
+  font-size: 15px; line-height: 1.9;
+  color: var(--shell-text);
+  letter-spacing: 0.02em;
+}
+.hero blockquote p { margin-bottom: 10px; }
+.hero blockquote p:last-child { margin-bottom: 0; }
+.hero hr {
+  border: none; border-top: 1px solid var(--shell-border);
+  width: 60px; margin: 40px auto 32px;
+}
+
+/* ── Two-Pillar Grid ── */
+.pillars {
+  max-width: 1000px; margin: 0 auto;
+  padding: 0 40px 64px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.pillar-card {
+  display: block; text-decoration: none;
+  padding: 40px 36px;
+  background: var(--shell-bg);
+  border: 1px solid var(--shell-border);
+  border-radius: 1px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pillar-card:hover {
+  border-color: var(--shell-muted);
+  box-shadow: 0 2px 16px rgba(44,38,33,0.04);
+}
+.pillar-card.pilates { border-top: 3px solid #B85D43; }
+.pillar-card.work   { border-top: 3px solid #8AB4F8; }
+.pillar-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.12em;
+  color: var(--shell-muted); margin-bottom: 8px;
+}
+.pillar-card h2 {
+  font-family: var(--font-serif);
+  font-size: 28px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--shell-text);
+  margin-bottom: 8px;
+}
+.pillar-card .pillar-sub {
+  font-size: 13px; color: var(--shell-muted);
+  letter-spacing: 0.03em; margin-bottom: 16px;
+}
+.pillar-card .pillar-desc {
+  font-size: 14px; line-height: 1.7;
+  color: var(--shell-muted);
+}
+.pillar-card .pillar-arrow {
+  display: inline-block; margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.08em;
+  color: var(--shell-muted);
+}
+
+/* ── Latest Updates ── */
+.latest {
+  max-width: 800px; margin: 0 auto;
+  padding: 0 40px 80px;
+}
+.latest-header {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  color: var(--shell-muted); text-transform: uppercase;
+  padding-top: 32px; border-top: 1px solid var(--shell-border);
+  margin-bottom: 24px;
+}
+.latest-list { list-style: none; }
+.latest-list li {
+  padding: 16px 0; border-bottom: 1px solid var(--shell-border);
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 14px; color: var(--shell-text);
+  letter-spacing: 0.02em;
+}
+.latest-list .latest-date {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--shell-muted);
+  letter-spacing: 0.06em; white-space: nowrap;
+  margin-left: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero { padding: 64px 20px 48px; }
+  .hero h1 { font-size: 36px; }
+  .hero blockquote { font-size: 14px; }
+  .pillars { grid-template-columns: 1fr; padding: 0 20px 48px; }
+  .pillar-card { padding: 28px 24px; }
+  .latest { padding: 0 20px 64px; }
+  .latest-list li { flex-direction: column; gap: 4px; }
+  .latest-list .latest-date { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+  <h1>Lucy Lyu</h1>
+  <p class="subtitle">古典普拉提解剖架构师 / B2B 出海操盘手</p>
+  <p class="tagline">在身体与商业之间，寻找底层逻辑。</p>
+  <hr>
+  <blockquote>
+    <p>欢迎来到我的数字庭院。</p>
+    <p>我痴迷于拆解复杂事物，寻找它们最原始、最干净的运作规律。</p>
+    <p>在普拉提的垫子与器械上，我研究如何用精确的生物力学，去替换那些无效的流行口令；在出海操盘的实战中，我沉淀可复现的业务框架，用极简的工具流对抗日常工作的高熵消耗。</p>
+    <p>向内探究身体张力，向外构建商业秩序。我将这两部分思考沉淀于此。不为迎合算法，只为知识的诚实。</p>
+  </blockquote>
+</header>
+
+<!-- ═══════════ TWO PILLARS ═══════════ -->
+<section class="pillars">
+  <a href="/pilates/" class="pillar-card pilates">
+    <p class="pillar-eyebrow">Pilates Archive</p>
+    <h2>普拉提</h2>
+    <p class="pillar-sub">向内剥离</p>
+    <p class="pillar-desc">古典普拉提的解剖学叙事。废口令拆解、力学正解、器械考古——探究身体运作的真实原理。</p>
+    <span class="pillar-arrow">进入栏目 →</span>
+  </a>
+  <a href="/work/" class="pillar-card work">
+    <p class="pillar-eyebrow">Work Philosophy</p>
+    <h2>工作论</h2>
+    <p class="pillar-sub">向外构建</p>
+    <p class="pillar-desc">开源的个人操作手册。B2B出海的实战方法论、工具链、低熵工作流——业务解绑，能力绑定。</p>
+    <span class="pillar-arrow">进入栏目 →</span>
+  </a>
+</section>
+
+<!-- ═══════════ LATEST UPDATES ═══════════ -->
+<section class="latest">
+  <p class="latest-header">最近更新</p>
+  <ul class="latest-list">
+    <li><span>一句Cue的解剖 #005 · 下巴找锁骨的力学陷阱</span><span class="latest-date">2026.06</span></li>
+    <li><span>普拉提小细节 #001 · 手——最被低估的关节</span><span class="latest-date">2026.06</span></li>
+    <li><span>出海笔记 13 · 用 HTML 做 PPT，一次配置永不跑版</span><span class="latest-date">2026.06</span></li>
+    <li><span>出海笔记 12 · 把杂活交给 AI 与双链笔记，找回操盘手的低熵状态</span><span class="latest-date">2026.06</span></li>
+    <li><span>行业冷思考（上）· 当普拉提变成一种消费品</span><span class="latest-date">2026.05</span></li>
+  </ul>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>

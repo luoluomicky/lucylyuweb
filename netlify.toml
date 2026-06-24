@@ -1,0 +1,22 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/pilates"
+  to = "/pilates/"
+  status = 301
+
+[[redirects]]
+  from = "/work"
+  to = "/work/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai"
+  to = "/ai/"
+  status = 301

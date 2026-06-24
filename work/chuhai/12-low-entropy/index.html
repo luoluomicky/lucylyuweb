@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="出海笔记 12：把杂活交给 AI 与双链笔记，找回操盘手的低熵状态。用 Obsidian + Notion + AI API 搭建个人低熵工作流。">
+<title>出海笔记 12 · 低熵工作流 · 工作论 · Lucy Lyu</title>
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+.article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
+.article-page .breadcrumb {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); margin-bottom: 32px;
+}
+.article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--section-accent); }
+.article-page h1 {
+  font-family: var(--font-serif); font-size: 36px; font-weight: 600;
+  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px;
+}
+.article-page .article-meta {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--section-muted); margin-bottom: 48px;
+}
+.article-page .article-body { font-size: 15px; line-height: 1.85; }
+.article-page .article-body p { margin-bottom: 20px; }
+.article-page .article-body h2 {
+  font-family: var(--font-serif); font-size: 24px; font-weight: 600;
+  letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px;
+  border-top: 1px solid var(--section-border);
+}
+.article-page .article-body h3 {
+  font-family: var(--font-sans); font-size: 16px; font-weight: 600;
+  margin: 32px 0 12px; color: var(--section-accent);
+}
+.article-page .article-body blockquote {
+  margin: 24px 0; padding: 16px 20px;
+  border-left: 3px solid var(--section-accent);
+  font-style: italic; color: var(--section-muted);
+}
+.article-body p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-serif); font-size: 56px; line-height: 0.85;
+  padding-right: 10px; padding-top: 4px; color: var(--section-accent);
+}
+@media (max-width: 768px) {
+  .article-page { padding: 48px 20px 64px; }
+  .article-page h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body data-section="work">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/" class="active">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="article-page">
+  <p class="breadcrumb"><a href="/work/">工作论</a> / <a href="/work/chuhai/">出海笔记</a> / #12</p>
+  <h1>把杂活交给 AI 与双链笔记，找回操盘手的"低熵"状态</h1>
+  <p class="article-meta">出海笔记系列 #12 · 2026.06</p>
+
+  <div class="article-body">
+    <p>做硬科技出海，最真实的工况往往不是在谈判桌上运筹帷幄，而是每天在极其琐碎的信息洪流中极限拉扯。左手是研发刚发来的几万字底层声学参数和海试报告，右手是海外代理商隔着十二个小时时差发来的邮件追问；微信里还挂着几个需要跨语言处理的展会物料群。</p>
+
+    <p>对于一个对外界信息有着极高敏锐度、习惯深度思考的操盘手来说，这种高频的"上下文切换"，是对认知精力和情绪能量的巨大透支。到了周五下午的 Deadline 前夕，脑容量往往只剩下可怜的 0.1%。</p>
+
+    <p>真正的破局之道，不是强迫自己像机器一样时刻保持 100% 的工作状态，而是去建立一个"极简且高度自动化的数字外脑"。把繁杂的信息流、枯燥的参数对比和机械的洗稿工作，全部甩给系统。</p>
+
+    <h2>第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</h2>
+
+    <p>为了彻底终结信息碎片化的内耗，我将个人的核心知识库全面迁移到了 Obsidian。这是一个极其纯粹的本地双链笔记软件。在这里，没有僵死的层级文件夹。当你敲下双括号的那一刻，这些散落在各处的孤立知识点，就会像神经突触一样瞬间连接起来。</p>
+
+    <p>当我点开 GeoScope 这个词条时，系统会自动在侧边栏关联出浅地层剖面仪底层声学逻辑、上周刚列好的全栈解决方案 PPT 大纲，以及它与欧美巨头 Innomar 的极其硬核的参数优劣势对比战术板。</p>
+
+    <blockquote>记忆应该存在系统里，而不是脑子里。那仅存的 0.1% 的宝贵脑力，必须毫无保留地留给判断新命名在海外市场的接受度，而不是去回忆旧参数到底是多少。</blockquote>
+
+    <h2>第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</h2>
+
+    <p>如果说 Obsidian 是我极其私人的"数字外脑"，那么 Notion，就是我为整个公司搭建的"底层操作系统"。应对跨部门协同的内耗，我的解法是：花最大的精力去搭建底层的关系型数据库，制定好流转规则，然后把填表的动作彻底还给业务端。</p>
+
+    <p>在这个 Notion 空间里，我搭建了生产工单面板和展会物料追踪系统。销售的工单流转、研发的排期、老板的进度看板——三方不再在微信群里互相对齐信息，所有关键节点自动流转。</p>
+
+    <h2>第三部分：AI 作为"执行层"——让模型去跑腿</h2>
+
+    <p>当 Obsidian 管好了知识、Notion 管好了流程，最后一层是 AI。我用 Gemini API 做了轻量化的落地：产品技术参数的自动对比、海外客户邮件的草稿生成、多语言展会物料的初稿翻译——这些不需要创造力的"执行层"工作，全部交给模型。人的算力，留给真正需要判断力的决策。</p>
+
+    <p>这三层叠在一起——Obsidian 做知识中枢、Notion 做流程系统、AI 做执行层——就是我的低熵工作流。不是工具测评，是可复现的操作框架。</p>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>普拉提 · 古典解剖学叙事 · Lucy Lyu</title>
+<style>
+/* ══════════════════════════════════════════════
+   CSS RESET
+   ══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════════════
+   CUSTOM PROPERTIES — 落落米（普拉提室）
+   ══════════════════════════════════════════════ */
+:root {
+  --bg:            #faf8f5;
+  --text:          #2C2621;
+  --muted:         #a39b93;
+  --border:        #E8E4DF;
+  --accent:        #B85D43;
+  --accent2:       #8B6F5E;
+  --card-bg:       #fcfaf7;
+  --font-sans:     -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-serif:    "Songti SC", "Noto Serif SC", "STSong", serif;
+  --font-mono:     "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+}
+
+/* ══════════════════════════════════════════════
+   WATERCOLOR PAPER NOISE TEXTURE
+   ══════════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ══════════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,245,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-home {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 15px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   SECTION HERO
+   ══════════════════════════════════════════════ */
+.section-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px 48px;
+}
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.section-desc {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════
+   HORIZONTAL SCROLL CAROUSEL GALLERY
+   ══════════════════════════════════════════════ */
+.gallery-section {
+  padding: 0 0 64px;
+}
+.gallery-label {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 0 40px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── Scroll container: constrained width forces overflow → scroll always works ── */
+.gallery-scroll-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Right-edge fade to hint more content */
+.gallery-scroll-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, var(--bg) 85%);
+  pointer-events: none;
+  z-index: 10;
+}
+.gallery-track {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 40px 24px;
+  scroll-padding: 0 40px;           /* snap points respect padding */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.gallery-track::-webkit-scrollbar {
+  height: 4px;
+}
+.gallery-track::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Left-edge spacer (first-item breathing room) */
+.gallery-spacer-start {
+  flex: 0 0 1px;
+  scroll-snap-align: none;
+  visibility: hidden;
+}
+.gallery-spacer-end {
+  flex: 0 0 1px;
+  scroll-snap-align: none;
+  visibility: hidden;
+}
+
+/* ── Single Carousel Item ── */
+.carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+.carousel-item:hover { opacity: 0.85; }
+
+/* ── Card Stack Container ── */
+.card-stack {
+  position: relative;
+  width: 260px;
+  height: 347px; /* 3:4 ratio for 260px width */
+}
+
+/* Back card (bottom of stack) */
+.card-stack::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2.5deg);
+  width: 248px;
+  height: 331px;
+  background: var(--card-bg);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 3px rgba(44,38,33,0.06),
+    0 4px 12px rgba(44,38,33,0.05);
+  z-index: 1;
+}
+
+/* Middle card */
+.card-stack::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 254px;
+  height: 339px;
+  background: var(--card-bg);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 3px rgba(44,38,33,0.07),
+    0 3px 10px rgba(44,38,33,0.05);
+  z-index: 2;
+}
+
+/* Front card (the actual image) */
+.card-front {
+  position: relative;
+  z-index: 3;
+  width: 260px;
+  height: 347px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 8px rgba(44,38,33,0.08),
+    0 8px 24px rgba(44,38,33,0.06);
+  background: var(--card-bg);
+}
+
+/* ── Passepartout (art print border) ── */
+.card-front {
+  padding: 10px;
+  background: #fdfaf6;
+}
+.card-front img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* ── Museum Label ── */
+.museum-label {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 260px;
+}
+.museum-label .series-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 3px 10px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+}
+.museum-label .item-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.museum-label .item-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════════════════
+   LONG-FORM ARTICLE LIST
+   ══════════════════════════════════════════════ */
+.articles-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+.articles-section-header {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.article-item {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.article-item:hover { opacity: 0.7; }
+.article-item:first-of-type { padding-top: 0; }
+
+.article-meta-top {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.article-item h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.article-lead {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 14px;
+}
+
+/* ── Drop Cap on first article ── */
+.article-item:first-of-type .article-lead::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 0.85;
+  padding-right: 10px;
+  padding-top: 4px;
+  color: var(--accent);
+}
+
+.article-meta-bottom {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.article-meta-bottom span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════ */
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.footer-right {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 14px; }
+  .section-hero { padding: 56px 20px 32px; }
+  .section-title { font-size: 36px; }
+  .section-desc { font-size: 15px; }
+  .gallery-track { padding: 12px 20px 20px; gap: 20px; }
+  .gallery-label { padding: 0 20px; }
+  .card-stack { width: 220px; height: 293px; }
+  .card-stack::before { width: 210px; height: 280px; }
+  .card-stack::after { width: 215px; height: 287px; }
+  .card-front { width: 220px; height: 293px; }
+  .museum-label { max-width: 220px; }
+  .museum-label .item-title { font-size: 15px; }
+  .articles-section { padding: 0 20px 64px; }
+  .article-item h3 { font-size: 24px; }
+  .article-lead { font-size: 14px; }
+  footer { padding: 36px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+}
+</style>
+</head>
+<body data-section="pilates">
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/" class="active">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════ SECTION HERO ═══════════ -->
+<header class="section-hero">
+  <p class="section-eyebrow">Pilates Archive</p>
+  <h1 class="section-title">普拉提</h1>
+  <p class="section-desc">古典普拉提的解剖学叙事。废口令拆解、力学正解、器械考古——向内剥离，探究身体运作的真实原理。</p>
+</header>
+
+<!-- ═══════════ CAROUSEL GALLERY ═══════════ -->
+<section class="gallery-section">
+  <p class="gallery-label">Carousel 画廊 · 横向滑动浏览</p>
+
+  <div class="gallery-scroll-wrap">
+  <div class="gallery-track">
+
+    <!-- Item 1: #005 下巴找锁骨 -->
+    <a href="/pilates/carousel/cue-005/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-005.png" alt="一句Cue的解剖 #005 下巴找锁骨" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #005</span>
+        <p class="item-title">下巴找锁骨的力学陷阱</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 2: #008 屁股夹紧 -->
+    <a href="/pilates/carousel/cue-008/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-008.png" alt="一句Cue的解剖 #008 屁股夹紧" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #008</span>
+        <p class="item-title">屁股夹紧——你越用力夹，假胯宽越严重</p>
+        <p class="item-meta">9 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 3: #007 腰贴垫子 -->
+    <a href="/pilates/carousel/cue-007/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-007.png" alt="一句Cue的解剖 #007 腰贴垫子" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #007</span>
+        <p class="item-title">普拉提腰越练越酸？别再死磕腰贴垫子了</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 4: #006 产后修复 -->
+    <a href="/pilates/carousel/truth-006/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-006.png" alt="普拉提真相 #006 产后修复陷阱" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提真相 #006</span>
+        <p class="item-title">产后修复——别让普拉提毁了你的盆底肌</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 5: #009 降肋骨 -->
+    <a href="/pilates/carousel/cue-009/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-007.png" alt="一句Cue的解剖 #009 降肋骨" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #009</span>
+        <p class="item-title">降肋骨——你降的不是肋骨，是胸椎的呼吸空间</p>
+        <p class="item-meta">9 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 6: 普拉提小细节 #001 手 -->
+    <a href="/pilates/carousel/detail-001/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-005.png" alt="普拉提小细节 #001 手" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提小细节 #001</span>
+        <p class="item-title">手——普拉提最被低估的关节</p>
+        <p class="item-meta">9 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 7: #004 沉肩 -->
+    <a href="/pilates/carousel/cue-004/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-004.png" alt="一句Cue的解剖 #004 沉肩" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #004</span>
+        <p class="item-title">别沉肩——你越沉肩膀越紧张</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <!-- Item 8: #002 骨盆后倾 -->
+    <a href="/pilates/carousel/cue-002/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-002.png" alt="一句Cue的解剖 #002 骨盆后倾" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #002</span>
+        <p class="item-title">骨盆后倾不是屁股没翘——是核心没找到着落点</p>
+        <p class="item-meta">8 张图版 · 2026.05</p>
+      </div>
+    </a>
+
+    <!-- Item 9: 底层定律 #003 -->
+    <a href="/pilates/carousel/law-003/" class="carousel-item">
+      <div class="card-stack">
+        <div class="card-front">
+          <img src="carousel-images/cover-004.png" alt="底层定律 #003 运动训练四条定律" loading="lazy">
+        </div>
+      </div>
+      <div class="museum-label">
+        <span class="series-tag">底层定律 #003</span>
+        <p class="item-title">运动训练四条定律——所有好口令的共同分母</p>
+        <p class="item-meta">7 张图版 · 2026.05</p>
+      </div>
+    </a>
+
+  </div>
+  </div><!-- /gallery-scroll-wrap -->
+</section>
+
+<!-- ═══════════ LONG-FORM ARTICLES ═══════════ -->
+<section class="articles-section">
+  <p class="articles-section-header">长文</p>
+
+  <article class="article-item">
+    <p class="article-meta-top">行业冷思考 · 2026</p>
+    <h3>冷思考（上）：当普拉提变成一种消费品</h3>
+    <p class="article-lead">当普拉提从"身体控制术"变成"中产阶级生活方式"，我们失去的不是价格，是对身体的理解。这篇文章试图回答一个根本问题：为什么最需要普拉提的人，往往被排除在普拉提之外？</p>
+    <div class="article-meta-bottom">
+      <span>预计阅读 12 分钟</span>
+      <span>2026.05</span>
+    </div>
+  </article>
+
+  <article class="article-item">
+    <p class="article-meta-top">解剖学长文 · 2026</p>
+    <h3>人体张力地图：从足底到头顶的筋膜连续体</h3>
+    <p class="article-lead">身体不是一块块孤立的肌肉拼起来的。它是一张连续的、三维的张力网络。理解这张地图，你就会明白为什么脚底的触感能改变脖子的紧张度——以及为什么普拉提不应该只盯着腹肌练。</p>
+    <div class="article-meta-bottom">
+      <span>预计阅读 18 分钟</span>
+      <span>2026.06</span>
+    </div>
+  </article>
+
+  <article class="article-item">
+    <p class="article-meta-top">教学法 · 2026</p>
+    <h3>如何在商业健身房里找到真正懂普拉提的教练</h3>
+    <p class="article-lead">三个问题，五分钟。你不需要解剖学学位也能判断一个教练是在背口令还是在看动作。这篇文章是一份给普通练习者的"教练鉴定指南"——简单、直接、不卖关子。</p>
+    <div class="article-meta-bottom">
+      <span>预计阅读 8 分钟</span>
+      <span>2026.04</span>
+    </div>
+  </article>
+
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>

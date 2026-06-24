@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="出海笔记 13：抛弃传统PPT，用HTML和AI打造永不跑版的跨国提案。一次配置，永久复用——像素级压制的秘密。">
+<title>出海笔记 13 · HTML做PPT · 工作论 · Lucy Lyu</title>
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+.article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
+.article-page .breadcrumb {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); margin-bottom: 32px;
+}
+.article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--section-accent); }
+.article-page h1 {
+  font-family: var(--font-serif); font-size: 36px; font-weight: 600;
+  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px;
+}
+.article-page .article-meta {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--section-muted); margin-bottom: 48px;
+}
+.article-page .article-body { font-size: 15px; line-height: 1.85; }
+.article-page .article-body p { margin-bottom: 20px; }
+.article-page .article-body h2 {
+  font-family: var(--font-serif); font-size: 24px; font-weight: 600;
+  letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px;
+  border-top: 1px solid var(--section-border);
+}
+.article-page .article-body h3 {
+  font-family: var(--font-sans); font-size: 16px; font-weight: 600;
+  margin: 32px 0 12px; color: var(--section-accent);
+}
+.article-page .article-body blockquote {
+  margin: 24px 0; padding: 16px 20px;
+  border-left: 3px solid var(--section-accent);
+  font-style: italic; color: var(--section-muted);
+}
+.article-body p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-serif); font-size: 56px; line-height: 0.85;
+  padding-right: 10px; padding-top: 4px; color: var(--section-accent);
+}
+@media (max-width: 768px) {
+  .article-page { padding: 48px 20px 64px; }
+  .article-page h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body data-section="work">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/" class="active">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="article-page">
+  <p class="breadcrumb"><a href="/work/">工作论</a> / <a href="/work/chuhai/">出海笔记</a> / #13</p>
+  <h1>抛弃传统 PPT，用 HTML 和 AI 打造"永不跑版"的跨国提案</h1>
+  <p class="article-meta">出海笔记系列 #13 · 2026.06</p>
+
+  <div class="article-body">
+    <p>刚刚结束了一场与法国水下成像设备厂商的 Teams 会议。开场切屏的时候，我半开玩笑地跟法国的 CEO 坦承了一句："老实说，这是我第一次抛弃传统办公软件，直接用 HTML 网页代码做了一份演示文稿，我不确定待会儿在跨国会议里跑起来会不会翻车。"</p>
+
+    <p>结果出人意料。整个 Pitch 讲下来，不仅没有任何排版错乱，对方 CEO 反而对这种极其干净、不受任何多余干扰的呈现方式感到惊喜。"整个展现极其干练，演讲逻辑非常清晰，Impressive。"一小时后，我把打包好的 HTML 文件发了过去。很快收到了他的邮件反馈："我刚打开了这个演示文件；完美运行（it works perfectly）。"</p>
+
+    <h2>传统 PPT 的"熵增"陷阱</h2>
+
+    <p>只要你做过哪怕一次面向海外大客户的 Pitch Deck，就一定经历过被传统办公软件按在地上摩擦的绝望。排版维度的降级、牵一发而动全身的灾难、跨国协作的字体水土不服、文本溢出引发的雪崩——这种极度消耗心智的内耗，本质上是因为传统PPT的排版单位是"手"，你永远在依靠极其不靠谱的肉眼和鼠标拖拽去寻找一种对齐的幻觉。</p>
+
+    <blockquote>HTML 的排版单位是极其冷酷且精准的"像素"。前者的每一次修改都在增加系统的混乱度；后者则是用代码将规则写死，精确到小数点。</blockquote>
+
+    <h2>注入灵魂——让 AI Agent 接管"排版与逻辑"</h2>
+
+    <p>但我一行代码都没自己敲。我只负责输出最核心的商业大纲和底层逻辑，剩下的排版苦力活，全部甩给了 Claude Code。现在的"低熵"解法，是彻底将形式与内容剥离：我只负责"想"，AI 负责"画"和"讲"。</p>
+
+    <p>这个 HTML 演示文稿的底层骨架，其实来源于我的一个业余小项目——一个用来自动生成小红书图文卡片的 Carousel 代码。因为它原本就是用来做社交媒体图文的，所以底层自带了极其方便的"导出 PNG"功能。</p>
+
+    <h2>一次配置，永久复用</h2>
+
+    <p>用 HTML 做 PPT 的最大好处不是"好看"，而是"一次配置，永久复用"。品牌色、字体、Logo、页脚——全部写死在 CSS 变量里。老板说"把所有页面的 Logo 换成带 Slogan 的新版"？改一行 CSS 变量，14 页幻灯片同步更新。不需要打开任何演示软件。不需要肉眼对齐。不需要怀疑是不是漏了一页。</p>
+
+    <p>而且，HTML 文件的体积小到不可思议——整个演示文件只有几十 KB，可以直接用邮件发送，对方双击即可在浏览器中打开。不需要安装任何软件。字体永远不会回退成 Times New Roman。排版永远不会跑偏。</p>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>

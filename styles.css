@@ -1,0 +1,125 @@
+/* ══════════════════════════════════════════════
+   Lucy Lyu · 个人网站
+   全局样式表 — 四个房间，四种光线
+   ══════════════════════════════════════════════ */
+
+/* ── CSS Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Custom Properties ── */
+:root {
+  /* 全局壳（大厅）— 水彩纸 + 深焙咖啡 */
+  --shell-bg:       #fcfaf7;
+  --shell-text:     #2C2621;
+  --shell-muted:    #a39b93;
+  --shell-border:   #E8E4DF;
+  --font-sans:      -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-serif:     "Songti SC", "Noto Serif SC", "STSong", serif;
+  --font-mono:      "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+
+  /* 默认继承壳色 */
+  --section-bg:     var(--shell-bg);
+  --section-text:   var(--shell-text);
+  --section-muted:  var(--shell-muted);
+  --section-border: var(--shell-border);
+  --section-accent: #8B6F5E;
+  --section-accent2: #a39b93;
+}
+
+/* ── 落落米（普拉提室）— 陶土琥珀 + 档案室米白 ── */
+[data-section="pilates"] {
+  --section-bg:     #faf8f5;
+  --section-accent: #B85D43;
+  --section-accent2: #8B6F5E;
+}
+
+/* ── 工作论（操盘手室）— 冷夜灰 + 追光 ── */
+[data-section="work"] {
+  --section-bg:     #121417;
+  --section-text:   #D0D6E0;
+  --section-muted:  #6B7280;
+  --section-border: #2A2D33;
+  --section-accent: #8AB4F8;
+  --section-accent2: #6B7280;
+}
+
+/* ── AI思考（代码室）— 石材灰 + 构建中 ── */
+[data-section="ai"] {
+  --section-bg:     #f5f3f0;
+  --section-accent: #4A4A4A;
+  --section-accent2: #78716c;
+}
+
+/* ── Base Typography ── */
+html { font-size: 16px; }
+body {
+  font-family: var(--font-sans);
+  background: var(--section-bg);
+  color: var(--section-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Watercolor Paper Noise ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Navigation ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,248,245,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--shell-border);
+}
+[data-section="work"] nav {
+  background: rgba(18,20,23,0.88);
+  border-bottom-color: #2A2D33;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-home {
+  font-family: var(--font-serif);
+  font-size: 18px; color: var(--section-text);
+  text-decoration: none; letter-spacing: 0.02em;
+}
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  font-size: 15px; color: var(--section-muted);
+  text-decoration: none; letter-spacing: 0.03em;
+  padding-bottom: 4px; border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { color: var(--section-text); }
+.nav-links a.active { color: var(--section-accent); border-bottom-color: var(--section-accent); }
+
+/* ── Footer ── */
+footer {
+  max-width: 1200px; margin: 0 auto;
+  padding: 48px 40px;
+  border-top: 1px solid var(--section-border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-left { font-family: var(--font-serif); font-size: 14px; color: var(--section-muted); letter-spacing: 0.04em; }
+.footer-right { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); }
+
+/* ── Responsive Nav & Footer ── */
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 14px; }
+  footer { padding: 36px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+}
