@@ -103,12 +103,13 @@
   margin-bottom: 24px;
 }
 .latest-list { list-style: none; }
-.latest-list li {
-  padding: 16px 0; border-bottom: 1px solid var(--shell-border);
+.latest-list li { padding: 16px 0; border-bottom: 1px solid var(--shell-border); }
+.latest-list a {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 14px; color: var(--shell-text);
-  letter-spacing: 0.02em;
+  font-size: 14px; color: var(--shell-text); text-decoration: none;
+  letter-spacing: 0.02em; transition: color 0.2s;
 }
+.latest-list a:hover { color: var(--section-accent); }
 .latest-list .latest-date {
   font-family: var(--font-mono);
   font-size: 10px; color: var(--shell-muted);
@@ -180,11 +181,10 @@
 <section class="latest">
   <p class="latest-header">最近更新</p>
   <ul class="latest-list">
-    <li><span>一句Cue的解剖 #005 · 下巴找锁骨的力学陷阱</span><span class="latest-date">2026.06</span></li>
-    <li><span>普拉提小细节 #001 · 手——最被低估的关节</span><span class="latest-date">2026.06</span></li>
-    <li><span>出海笔记 13 · 用 HTML 做 PPT，一次配置永不跑版</span><span class="latest-date">2026.06</span></li>
-    <li><span>出海笔记 12 · 把杂活交给 AI 与双链笔记，找回操盘手的低熵状态</span><span class="latest-date">2026.06</span></li>
-    <li><span>行业冷思考（上）· 当普拉提变成一种消费品</span><span class="latest-date">2026.05</span></li>
+    <li><a href="/pilates/carousel/cue-005/"><span>一句Cue的解剖 #005 · 下巴找锁骨的力学陷阱</span><span class="latest-date">2026.06</span></a></li>
+    <li><a href="/work/chuhai/13-html-as-ppt/"><span>出海笔记 13 · 用 HTML 做 PPT，一次配置永不跑版</span><span class="latest-date">2026.06</span></a></li>
+    <li><a href="/work/chuhai/12-low-entropy/"><span>出海笔记 12 · 把杂活交给 AI 与双链笔记，找回操盘手的低熵状态</span><span class="latest-date">2026.06</span></a></li>
+    <li><a href="/pilates/articles/cold-thoughts-1/"><span>行业冷思考（上）· 当普拉提变成一种消费品</span><span class="latest-date">2026.05</span></a></li>
   </ul>
 </section>
 
