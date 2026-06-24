@@ -228,34 +228,36 @@ nav {
 .card-stack::before {
   content: '';
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: 50%;
-  transform: translateX(-50%) rotate(2.5deg);
+  transform: translateX(-50%) rotate(3deg);
   width: 248px;
   height: 331px;
-  background: var(--card-bg);
+  background: #f5f0ea;
   border-radius: 2px;
   box-shadow:
-    0 1px 3px rgba(44,38,33,0.06),
-    0 4px 12px rgba(44,38,33,0.05);
+    0 1px 4px rgba(44,38,33,0.10),
+    0 4px 16px rgba(44,38,33,0.07);
   z-index: 1;
+  border: 1px solid rgba(44,38,33,0.06);
 }
 
 /* Middle card */
 .card-stack::after {
   content: '';
   position: absolute;
-  top: 3px;
+  top: 4px;
   left: 50%;
-  transform: translateX(-50%) rotate(-1.5deg);
+  transform: translateX(-50%) rotate(-2deg);
   width: 254px;
   height: 339px;
-  background: var(--card-bg);
+  background: #f8f3ed;
   border-radius: 2px;
   box-shadow:
-    0 1px 3px rgba(44,38,33,0.07),
-    0 3px 10px rgba(44,38,33,0.05);
+    0 1px 4px rgba(44,38,33,0.08),
+    0 3px 12px rgba(44,38,33,0.06);
   z-index: 2;
+  border: 1px solid rgba(44,38,33,0.05);
 }
 
 /* Front card (the actual image) */
@@ -436,8 +438,8 @@ footer {
   .gallery-track { padding: 12px 20px 20px; gap: 20px; }
   .gallery-label { padding: 0 20px; }
   .card-stack { width: 220px; height: 293px; }
-  .card-stack::before { width: 210px; height: 280px; }
-  .card-stack::after { width: 215px; height: 287px; }
+  .card-stack::before { width: 210px; height: 280px; top: 6px; }
+  .card-stack::after { width: 215px; height: 287px; top: 3px; }
   .card-front { width: 220px; height: 293px; }
   .museum-label { max-width: 220px; }
   .museum-label .item-title { font-size: 15px; }
