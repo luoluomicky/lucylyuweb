@@ -76,6 +76,17 @@ nav {
   color: var(--text);
   text-decoration: none;
   letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-home::before {
+  content: '';
+  display: block;
+  width: 30px; height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/images/logo-light.png');
+  flex-shrink: 0;
 }
 .nav-links {
   display: flex;

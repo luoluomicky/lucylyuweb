@@ -95,6 +95,23 @@ nav {
   font-family: var(--font-serif);
   font-size: 18px; color: var(--section-text);
   text-decoration: none; letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-home::before {
+  content: '';
+  display: block;
+  width: 30px; height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/images/logo-transparent.png');
+  flex-shrink: 0;
+}
+[data-section="pilates"] .nav-home::before {
+  background-image: url('/assets/images/logo-light.png');
+}
+[data-section="work"] .nav-home::before {
+  background-image: url('/assets/images/logo-dark.png');
 }
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
