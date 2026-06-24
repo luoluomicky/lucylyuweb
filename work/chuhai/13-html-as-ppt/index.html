@@ -3,50 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="出海笔记 13：抛弃传统PPT，用HTML和AI打造永不跑版的跨国提案。一次配置，永久复用——像素级压制的秘密。">
+<meta name="description" content="出海笔记 13：抛弃传统PPT，用HTML和AI打造永不跑版的跨国提案。一份让法国CEO评价Perfectly的演示文件背后的完整方法论。">
 <title>出海笔记 13 · HTML做PPT · 工作论 · Lucy Lyu</title>
 <link rel="stylesheet" href="../../../styles.css">
 <style>
 .article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
-.article-page .breadcrumb {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-  color: var(--section-muted); margin-bottom: 32px;
-}
+.article-page .breadcrumb { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 32px; }
 .article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
 .article-page .breadcrumb a:hover { color: var(--section-accent); }
-.article-page h1 {
-  font-family: var(--font-serif); font-size: 36px; font-weight: 600;
-  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px;
-}
-.article-page .article-meta {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
-  color: var(--section-muted); margin-bottom: 48px;
-}
-.article-page .article-body { font-size: 15px; line-height: 1.85; }
-.article-page .article-body p { margin-bottom: 20px; }
-.article-page .article-body h2 {
-  font-family: var(--font-serif); font-size: 24px; font-weight: 600;
-  letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px;
-  border-top: 1px solid var(--section-border);
-}
-.article-page .article-body h3 {
-  font-family: var(--font-sans); font-size: 16px; font-weight: 600;
-  margin: 32px 0 12px; color: var(--section-accent);
-}
-.article-page .article-body blockquote {
-  margin: 24px 0; padding: 16px 20px;
-  border-left: 3px solid var(--section-accent);
-  font-style: italic; color: var(--section-muted);
-}
-.article-body p:first-of-type::first-letter {
-  float: left;
-  font-family: var(--font-serif); font-size: 56px; line-height: 0.85;
-  padding-right: 10px; padding-top: 4px; color: var(--section-accent);
-}
-@media (max-width: 768px) {
-  .article-page { padding: 48px 20px 64px; }
-  .article-page h1 { font-size: 28px; }
-}
+.article-page h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; }
+.article-page .article-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--section-muted); margin-bottom: 48px; }
+.article-body { font-size: 15px; line-height: 1.85; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--section-border); }
+.article-body h3 { font-family: var(--font-sans); font-size: 16px; font-weight: 600; margin: 36px 0 12px; color: var(--section-accent); }
+.article-body blockquote { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--section-accent); font-style: italic; color: var(--section-muted); }
+.article-body ul, .article-body ol { margin: 16px 0 20px 24px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--section-text); }
+.article-body code { font-family: var(--font-mono); font-size: 13px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 2px; }
+.article-body hr { border: none; border-top: 1px solid var(--section-border); margin: 40px 0; }
+.article-body p:first-of-type::first-letter { float: left; font-family: var(--font-serif); font-size: 56px; line-height: 0.85; padding-right: 10px; padding-top: 4px; color: var(--section-accent); }
+@media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 </head>
 <body data-section="work">
@@ -69,27 +47,100 @@
   <p class="article-meta">出海笔记系列 #13 · 2026.06</p>
 
   <div class="article-body">
-    <p>刚刚结束了一场与法国水下成像设备厂商的 Teams 会议。开场切屏的时候，我半开玩笑地跟法国的 CEO 坦承了一句："老实说，这是我第一次抛弃传统办公软件，直接用 HTML 网页代码做了一份演示文稿，我不确定待会儿在跨国会议里跑起来会不会翻车。"</p>
 
-    <p>结果出人意料。整个 Pitch 讲下来，不仅没有任何排版错乱，对方 CEO 反而对这种极其干净、不受任何多余干扰的呈现方式感到惊喜。"整个展现极其干练，演讲逻辑非常清晰，Impressive。"一小时后，我把打包好的 HTML 文件发了过去。很快收到了他的邮件反馈："我刚打开了这个演示文件；完美运行（it works perfectly）。"</p>
+<p>刚刚结束了一场与法国水下成像设备厂商的 Teams 会议。会议的主题很重，盘点接下来的中国区战略落地。跨越七个小时的时差、全英文的高密度交锋——做 B2B 硬科技出海的同行，对这种高压场景绝对不会陌生。</p>
 
-    <h2>传统 PPT 的"熵增"陷阱</h2>
+<p>开场切屏的时候，我半开玩笑地跟法国的 CEO 坦承了一句："老实说，这是我第一次抛弃传统办公软件，直接用 HTML 网页代码做了一份演示文稿，我不确定待会儿在跨国会议里跑起来会不会'翻车'。"</p>
 
-    <p>只要你做过哪怕一次面向海外大客户的 Pitch Deck，就一定经历过被传统办公软件按在地上摩擦的绝望。排版维度的降级、牵一发而动全身的灾难、跨国协作的字体水土不服、文本溢出引发的雪崩——这种极度消耗心智的内耗，本质上是因为传统PPT的排版单位是"手"，你永远在依靠极其不靠谱的肉眼和鼠标拖拽去寻找一种对齐的幻觉。</p>
+<p>结果出人意料。整个 Pitch 讲下来，不仅没有任何排版错乱，对方 CEO 反而对这种极其干净、不受任何多余干扰的呈现方式感到惊喜。他当场表示"整个展现极其干练，演讲逻辑非常清晰，Impressive"，并特意叮嘱我，会议结束后务必把这份演示文件的原件打包发给他看看。</p>
 
-    <blockquote>HTML 的排版单位是极其冷酷且精准的"像素"。前者的每一次修改都在增加系统的混乱度；后者则是用代码将规则写死，精确到小数点。</blockquote>
+<p>一小时后，我把打包好的 HTML 文件发了过去。很快，收到了他的邮件反馈，正文极其干脆："我刚打开了这个演示文件；完美运行（it works perfectly）。"</p>
 
-    <h2>注入灵魂——让 AI Agent 接管"排版与逻辑"</h2>
+<p>说实话，哪怕是再资深的设计师，大概率也不敢拍着胸脯保证一份发送给跨国大客户的 PPT，在对方各种未知的系统环境里能做到"完美运行"。但我这次吃准了他为什么会用这个词。</p>
 
-    <p>但我一行代码都没自己敲。我只负责输出最核心的商业大纲和底层逻辑，剩下的排版苦力活，全部甩给了 Claude Code。现在的"低熵"解法，是彻底将形式与内容剥离：我只负责"想"，AI 负责"画"和"讲"。</p>
+<p>因为在这场长达一小时的跨国屏幕共享中，整整十四页幻灯片，没有任何一处排版出现哪怕一毫米的跑偏。没有一个精心设计的图标莫名其妙地飞出边界。更没有精心挑选的无衬线英文字体，在老外的屏幕上尴尬地回退成极其古板的 Times New Roman。达成这种"像素级"压制和绝对一致性的秘密武器，不是什么动辄大几千块的昂贵 SaaS 工具，而是一份极其轻量的 HTML 代码文件。</p>
 
-    <p>这个 HTML 演示文稿的底层骨架，其实来源于我的一个业余小项目——一个用来自动生成小红书图文卡片的 Carousel 代码。因为它原本就是用来做社交媒体图文的，所以底层自带了极其方便的"导出 PNG"功能。</p>
+<h2>第一部分：传统 PPT 的"熵增"陷阱</h2>
 
-    <h2>一次配置，永久复用</h2>
+<p>只要你做过哪怕一次面向海外大客户的 Pitch Deck，就一定经历过被传统办公软件按在地上摩擦的绝望。在这个过程里，你的大部分精力并不是在思考商业逻辑，而是在对抗极其可怕的"信息熵增"：</p>
 
-    <p>用 HTML 做 PPT 的最大好处不是"好看"，而是"一次配置，永久复用"。品牌色、字体、Logo、页脚——全部写死在 CSS 变量里。老板说"把所有页面的 Logo 换成带 Slogan 的新版"？改一行 CSS 变量，14 页幻灯片同步更新。不需要打开任何演示软件。不需要肉眼对齐。不需要怀疑是不是漏了一页。</p>
+<ul>
+<li><strong>排版维度的降级：</strong>满怀激情地拖拽出一个文本框，敲下一行英文字母，紧接着输入中文，字体瞬间毫无预兆地跳回了默认宋体。退回、全选、重设字体……三分钟后只因为改了一个标点，字体又跳了。</li>
+<li><strong>牵一发而动全身的灾难：</strong>老板临时拍板说"把所有页面的 Logo 换成带 Slogan 的新版"。你只能绝望地深吸一口气，打开 14 页幻灯片，重复 14 次极其机械的"删除-插入-调整大小-肉眼对齐"。</li>
+<li><strong>跨国协作的"水土不服"：</strong>你在国内精心挑选了一款极具科技感的字体，排版极其克制、高级。结果邮件发给法国客户，对方的电脑系统里根本没有这款字体。一打开，整体瞬间灾难性地回退成系统默认的 Times New Roman。你耗费半宿心血打磨的极简视觉，在对方屏幕上秒变 1998 年乡镇企业风格的 Word 汇报文档。</li>
+<li><strong>文本溢出引发的雪崩：</strong>临开会前突然需要修改一个核心数据，结果多加了一个单词，文本框直接溢出换行。接下来的十分钟，你都在重新调整字号、重新拖拽位置、重新依靠肉眼去对齐其他的参考线。</li>
+</ul>
 
-    <p>而且，HTML 文件的体积小到不可思议——整个演示文件只有几十 KB，可以直接用邮件发送，对方双击即可在浏览器中打开。不需要安装任何软件。字体永远不会回退成 Times New Roman。排版永远不会跑偏。</p>
+<p>这种极度消耗心智的内耗，本质上是因为<strong>传统 PPT 的排版单位是"手"</strong>——你永远在依靠极其不靠谱的肉眼和鼠标拖拽去寻找一种对齐的幻觉。而<strong>HTML 的排版单位是极其冷酷且精准的"像素"。</strong>前者的每一次修改都在增加系统的混乱度，最终把你逼成一个疲于奔命的"排版女工"；而后者则是用代码将规则写死，精确到小数点。</p>
+
+<p>看着电脑桌面上那份名为 <code>最终版_v3_发给法国_绝对不改了.pptx</code> 的文件，这不仅仅是版本的迭代，它记录的，是操盘手在毫无意义的杂活中被白白榨干脑力的全过程。</p>
+
+<p>达成这种"像素级"压制的秘密武器，不是什么动辄大几千块的昂贵 SaaS 订阅工具，而是极简的 HTML 和 CSS。</p>
+
+<p><strong>但我一行代码都没自己敲。</strong>我只负责输出最核心的商业大纲和底层逻辑，剩下的排版苦力活，全部甩给了 Claude Code。</p>
+
+<h2>第二部分：注入灵魂——让 AI Agent 接管"排版与逻辑"</h2>
+
+<p>以前做演示文稿，我们总是被"形式"绑架了"内容"。脑子里刚冒出一个极其犀利的战略雏形，手就已经下意识地去调字号、选颜色了。思路一次次被那些不听话的文本框打断。现在的"低熵"解法，是彻底将形式与内容剥离：<strong>我只负责"想"，AI 负责"画"和"讲"。</strong></p>
+
+<p>在这场与法国高管的战略会议前，我的整个 PPT 制作流是极其轻量且没有摩擦感的：</p>
+
+<p><strong>1. 极简的"指令输入"</strong>——我完全没有打开任何演示软件，而是直接把整理好的大纲逻辑、产品参数对比，作为一段纯文本丢给了 Claude Code。</p>
+
+<p><strong>2. 拿"小红书轮播图"去降维打击</strong>——这里必须坦白，我根本不是什么资深的前端大佬，甚至我开始折腾 AI Agent 也才刚刚十来天的时间。但我发现，在这个时代只要你思路清晰，进度就会极其喜人。这个 HTML 演示文稿的底层骨架，其实来源于我的一个业余小项目——一个用来自动生成小红书图文卡片的 Carousel 代码。因为它原本就是用来做社交媒体图文的，所以底层自带了极其方便的"导出 PNG"功能。我只是给 Claude 下了个指令，让它在这个小红书轮播图的基础上，帮我加一个 "Present" 模式。Claude 瞬间理解了我的意图，极其巧妙地利用了原本的图片滑动逻辑，把它变成了一个支持全屏、支持键盘翻页的网页版 PPT。当它把我丢过去的大纲文字，严丝合缝地嵌套进这个深紫与亮青配色的代码骨架时，没有任何需要耗费精力去反复调试的"磨合期"。</p>
+
+<p><strong>3. 震撼的"双核输出"</strong>——短短几分钟后，最让我感到享受的爽点出现了：视觉层——14 页的 HTML 演示文稿瞬间生成，排版精确到像素，一键全屏流畅演示；因为自带了以前小红书代码里的导出功能，后续即便老外索要存档，也能极速导出高清大图并拼成 PDF 发过去。逻辑层（Killer Feature）——它不仅搞定了前端代码，甚至还在旁边的文档里，顺手帮我生成了一套极其严密、专业度极高的口述稿。AI Agent 把那些干瘪的参数列表和极其骨感的商业大纲，瞬间转化为了极具说服力的 Pitch 话术。甚至在某些转折点和策略推演上，它的演讲逻辑比普通人在疲惫状态下东拼西凑出来的表达，还要清晰和严密得多。</p>
+
+<p>一份原本需要极其耗时、且容易让人情绪崩溃的跨国提案演示，最终被压缩成了极其享受的极客时间。拿着这种准备充分的底气去开跨国会议，难怪能拿到 "perfectly" 的评价。</p>
+
+<h2>第三部分：为什么 HTML 是出海 B2B 的终极解法？</h2>
+
+<p>在复杂的跨国商业谈判中，任何因为工具导致的视觉瑕疵，都会在无形中削弱你的专业度。抛弃 PowerPoint，转向 HTML 网页渲染，本质上是从"手工绘图"走向了"工程交付"。</p>
+
+<p><strong>品牌资产的绝对掌控（全局变量）：</strong>传统 PPT 里，老板让你把主题色调暗一点，你只能逐页去调色盘里修改。但在我的 HTML 代码里，品牌色被定义成了 CSS 变量。只需要在代码开头改动一行，14 页幻灯片的背景、高亮、边框瞬间集体变阵。同理，更新 Logo 也仅仅是替换一个 <code>&lt;img&gt;</code> 标签的路径。</p>
+
+<p><strong>跨越系统的字体"免疫力"：</strong>这是最让出海人痛心疾首的一环。精心排版的文档发给老外，因为对方系统缺失字体而全部乱码或回退成 Times New Roman。而 HTML 天然运行在浏览器之上，调用的是系统级原生无衬线字体（如苹果的 PingFang SC 或国际通用的 Inter）。只要有浏览器，它就拥有绝对的跨平台一致性。</p>
+
+<p><strong>极客级的版本管理：</strong>再也不需要面对 <code>最终版_v3_修改_绝不改版.pptx</code> 这种动辄几十兆的臃肿文件。HTML 的本质是纯文本格式，你可以极其优雅地用版本控制工具（如 Git）去管理。每一次修改了哪个单词、改了哪行参数，全都在 Diff 对比里一目了然。</p>
+
+<h2>第四部分：把系统封装成"傻瓜包"——从个人极客到团队平权</h2>
+
+<p>一个优秀的数字系统，不能仅仅是系统架构师自嗨的极客玩具。它必须能够做到向下兼容，赋能给团队里完全不懂代码的销售和技术服务人员。我没有把这套工具做成什么复杂的后台，而是用最轻的"本地文件夹"方式把它分发给了同事。</p>
+
+<h3>零门槛的"复制粘贴"填表法</h3>
+<p>为了彻底杜绝团队成员"凭借手感乱调格式"带来的混乱，我把页面做成了极其标准化的模板模块。销售如果需要新增一页竞品对比，完全不需要去学什么 CSS。他们只需要打开 HTML 文件，把代表这一页的代码块复制一遍，像填表一样替换掉里面的文字和数据，系统就会自动接管排版，渲染出绝对一致的页面效果。</p>
+
+<h3>极简的交互与"兜底"导出</h3>
+<p>这份文件极其纯粹，1920×1080 的 16:9 满屏比例。开会时，点击页面上的 ▶ PRESENT 按钮一键全屏，用键盘左右键极其丝滑地翻页。考虑到欧洲大客户有时依然会索要传统的 <code>.pptx</code> 或 PDF 存档，我在这套"小红书轮播图"的底层里保留了一个约 200KB 的本地纯静态库（html2canvas）。它完全不依赖外部网络，只要点一下导出按钮，就能在本地浏览器里瞬间将 HTML 代码极速截图为高清 PNG 大图，随后拖进 Keynote 或直接打包成 PDF 完美交付。</p>
+
+<h2>第五部分："零代码"不意味着零学习曲线——我们踩过的五个坑</h2>
+
+<p>说完了这套系统的优势，也坦诚地聊聊它的成长代价。如果你决定尝试这个方向，下面这五个坑是我们一行一行调试出来的，希望你能少走弯路。</p>
+
+<p><strong>坑一：Canvas 跨域污染。</strong>导出 PNG 功能依赖 html2canvas 这个库。当你双击 HTML 文件直接用浏览器打开时（<code>file://</code> 协议），Canvas 会被标记为"被污染"，截图导出时报错 <code>Tainted canvas</code>。解法极其简单——在 HTML 所在的文件夹里起一个本地服务器：<code>python3 -m http.server 8765</code>，然后通过 <code>http://localhost:8765</code> 访问。一行命令，但不知道的时候能卡半天。</p>
+
+<p><strong>坑二：Safari 和 Chrome 的兼容。</strong>Chrome 下 <code>canvas.toDataURL()</code> 导出丝般顺滑，Safari 却直接报 <code>insecure</code> 拒绝执行。最终方案是优先尝试 <code>toDataURL()</code>，失败自动降级到 <code>canvas.toBlob()</code> + <code>ObjectURL</code>——用双保险兼容两个浏览器。</p>
+
+<p><strong>坑三：AI 生图带元数据。</strong>我们用 Gemini 生成封面配图，出来的 PNG 文件动辄 600KB 以上，嵌入幻灯片后 html2canvas 渲染超时失败。后来发现是 AI 生图携带了大量不可见的 ICC 色域和文本元数据。用 Python 写了四行去元数据脚本，文件体积直降 30%，渲染再无超时。</p>
+
+<p><strong>坑四：JS 闭包陷阱。</strong>写导出循环时用了 <code>var</code> 声明变量，结果所有卡片都下载成同一张（最后一张）。改了 <code>let</code> 关键字，每个循环迭代独立绑定，秒修。这事儿不分前端新手老手，只要写过异步循环的人都踩过。</p>
+
+<p><strong>坑五：16:9 视频变细长条。</strong>直接在 1920px 宽的幻灯片里嵌视频，画面被横向拉伸成一条细线。加了 <code>max-width: 880px</code> 限制宽度，再用 <code>object-fit: contain</code> 保持原始比例，视频才恢复正常。</p>
+
+<p>五个坑，每个都只踩一次。这也是这套系统的隐性优势——<strong>坑一旦被代码修好，就永远不会重现。</strong>不像传统 PPT 里那些"说不清为什么又跑偏了"的排版问题，每次都从零开始排查。</p>
+
+<h2>结语：收起画笔，拿起手术刀</h2>
+
+<p>就在我准备给这篇笔记收尾的时候，我又对这套系统产生了一丝新的"野心"。我原本以为，如果遇到需要复杂动画的场景，HTML 这种代码形式可能会显得不够直观。但我刚发现这完全是个自我设限的伪命题——只要你切换成"导演视角"给 AI Agent 下达运动指令，它同样能瞬间为你写出极其优雅的缓动曲线、错落入场，甚至充满极客美学的 SVG 动态生长。虽然这次给法国客户的演示里，我还没来得及实操这些动态微交互，但毫无疑问，这绝对是我接下来要攻克并带进工作流的"新魔法"。</p>
+
+<p>这套极简工具链的核心奥义，是在 B2B 严肃的商业谈判场景下，用工程的确定性，彻底取代手工排版的混沌。当我们用 AI 代替了排版女工的手，用一行行代码代替了鼠标无意义的拖拽，我们就能把宝贵的脑力毫无保留地投入到战略推演中。</p>
+
+<blockquote>在出海的前线，操盘手不需要握着画笔去描摹对齐的边缘。我们需要的是拿起手术刀，用最精准的逻辑和绝对一致的视觉，去切开深水区大客户的防线。至于那些繁琐的视觉过场，全部留给底层运转的代码就好。</blockquote>
+
+<hr>
+
+<p><em>这篇文章不是来劝你放弃 PowerPoint 的。日常内部汇报、随手两页的周报、朋友圈海报——PPT 完全够用，也应该用。这条路的真正价值，在那些"输不起"的场景：跨国并购的 pitch deck、给海外总部的年度策略汇报、政府招商的路演。当你在这些场合需要绝对的控制力——像素级的排版、跨平台的一致性、可追溯的版本管理——你会发现，一套不收许可费、不依赖特定软件、可以从一次会议直接复用十年的工具链，比任何 SaaS 订阅都更值得信赖。</em></p>
+
   </div>
 </main>
 

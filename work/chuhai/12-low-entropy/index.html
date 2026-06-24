@@ -3,50 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="出海笔记 12：把杂活交给 AI 与双链笔记，找回操盘手的低熵状态。用 Obsidian + Notion + AI API 搭建个人低熵工作流。">
+<meta name="description" content="出海笔记 12：把杂活交给 AI 与双链笔记，找回操盘手的低熵状态。Obsidian + Notion + Claude Code 三件套工作流。">
 <title>出海笔记 12 · 低熵工作流 · 工作论 · Lucy Lyu</title>
 <link rel="stylesheet" href="../../../styles.css">
 <style>
 .article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
-.article-page .breadcrumb {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-  color: var(--section-muted); margin-bottom: 32px;
-}
+.article-page .breadcrumb { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 32px; }
 .article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
 .article-page .breadcrumb a:hover { color: var(--section-accent); }
-.article-page h1 {
-  font-family: var(--font-serif); font-size: 36px; font-weight: 600;
-  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px;
-}
-.article-page .article-meta {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
-  color: var(--section-muted); margin-bottom: 48px;
-}
-.article-page .article-body { font-size: 15px; line-height: 1.85; }
-.article-page .article-body p { margin-bottom: 20px; }
-.article-page .article-body h2 {
-  font-family: var(--font-serif); font-size: 24px; font-weight: 600;
-  letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px;
-  border-top: 1px solid var(--section-border);
-}
-.article-page .article-body h3 {
-  font-family: var(--font-sans); font-size: 16px; font-weight: 600;
-  margin: 32px 0 12px; color: var(--section-accent);
-}
-.article-page .article-body blockquote {
-  margin: 24px 0; padding: 16px 20px;
-  border-left: 3px solid var(--section-accent);
-  font-style: italic; color: var(--section-muted);
-}
-.article-body p:first-of-type::first-letter {
-  float: left;
-  font-family: var(--font-serif); font-size: 56px; line-height: 0.85;
-  padding-right: 10px; padding-top: 4px; color: var(--section-accent);
-}
-@media (max-width: 768px) {
-  .article-page { padding: 48px 20px 64px; }
-  .article-page h1 { font-size: 28px; }
-}
+.article-page h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; }
+.article-page .article-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--section-muted); margin-bottom: 48px; }
+.article-body { font-size: 15px; line-height: 1.85; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--section-border); }
+.article-body h3 { font-family: var(--font-sans); font-size: 16px; font-weight: 600; margin: 36px 0 12px; color: var(--section-accent); }
+.article-body blockquote { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--section-accent); font-style: italic; color: var(--section-muted); }
+.article-body ul, .article-body ol { margin: 16px 0 20px 24px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--section-text); }
+.article-body code { font-family: var(--font-mono); font-size: 13px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 2px; }
+.article-body hr { border: none; border-top: 1px solid var(--section-border); margin: 40px 0; }
+.article-body p:first-of-type::first-letter { float: left; font-family: var(--font-serif); font-size: 56px; line-height: 0.85; padding-right: 10px; padding-top: 4px; color: var(--section-accent); }
+@media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 </head>
 <body data-section="work">
@@ -69,31 +47,69 @@
   <p class="article-meta">出海笔记系列 #12 · 2026.06</p>
 
   <div class="article-body">
-    <p>做硬科技出海，最真实的工况往往不是在谈判桌上运筹帷幄，而是每天在极其琐碎的信息洪流中极限拉扯。左手是研发刚发来的几万字底层声学参数和海试报告，右手是海外代理商隔着十二个小时时差发来的邮件追问；微信里还挂着几个需要跨语言处理的展会物料群。</p>
 
-    <p>对于一个对外界信息有着极高敏锐度、习惯深度思考的操盘手来说，这种高频的"上下文切换"，是对认知精力和情绪能量的巨大透支。到了周五下午的 Deadline 前夕，脑容量往往只剩下可怜的 0.1%。</p>
+<p>做硬科技出海，最真实的工况往往不是在谈判桌上运筹帷幄，而是每天在极其琐碎的信息洪流中极限拉扯。左手是研发刚发来的几万字底层声学参数和海试报告，右手是海外代理商隔着十二个小时时差发来的邮件追问；微信里还挂着几个需要跨语言处理的展会物料群。对于一个对外界信息有着极高敏锐度、习惯深度思考的操盘手来说，这种高频的"上下文切换"，是对认知精力和情绪能量的巨大透支。</p>
 
-    <p>真正的破局之道，不是强迫自己像机器一样时刻保持 100% 的工作状态，而是去建立一个"极简且高度自动化的数字外脑"。把繁杂的信息流、枯燥的参数对比和机械的洗稿工作，全部甩给系统。</p>
+<p>到了周五下午的 Deadline 前夕，脑容量往往只剩下可怜的 0.1%。这个时候，大脑的自我保护机制会强制启动，让你只想立刻合上电脑，把剩下的 99.9% 算力全部投入到对生物力学解剖的钻研、对脊柱灵活性的向内探索中，去纯粹地享受那种精准发力带来的身体掌控感。很多同行试图用"死记硬背"和"疯狂建文件夹"来对抗这种职场损耗，结果往往是陷入更深的内耗。</p>
 
-    <h2>第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</h2>
+<p>真正的破局之道，不是强迫自己像机器一样时刻保持 100% 的工作状态，而是去建立一个"极简且高度自动化的数字外脑"。把繁杂的信息流、枯燥的参数对比和机械的洗稿工作，全部甩给系统。</p>
 
-    <p>为了彻底终结信息碎片化的内耗，我将个人的核心知识库全面迁移到了 Obsidian。这是一个极其纯粹的本地双链笔记软件。在这里，没有僵死的层级文件夹。当你敲下双括号的那一刻，这些散落在各处的孤立知识点，就会像神经突触一样瞬间连接起来。</p>
+<p>就拿这周的一项核心业务落地来说：为了更好地匹配海外大客户的认知习惯，公司决定将出海主推的四款核心产品线进行全面的命名统一与品牌升级。高层的战略极其正确，但基层的落地却是一场数据灾难——这意味着七份海外技术文档必须瞬间同步更新、两版面向顶级客户的解决方案 PPT 需要紧急对齐参数。如果按照以前"人肉驱动"的工作模式，光是翻那些乱码的 PDF 找原始参数，再挨个跨部门通知研发和生产改单子，就能耗尽我一周的精力。但有了下面这套系统，这场原本兵荒马乱的"大换血"，就像流水线一样自动且极其平静地完成了。</p>
 
-    <p>当我点开 GeoScope 这个词条时，系统会自动在侧边栏关联出浅地层剖面仪底层声学逻辑、上周刚列好的全栈解决方案 PPT 大纲，以及它与欧美巨头 Innomar 的极其硬核的参数优劣势对比战术板。</p>
+<h2>第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</h2>
 
-    <blockquote>记忆应该存在系统里，而不是脑子里。那仅存的 0.1% 的宝贵脑力，必须毫无保留地留给判断新命名在海外市场的接受度，而不是去回忆旧参数到底是多少。</blockquote>
+<p>回想一下我们以前最真实的崩溃状态：竞品参数躺在一份经常找不到的 Excel 里，海外代理商的 FAQ 碎落在漫长的微信聊天记录里，而最新的产品命名规则全记在自己的脑子里——直到公司决定统一品牌线，脑子里那版瞬间作废。为了找一个关键的销售话术，你可能要在四个不同的软件里"大海捞针"。这种极其消耗电量的"信息熵增"，是拖垮一个优秀团队的罪魁祸首。</p>
 
-    <h2>第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</h2>
+<p>为了彻底终结这种内耗，我将个人的核心知识库全面迁移到了 Obsidian。这是一个极其纯粹的本地双链笔记软件。它最大的魅力在于，你可以把所有的产品、市场和技术信息，极其克制且结构化地沉淀下来。在这里，没有僵死的层级文件夹。当你敲下双括号的那一刻，这些散落在各处的孤立知识点，就会像神经突触一样瞬间连接起来。</p>
 
-    <p>如果说 Obsidian 是我极其私人的"数字外脑"，那么 Notion，就是我为整个公司搭建的"底层操作系统"。应对跨部门协同的内耗，我的解法是：花最大的精力去搭建底层的关系型数据库，制定好流转规则，然后把填表的动作彻底还给业务端。</p>
+<p>比如，当我点开 GeoScope 这个词条时，系统会自动在侧边栏关联出浅地层剖面仪底层声学逻辑、上周刚列好的全栈解决方案 PPT 大纲，以及它与欧美巨头 Innomar 的极其硬核的参数优劣势对比战术板。</p>
 
-    <p>在这个 Notion 空间里，我搭建了生产工单面板和展会物料追踪系统。销售的工单流转、研发的排期、老板的进度看板——三方不再在微信群里互相对齐信息，所有关键节点自动流转。</p>
+<p>更重要的是，它让我找回了对数据的绝对掌控感。所有的底层笔记都以 Markdown 纯文本的格式牢牢攥在自己手里。说起 Markdown，其实还有一种奇妙的宿命感。早在 2019 年还在用印象笔记的时候，我就熟练掌握了它的各种语法。当时只觉得是个小众技能，万万没想到在如今大模型爆发的 AI 时代，Markdown 直接变成了人机交互最底层、最原生的通用语言。现在去给大模型写 Prompt，简直就是肌肉记忆般的降维打击。</p>
 
-    <h2>第三部分：AI 作为"执行层"——让模型去跑腿</h2>
+<p>配合 iCloud 的原生同步，我在办公室电脑上改完最新的英文彩页文案，下班回家躺在沙发上，打开手机就能无缝复查，绝不依赖任何云端平台的封闭生态。</p>
 
-    <p>当 Obsidian 管好了知识、Notion 管好了流程，最后一层是 AI。我用 Gemini API 做了轻量化的落地：产品技术参数的自动对比、海外客户邮件的草稿生成、多语言展会物料的初稿翻译——这些不需要创造力的"执行层"工作，全部交给模型。人的算力，留给真正需要判断力的决策。</p>
+<blockquote>记忆应该存在系统里，而不是脑子里。那仅存的 0.1% 的宝贵脑力，必须毫无保留地留给"判断新命名在海外市场的接受度"，而不是去回忆"旧参数到底是多少"。</blockquote>
 
-    <p>这三层叠在一起——Obsidian 做知识中枢、Notion 做流程系统、AI 做执行层——就是我的低熵工作流。不是工具测评，是可复现的操作框架。</p>
+<h2>第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</h2>
+
+<p>如果说 Obsidian 是我极其私人的"数字外脑"，那么 Notion，就是我为整个公司搭建的"底层操作系统"。其实在这套系统里，我扮演的并不是那个指点江山的"操盘手"（那是我老板的角色），我更像是一个被逼出来的"系统架构师"。老板需要抓业务、盯交期、看大盘，但他往往搞不定复杂的底层数据逻辑。如果我们不把这套运转机制搭好，最终团队协同的混乱和摩擦，还是会以各种形式反噬到我们自己头上。</p>
+
+<p>应对这种跨部门协同的内耗，我的解法是：<strong>花最大的精力去搭建底层的关系型数据库，制定好流转规则，然后把填表的动作彻底还给业务端。</strong></p>
+
+<h3>枢纽一：消除信息差的"生产工单"面板</h3>
+
+<p>过去，销售接了单，研发和生产要排期，老板要看进度，这三方经常在微信群里互相对齐信息，一不小心就会漏掉关键的交货节点。现在，我建了一个"研发生产人员专区"。销售谈下项目后直接新建工单，填入产品型号、脱敏后的客户名称、以及合同交货期和优先级；研发和生产人员每天只需盯着这个看板按优先级领任务；老板不需要再去群里挨个@问进度，打开自己的 Dashboard 所有状态标签和交货倒计时一目了然。<strong>我不用去催谁，系统自己会催。</strong></p>
+
+<h3>枢纽二：全景可视的"技术服务排期"</h3>
+
+<p>这也是以前最让人头疼的环节——谁在宁波出差？谁在天津跟船？设备去哪了？现在，这些问题全部被整合进了一个带有日历视图和表格视图的动态面板中。当你看到日程表上挂着"某测扫/浅剖作业"或者"某科研院所装船"的任务时，它的背后其实已经串联起了 CRM 库里的客户档案和设备库里的仪器编号。技术人员服务结束后，直接在对应的任务卡片下记录数据，后续甚至可以直接生成出差报告。</p>
+
+<p><strong>"建好系统，然后隐身"</strong>，这就是我在这套协同工具里追求的最高境界。当这套庞大的齿轮开始无声且精准地自动咬合运转时，整个公司的管理熵增被降到了最低，而我也终于可以把珍贵的脑力，留给那些真正需要创造力的 Marketing 核心业务了。</p>
+
+<h2>第三部分：无情的工作流推土机——让 Claude Code 成为终端级超级助理</h2>
+
+<p>如果说 Obsidian 是存储记忆的骨架，Notion 是流转跨部门业务的齿轮，那最近成了我心头好的 Claude，就是在这套系统里日夜轰鸣、任劳任怨的"无情推土机"。</p>
+
+<p>在这个被老板要求"两天内全线更名并对齐物料"的魔鬼周期里，如果完全靠人力去梳理那些陈旧的 PDF 彩页，绝对是一场灾难。很多同行还在用最原始的体力对抗信息熵，而我选择把 Claude Code 直接嵌入到本地终端的工作流中，让它接管所有的"脏活累活"。</p>
+
+<p><strong>❌ Before（人肉时代的苦力活）：</strong>翻到竞品彩页第 2 页 → 睁大眼睛在一堆密密麻麻的表格里找"波束分辨率" → 复制粘贴到文档里 → 发现特殊字体导致汉字全部变成乱码方块 → 手动一个个敲字修正格式。<strong>耗时：15 分钟，且容易眼花抄错。</strong></p>
+
+<p><strong>✅ After（终端超级助理的秒杀）：</strong>把 PDF 路径丢给 Claude Code → AI 后台暴力解析 → 3 秒钟输出极其干净的结构化 Markdown 表格 → 自动双写写入 Obsidian 知识库 → 顺便帮你找出两代产品参数表里的隐藏差异。<strong>耗时：3 秒，零错误率。</strong></p>
+
+<p>它不仅能秒杀 PDF，还能瞬间完成全新产品线命名公式的一键推导、PPT 英文文案的全局批量替换。更绝的是，它甚至能充当我的外挂大脑：每天的工作日志自动记录，并在 Obsidian 中完成双写，每 7 天自动打包归档。不管这周经历了怎样极限的多线并行拉扯，系统永远帮你记住脉络，"永不断片"。</p>
+
+<blockquote>AI 绝不是为了替代你的商业判断，它的终极使命，是把你从无脑的"人肉 grep"中彻底解放出来。你那宝贵的脑力，必须留给去思考"这个新命名的底层逻辑是什么"，而不是在废纸堆里人工校对数据。</blockquote>
+
+<h2>结语：系统越精密，人越自由</h2>
+
+<p>B2B 硬科技出海这条路，外部环境永远处于一种无序的混乱中——老板随时可能推翻重改的需求、海外代理商跨越十二个小时时差的夺命催单、全球各个展会排期和物料的疯狂打架。作为置身其中的出海人，你控制不了这些随时爆发的外部变量。但你能绝对控制的，是自己的信息环境。</p>
+
+<p>建立这套从 Obsidian 到 Notion 再到 Claude 的精密工作流，绝不是为了把自己异化成一个 24/7 随时响应的"打工机器"。恰恰相反，花最大精力去搭建系统，是为了在周五的下午，当所有工单和排期都在底层齿轮里自动流转时，你能心安理得、毫无负担地把电脑一合。</p>
+
+<p>把繁杂与喧嚣留在系统里，把清空的大脑还给自己——去普拉提垫子上做一次极其专注的 Short Spine 感受脊柱的延展，或者去用心手冲一杯果酸明亮的埃塞浅烘。</p>
+
+<p>把系统建好，剩下的交给它去运转。在这个信息极度过载的时代，工具的极致，终究是为了捍卫我们内心的低熵。</p>
+
   </div>
 </main>
 
