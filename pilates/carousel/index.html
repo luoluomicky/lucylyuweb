@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="一句Cue的解剖 · 普拉提真相 — 废口令拆解与行业批判的 Carousel 画廊。">
+<title>Carousel 画廊 · 普拉提 · Lucy Lyu</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+.page-header {
+  max-width: 800px; margin: 0 auto;
+  padding: 64px 40px 48px;
+}
+.breadcrumb {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--section-accent); }
+.page-header h1 {
+  font-family: var(--font-serif); font-size: 42px; font-weight: 600;
+  letter-spacing: 0.04em; line-height: 1.25; margin-bottom: 12px;
+}
+.page-header .subtitle {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em;
+  color: var(--section-muted); text-transform: uppercase;
+}
+
+.gallery-grid {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 40px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 48px 32px;
+}
+
+.carousel-item {
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  text-decoration: none; color: inherit;
+  transition: opacity 0.2s;
+}
+.carousel-item:hover { opacity: 0.82; }
+
+.card-stack {
+  position: relative;
+  width: 240px; height: 320px;
+}
+.card-stack::before {
+  content: '';
+  position: absolute; top: 8px; left: 50%;
+  transform: translateX(-50%) rotate(3deg);
+  width: 228px; height: 304px;
+  background: #f5f0ea; border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(44,38,33,0.10), 0 4px 16px rgba(44,38,33,0.07);
+  z-index: 1; border: 1px solid rgba(44,38,33,0.06);
+}
+.card-stack::after {
+  content: '';
+  position: absolute; top: 4px; left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 234px; height: 312px;
+  background: #f8f3ed; border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(44,38,33,0.08), 0 3px 12px rgba(44,38,33,0.06);
+  z-index: 2; border: 1px solid rgba(44,38,33,0.05);
+}
+.card-front {
+  position: relative; z-index: 3;
+  width: 240px; height: 320px;
+  border-radius: 2px; overflow: hidden;
+  padding: 10px; background: #fdfaf6;
+  box-shadow: 0 2px 8px rgba(44,38,33,0.08), 0 8px 24px rgba(44,38,33,0.06);
+}
+.card-front img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; border-radius: 1px;
+}
+
+.museum-label {
+  margin-top: 20px; text-align: center; max-width: 240px;
+}
+.series-tag {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em;
+  color: var(--section-accent); border: 1px solid var(--section-accent);
+  padding: 3px 10px; border-radius: 1px; margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.item-title {
+  font-family: var(--font-serif); font-size: 16px; font-weight: 600;
+  letter-spacing: 0.03em; line-height: 1.4;
+  color: var(--section-text); margin-bottom: 6px;
+}
+.item-meta {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.06em; color: var(--section-muted);
+}
+
+@media (max-width: 768px) {
+  .page-header { padding: 48px 20px 32px; }
+  .page-header h1 { font-size: 30px; }
+  .gallery-grid { padding: 0 20px 64px; gap: 40px 20px; }
+  .card-stack { width: 200px; height: 267px; }
+  .card-stack::before { width: 190px; height: 253px; }
+  .card-stack::after { width: 195px; height: 260px; }
+  .card-front { width: 200px; height: 267px; }
+  .museum-label { max-width: 200px; }
+}
+</style>
+</head>
+<body data-section="pilates">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/" class="active">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-header">
+    <p class="breadcrumb"><a href="/pilates/">普拉提</a> / Carousel 画廊</p>
+    <h1>Carousel 画廊</h1>
+    <p class="subtitle">废口令拆解 · 行业批判 · 训练底层逻辑</p>
+  </div>
+
+  <div class="gallery-grid">
+
+    <a href="/pilates/carousel/cue-005/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-005.png" alt="#005 下巴找锁骨" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #005</span>
+        <p class="item-title">下巴找锁骨的力学陷阱</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/cue-007/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-007.png" alt="#007 腰贴垫子" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #007</span>
+        <p class="item-title">普拉提腰越练越酸？别再死磕腰贴垫子了</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/truth-006/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-006.png" alt="#006 产后修复" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提真相 #006</span>
+        <p class="item-title">产后修复——别让普拉提毁了你的盆底肌</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/cue-004/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-004.png" alt="#004 沉肩" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #004</span>
+        <p class="item-title">别沉肩——你越沉肩膀越紧张</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/cue-002/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-002.png" alt="#002 骨盆后倾" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #002</span>
+        <p class="item-title">骨盆后倾不是屁股没翘——是核心没找到着落点</p>
+        <p class="item-meta">8 张图版 · 2026.05</p>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>
