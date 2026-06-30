@@ -391,8 +391,8 @@ nav {
   margin-bottom: 14px;
 }
 
-/* ── Drop Cap on first article ── */
-.article-item:first-of-type .article-lead::first-letter {
+/* ── Drop Cap on all articles ── */
+.article-lead::first-letter {
   float: left;
   font-family: var(--font-serif);
   font-size: 56px;
@@ -503,6 +503,18 @@ footer {
       <div class="museum-label"><span class="series-tag">解剖学系列 #005</span><p class="item-title">下巴找锁骨的力学陷阱</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
+    <!-- #009 降肋骨 -->
+    <a href="/pilates/carousel/cue-009/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="carousel-images/cover-009.png" alt="#009 降肋骨" loading="lazy"></div></div>
+      <div class="museum-label"><span class="series-tag">解剖学系列 #009</span><p class="item-title">比降肋骨精准一百倍的感知</p><p class="item-meta">9 张图版 · 2026.06</p></div>
+    </a>
+
+    <!-- #008 屁股夹紧 -->
+    <a href="/pilates/carousel/cue-008/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="carousel-images/cover-008.png" alt="#008 屁股夹紧" loading="lazy"></div></div>
+      <div class="museum-label"><span class="series-tag">解剖学系列 #008</span><p class="item-title">屁股夹紧——你越用力夹，假胯宽越严重</p><p class="item-meta">9 张图版 · 2026.06</p></div>
+    </a>
+
     <!-- #007 腰贴垫子 -->
     <a href="/pilates/carousel/cue-007/" class="carousel-item">
       <div class="card-stack"><div class="card-front"><img src="carousel-images/cover-007.png" alt="#007 腰贴垫子" loading="lazy"></div></div>
@@ -553,7 +565,7 @@ footer {
       <span>预计阅读 18 分钟</span>
       <span>2026.06</span>
     </div>
-  </article>
+  </a>
 
   <a href="/pilates/articles/find-good-teacher/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
     <p class="article-meta-top">教学法 · 2026</p>
