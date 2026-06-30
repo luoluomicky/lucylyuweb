@@ -38,33 +38,43 @@
 }
 .card-viewer-wrap::after {
   content: '';
-  position: absolute; top: 0; right: 0; bottom: 36px;
-  width: 60px;
-  background: linear-gradient(to right, transparent, var(--bg));
-  pointer-events: none;
+  position: absolute; right: 0; top: 0; bottom: 0; width: 60px;
+  background: linear-gradient(to right, transparent, var(--section-bg) 85%);
+  pointer-events: none; z-index: 10;
 }
+/* Arrow buttons */
 .viewer-arrow {
-  position: absolute; top: calc(50% - 18px); z-index: 10;
-  background: var(--bg); border: 1px solid var(--border);
-  color: var(--section-muted); font-size: 20px; line-height: 1;
-  width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(250,248,245,0.85); border: 1px solid var(--section-border);
   display: flex; align-items: center; justify-content: center;
-  transition: opacity 0.2s;
+  cursor: pointer; z-index: 20;
+  font-size: 20px; color: var(--section-muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
 }
-.viewer-arrow-left  { left: -18px; }
-.viewer-arrow-right { right: -18px; }
+.viewer-arrow:hover { background: #fff; color: var(--section-accent); border-color: var(--section-accent); box-shadow: 0 2px 12px rgba(44,38,33,0.10); }
+.viewer-arrow-left  { left: 12px; }
+.viewer-arrow-right { right: 12px; }
 .card-viewer {
-  display: flex; gap: 16px;
-  overflow-x: auto; scroll-snap-type: x mandatory;
-  padding: 12px 40px 20px; scrollbar-width: none;
+  display: flex; gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--section-border) transparent;
+  padding: 0 0 32px;
+  align-items: start;
 }
-.card-viewer::-webkit-scrollbar { display: none; }
+.card-viewer::-webkit-scrollbar { height: 4px; }
+.card-viewer::-webkit-scrollbar-thumb { background: var(--section-border); border-radius: 2px; }
 .card-viewer .card-frame {
-  flex-shrink: 0; scroll-snap-align: center;
-  width: 240px; height: 360px;
-  padding: 16px 16px 0;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  height: 68vh; max-height: 780px;
+  padding: 18px 18px 0;
+  background: #fdfaf6;
+  margin: 0 10px;
   border-radius: 2px;
   box-shadow: 0 2px 12px rgba(44,38,33,0.07), 0 8px 32px rgba(44,38,33,0.05);
   display: flex; flex-direction: column; align-items: center;
@@ -72,16 +82,14 @@
 .card-viewer .card-frame:first-child { margin-left: calc(50% - 120px); }
 .card-viewer .card-frame:last-child  { margin-right: calc(50% - 120px); }
 .card-viewer .card-frame img {
-  display: block; height: calc(100% - 36px); width: auto;
-  border-radius: 1px; object-fit: contain;
+  display: block;
+  height: calc(100% - 36px);
+  width: auto;
+  border-radius: 1px;
+  object-fit: contain;
 }
 .card-viewer .card-num {
   text-align: center; padding: 8px 0;
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-  color: var(--section-muted);
-}
-.scroll-hint {
-  text-align: center; padding: 8px 0 40px;
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
   color: var(--section-muted);
 }
