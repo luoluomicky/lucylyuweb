@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI思考 — Lucy Lyu 的 AI 工具链与自动化思维。">
+<meta name="description" content="AI思考 — 人机协作、Agent 能力边界与自动化工作流的思考。">
 <title>AI思考 · Lucy Lyu</title>
 <link rel="stylesheet" href="../styles.css">
 <style>
-.placeholder { max-width: 600px; margin: 0 auto; padding: 120px 40px; text-align: center; }
-.placeholder h2 {
-  font-family: var(--font-serif); font-size: 28px; font-weight: 600;
-  letter-spacing: 0.04em; margin-bottom: 12px;
-}
-.placeholder .wip-tag {
-  display: inline-block;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em;
-  color: var(--section-accent); border: 1px solid var(--section-accent);
-  padding: 3px 10px; border-radius: 1px; margin-bottom: 20px;
-}
-.placeholder p { font-size: 15px; color: var(--section-muted); line-height: 1.8; }
+.page-header { max-width: 800px; margin: 0 auto; padding: 64px 40px 48px; }
+.page-header h1 { font-family: var(--font-serif); font-size: 42px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.25; margin-bottom: 12px; }
+.page-header .subtitle { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--section-muted); text-transform: uppercase; }
+.article-list { max-width: 800px; margin: 0 auto; padding: 0 40px 80px; border-top: 1px solid var(--section-border); }
+.article-item { display: block; text-decoration: none; color: inherit; padding: 40px 0; border-bottom: 1px solid var(--section-border); transition: opacity 0.2s; }
+.article-item:hover { opacity: 0.72; }
+.article-meta-top { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-accent); margin-bottom: 12px; }
+.article-item h2 { font-family: var(--font-serif); font-size: 28px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; color: var(--section-text); }
+.article-lead { font-size: 15px; color: var(--section-muted); line-height: 1.75; max-width: 560px; margin-bottom: 16px; }
+.article-meta-bottom { display: flex; gap: 20px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--section-muted); }
+.growing-note { max-width: 800px; margin: 0 auto; padding: 24px 40px 64px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); }
+@media (max-width: 768px) { .page-header { padding: 48px 20px 32px; } .page-header h1 { font-size: 30px; } .article-list { padding: 0 20px 48px; } .article-item h2 { font-size: 22px; } .article-lead { font-size: 14px; } .growing-note { padding: 20px 20px 48px; } }
 </style>
 </head>
 <body data-section="ai">
@@ -35,11 +35,27 @@
   </div>
 </nav>
 
-<main class="placeholder">
-  <span class="wip-tag">WIP</span>
-  <h2>这个房间还在布置</h2>
-  <p>AI 工具链、自动化工作流、人机协作的思考——正在整理中。</p>
-  <p>诚实地说，内容还不够撑起一个栏目。等攒够了，这里会有好东西。</p>
+<main>
+  <div class="page-header">
+    <h1>AI思考</h1>
+    <p class="subtitle">人机协作 · Agent 能力边界 · 自动化工作流</p>
+  </div>
+
+  <div class="article-list">
+
+    <a href="/ai/agent-capability-lines/" class="article-item">
+      <p class="article-meta-top">工作笔记 · 2026</p>
+      <h2>AI Agent 能力边界：从三条线长到五条</h2>
+      <p class="article-lead">边界不按领域划，按线划：能不能翻译成对文件的操作、结果能不能被便宜地验证、反馈环在谁手里、规则遵循的注意力预算、对谁的记忆有写入权限。一份随实践持续生长的笔记——写下时三条线，现在五条。</p>
+      <div class="article-meta-bottom">
+        <span>预计阅读 12 分钟</span>
+        <span>2026.07 · 持续更新</span>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="growing-note">这个栏目按积累速度生长，不按日历生长。</p>
 </main>
 
 <footer>

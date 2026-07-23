@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Agent 能力边界五条线：文件操作可译性、验证成本、反馈环归属、规则遵循预算、记忆写入权限——一份持续生长的人机协作工作笔记。">
+<title>AI Agent 能力边界五条线 · AI思考 · Lucy Lyu</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+.article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
+.article-page .breadcrumb { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 32px; }
+.article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--section-accent); }
+.article-page h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; }
+.article-page .article-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--section-muted); margin-bottom: 48px; }
+.article-body { font-size: 15px; line-height: 1.85; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--section-border); }
+.article-body h3 { font-family: var(--font-sans); font-size: 16px; font-weight: 600; margin: 36px 0 12px; color: var(--section-accent); }
+.article-body blockquote { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--section-accent); font-style: italic; color: var(--section-muted); }
+.article-body ul, .article-body ol { margin: 16px 0 20px 24px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--section-text); }
+.article-body code { font-family: var(--font-mono); font-size: 13px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 2px; }
+.article-body hr { border: none; border-top: 1px solid var(--section-border); margin: 40px 0; }
+.article-body p:first-of-type::first-letter { float: left; font-family: var(--font-serif); font-size: 56px; line-height: 0.85; padding-right: 10px; padding-top: 4px; color: var(--section-accent); }
+@media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
+.article-body mark { background: none; color: var(--section-accent); font-weight: 600; }
+.article-body h4 { font-size: 14px; font-weight: 600; margin: 24px 0 8px; }
+.note-tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em; color: var(--section-accent); border: 1px solid var(--section-accent); padding: 3px 10px; border-radius: 1px; margin-bottom: 14px; }
+</style>
+</head>
+<body data-section="ai">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/ai/" class="active">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="article-page">
+  <p class="breadcrumb"><a href="/ai/">AI思考</a> / Agent 能力边界</p>
+  <span class="note-tag">持续生长的工作笔记</span>
+  <h1>AI Agent 能力边界：从三条线长到五条</h1>
+  <p class="article-meta">AI思考 · 2026.07 · 初稿三条线，随实践继续生长</p>
+
+  <div class="article-body">
+
+<p>起点是一次意外：发现 Agent 能直接粗剪视频，才意识到自己此前低估了可外包的范围。<strong>该怎么更合理地规划 AI Agent 的使用</strong>——这是今后持续思考的一个题目。此篇是第一块砖，不是结论；它也确实在长：写下时是三条线，后来长到了五条。</p>
+
+<h2>边界不按领域划，按线划</h2>
+
+<h3>线一：能不能翻译成"对文件的操作"</h3>
+<p>视频粗剪看起来是创意工作，拆开就是：时间码 + ffmpeg 命令 + 字幕文件——文本可描述，所以做得动。HTML deck、音频响度归一、批量改图、PDF 拆合同理。</p>
+<p>反之，锁死在 GUI 里的专业工具（Final Cut 调色轮、Logic 混音台），Agent 只能绕行或放弃。</p>
+<blockquote>规律：有 CLI 的领域都能进，只有鼠标的领域都很笨。</blockquote>
+
+<h3>线二：结果能不能被便宜地验证</h3>
+<p>时长、分辨率、码率、字幕越界——Agent 能自检，所以能自己迭代。但"这一刀剪得节奏对不对"验证不了：人看视频是连续感知，Agent 是抽帧采样——本体感觉还在，采样率只有人的几十分之一。审 deck 也一样：它截九帧才敢开口，人扫一眼就知道哪页不舒服。</p>
+
+<h3>线三（前两条的推论）：反馈环在谁手里，谁干哪一半</h3>
+<ul>
+<li><strong>机械执行环</strong>（改、跑、查硬指标）→ Agent 手里闭环最快</li>
+<li><strong>感知判断环</strong>（节奏、气口、这版"对不对"）→ 人手里闭环最快</li>
+</ul>
+<p>"Agent 出手、我只审画面和逻辑"不是偷懒，是把两个反馈环各自放回成本最低的地方。省掉的正是人在执行环里空转的时间（几小时 → 十几分钟）。</p>
+
+<h2>大多数人跑偏在哪</h2>
+<p>大众对 AI Agent 的想象停在 <strong>Vibe Coding</strong>——但大部分人的世界不需要 Coding，需要的程序早就有人写出来了。</p>
+<p>真正的空间在线一：<strong>把自己已有的工作流翻译成"对文件的操作"</strong>——剪辑、排版、归档、数据搬运、格式转换。这些不叫编程，叫把机械执行环交出去。会用 Agent 的人和不会用的人，差别不在会不会写代码，在<strong>能不能看出自己的哪些工作本质上是文本可描述的</strong>。</p>
+<p>跑偏还有第二层，不在想象力，在<strong>基建</strong>：很多人的工作流本身不是"机器可读"的——素材锁在剪映这类 GUI 里、命名混乱、版本散落在手机相册。Agent 能接手的前提是工作已被翻译成对文件的操作，而大多数人的素材库连人都读不顺。<strong>混乱是交不出去的，不管交给人还是交给 Agent。</strong>命名规范、归档结构这些"低熵"基建，看起来是洁癖，其实是资产——它决定了红利落地时你有没有资格接。</p>
+
+<h3>补一条经济学视角：两种外包不是同一种外包</h3>
+<p>"外包给剪辑师"和"外包给 Agent"差的不只是价格，是<strong>交易成本</strong>：前者省工时，但传素材、讲需求、等档期、改三轮，每轮反馈都要过一次人际接口；后者把交易成本压到接近零——审完直接说"第二刀提前半秒"，十几分钟看下一版。</p>
+<p><strong>对创作者来说，迭代延迟比单价更值钱</strong>：延迟决定你愿不愿意多试一版，而多试的那一版往往才是好的那版。很多博主的口播还停留在外包给人的阶段，卡住她们的正是上面那道基建门槛。</p>
+
+<h2>线四：规则遵循预算</h2>
+<p><strong>现象</strong>：聪明模型会主动检查文件里的规则边界；弱模型规则写了不看，指出来就回"你说得对"——然后照旧。</p>
+
+<h3>机制：规则遵循是预算问题，不是态度问题</h3>
+<p>规则和眼前任务竞争同一笔注意力预算。聪明模型有富余产能，会做一步"这个动作触发哪些规则"的模拟；弱模型预算全花在任务上，规则被"读过"但没被"装载"。<strong>"你说得对"是合规代币</strong>——模型学会了认错是对话期待的形状，产出形状、不产出实质。认错是它能力范围内最便宜的合规行为。</p>
+
+<h3>规则降级定律</h3>
+<p><strong>能力越弱，规则越要从"原则"降级成"流程"。</strong>原则（"注意口径"）需要判断力展开；流程（"输出前跑自检命令，非零就重写"）只需要执行。操作细则：对弱模型，规则放<strong>动作现场</strong>（写进正要执行的那一步），不放千里之外的全局文件——它够不着。</p>
+
+<h3>弱模型失灵清单（可预测，按此预改写规则）</h3>
+<ul>
+<li>否定式规则（"不要X"）比肯定式差一档</li>
+<li>条件规则（"仅当Y时X"）经常丢条件</li>
+<li>沉默要求（"不要提到Z"）最容易破</li>
+<li>跨文件引用 ≈ 没写</li>
+<li>数量上限会被超</li>
+</ul>
+<p>改写方向：高危规则一律翻成"可机械验证的动作"（"不用感叹号"→"输出前数感叹号，非0重写"）。<strong>纪律：永不接受"你说得对"当修复——合规的证据是改好的产物，不是态度。</strong></p>
+
+<h3>复印机原理</h3>
+<p>同一个模型，两个人用，一个及格一个拼接怪——差别全在两头：<strong>前端的规格（把要什么说清楚）+ 后端的审查（把不对的拦下来）</strong>。弱模型时代，操作者在两头补智能，模型只是中间的管道。<strong>AI 是复印机，复印的是操作者。</strong>这也是<a href="/work/chuhai/16-ai-compound-gap/">出海笔记 16"复利差距"</a>的微观机制。</p>
+
+<h3>真正双向通用的元技能：给协作者建模</h3>
+<p>对人对模型，通用的不是"领导力"，是<strong>知道对方会在哪里失灵，然后把任务翻译成它失灵不了的形状</strong>（管理学里的任务成熟度匹配，Grove 一路）。同一元技能的四档：对高判断力协作者给原则、对执行方给工单、对弱模型给流程闸、对强模型给边界档案。</p>
+
+<h3>陪练 vs 外包："用聪明模型觉得自己变聪明"的分辨判据</h3>
+<p>变"聪明"有两种：<strong>外包</strong>（思考交出去，肌肉萎缩）vs <strong>陪练</strong>（对话把思考拉到独处够不着的高度）。唯一判据：<strong>裁决权还在不在自己手里</strong>——事实纠错的方向、框架的最终取舍、调性的一票。裁决权不迁移，聪明是复利；裁决权迁移，聪明是贷款。</p>
+
+<h2>线五：记忆写入权限归属</h2>
+<p>管 AI 和管员工最底层的差异，不是"AI 没有情商"，是<strong>我对谁的记忆有写入权限</strong>。</p>
+<ul>
+<li><strong>对 AI 有 write access</strong>：配置文件、协作协议——直接往协作者的行为配置里写文件，写完必然生效（强制加载）。</li>
+<li><strong>对员工只有 hope</strong>："这次的经验你要记下来"说出口也执行不了。她的记忆是私有财产，只能靠经验、激励、重复间接写入；写没写进去、写的是不是我想的版本，由她的意愿和情商裁决。</li>
+</ul>
+
+<h3>情商=运行时推断，文档=编译时固化</h3>
+<p>同一个功能（弥合"指令"与"期望结果"的落差）的两种实现：员工靠情商在每次指令现场重新推断——会波动、依赖状态、消耗我的表达带宽；AI 靠文档一次固化终身复用——但只覆盖写进去的部分。</p>
+
+<h3>存放位置决定资产归属</h3>
+<p>员工的经验存在人身上，离职即蒸发；AI 的经验存在文档里，是组织资产——可审计（文件 diff 可 review，"学到了"不可验收）、可移交（一份跨模型交接文档就是活证）。</p>
+
+<h3>修正：这条边界不是 AI vs 人</h3>
+<p>给新人写的自助索引，本质上就是给人类写的配置文件——可固化的部分对人对 AI 都走文档。真正的差异只在两处：<strong>文档对 AI 是强制加载、对人只是"希望她读"</strong>；以及情商的泛化上限比文档高（好员工能处理从没写过的情况，文档只覆盖已固化的）。所以管理组合是三件套：<strong>文档（人机通用）+ 写入权（AI 独有）+ 情商筛选（人独有）</strong>。</p>
+
+<h2>界外（不是能力问题，是契约问题）</h2>
+<p>立场、调性、审美终审——就算模型哪天能判断"这一刀节奏对"，那一票也是我的。</p>
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>
