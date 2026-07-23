@@ -95,10 +95,20 @@
   letter-spacing: 0.06em; color: var(--section-muted);
 }
 
+.cat-header {
+  max-width: 1100px; margin: 0 auto;
+  padding: 40px 40px 24px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+  color: var(--section-muted); text-transform: uppercase;
+  border-top: 1px solid var(--section-border);
+}
+.gallery-grid { padding-bottom: 24px; }
+
 @media (max-width: 768px) {
   .page-header { padding: 48px 20px 32px; }
   .page-header h1 { font-size: 30px; }
-  .gallery-grid { padding: 0 20px 64px; gap: 40px 20px; }
+  .gallery-grid { padding: 0 20px 24px; gap: 40px 20px; }
+  .cat-header { padding: 32px 20px 20px; }
   .card-stack { width: 200px; height: 267px; }
   .card-stack::before { width: 190px; height: 253px; }
   .card-stack::after { width: 195px; height: 260px; }
@@ -128,14 +138,24 @@
     <p class="subtitle">废口令拆解 · 行业批判 · 训练底层逻辑</p>
   </div>
 
+  <p class="cat-header">一句Cue的解剖 · 废口令拆解</p>
   <div class="gallery-grid">
 
-    <a href="/pilates/carousel/cue-005/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-005.png" alt="#005 下巴找锁骨" loading="lazy"></div></div>
+    <a href="/pilates/carousel/cue-009/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-009.png" alt="#009 降肋骨" loading="lazy"></div></div>
       <div class="museum-label">
-        <span class="series-tag">解剖学系列 #005</span>
-        <p class="item-title">下巴找锁骨的力学陷阱</p>
-        <p class="item-meta">8 张图版 · 2026.06</p>
+        <span class="series-tag">解剖学系列 #009</span>
+        <p class="item-title">比降肋骨精准一百倍的感知</p>
+        <p class="item-meta">9 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/cue-008/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-008.png" alt="#008 屁股夹紧" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #008</span>
+        <p class="item-title">屁股夹紧——你越用力夹，假胯宽越严重</p>
+        <p class="item-meta">9 张图版 · 2026.07</p>
       </div>
     </a>
 
@@ -148,11 +168,11 @@
       </div>
     </a>
 
-    <a href="/pilates/carousel/truth-006/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-006.png" alt="#006 产后修复" loading="lazy"></div></div>
+    <a href="/pilates/carousel/cue-005/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-005.png" alt="#005 下巴找锁骨" loading="lazy"></div></div>
       <div class="museum-label">
-        <span class="series-tag">普拉提真相 #006</span>
-        <p class="item-title">产后修复——别让普拉提毁了你的盆底肌</p>
+        <span class="series-tag">解剖学系列 #005</span>
+        <p class="item-title">下巴找锁骨的力学陷阱</p>
         <p class="item-meta">8 张图版 · 2026.06</p>
       </div>
     </a>
@@ -167,11 +187,125 @@
     </a>
 
     <a href="/pilates/carousel/cue-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-002.png" alt="#002 骨盆后倾" loading="lazy"></div></div>
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-002.png" alt="#002 收紧肚子" loading="lazy"></div></div>
       <div class="museum-label">
         <span class="series-tag">解剖学系列 #002</span>
-        <p class="item-title">骨盆后倾不是屁股没翘——是核心没找到着落点</p>
-        <p class="item-meta">8 张图版 · 2026.05</p>
+        <p class="item-title">收紧肚子——你以为在激活核心，其实在憋气</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/cue-001/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/001-01.png" alt="#001 骨盆后倾" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">解剖学系列 #001</span>
+        <p class="item-title">骨盆后倾——普拉提圈被滥用最多的废口令</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="cat-header">普拉提小细节 · 动作细节</p>
+  <div class="gallery-grid">
+
+    <a href="/pilates/carousel/detail-003/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/detail003-01.png" alt="小细节 #003 后脑勺" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提小细节 #003</span>
+        <p class="item-title">后脑勺：被忽略的第一块砖</p>
+        <p class="item-meta">8 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/detail-002/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/detail002-01.png" alt="小细节 #002 脚" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提小细节 #002</span>
+        <p class="item-title">勾脚和绷脚，到底在练什么</p>
+        <p class="item-meta">8 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/detail-001/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/detail001-01.png" alt="小细节 #001 手" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提小细节 #001</span>
+        <p class="item-title">手：最被低估的关节</p>
+        <p class="item-meta">8 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="cat-header">体感短文 · 轻量三张卡</p>
+  <div class="gallery-grid">
+
+    <a href="/pilates/carousel/short-005/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/short005-01.png" alt="体感短文 绷脚" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">体感短文</span>
+        <p class="item-title">绷脚，脚趾头要用力吗</p>
+        <p class="item-meta">3 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/short-004/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/short004-01.png" alt="体感短文 Roll Over" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">体感短文</span>
+        <p class="item-title">普拉提 Roll Over 上不去，先看手</p>
+        <p class="item-meta">3 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/short-003/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/short003-01.png" alt="体感短文 呼吸" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">体感短文</span>
+        <p class="item-title">呼吸：肋骨往哪走</p>
+        <p class="item-meta">3 张图版 · 2026.07</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/short-002/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/short002-01.png" alt="体感短文 骨盆" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">体感短文</span>
+        <p class="item-title">坐着，骨盆在哪里？</p>
+        <p class="item-meta">3 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/short-hundred/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/short-hundred-01.png" alt="体感短文 Hundred" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">体感短文</span>
+        <p class="item-title">Hundred 视线锚点</p>
+        <p class="item-meta">3 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="cat-header">普拉提真相 · 行业批判与底层逻辑</p>
+  <div class="gallery-grid">
+
+    <a href="/pilates/carousel/truth-006/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/cover-006.png" alt="#006 产后修复" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提真相 #006</span>
+        <p class="item-title">产后修复——别让普拉提毁了你的盆底肌</p>
+        <p class="item-meta">8 张图版 · 2026.06</p>
+      </div>
+    </a>
+
+    <a href="/pilates/carousel/truth-001/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/truth001-01.png" alt="#001 四条定律" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提真相 #001</span>
+        <p class="item-title">运动训练四条定律</p>
+        <p class="item-meta">7 张图版 · 2026.06</p>
       </div>
     </a>
 
