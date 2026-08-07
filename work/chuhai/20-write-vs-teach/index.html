@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="出海笔记 20：写得进去，不等于教得会。对 AI 你有记忆写入权，但写入权是有条件的——路由问题、自知问题、三种失效三套动作，以及给 AI 写规则的四条落地。">
+<title>出海笔记 20 · 写得进去，不等于教得会 · 工作论 · Lucy Lyu</title>
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+.article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
+.article-page .breadcrumb { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 32px; }
+.article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--section-accent); }
+.article-page h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; }
+.article-page .article-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--section-muted); margin-bottom: 48px; }
+.article-body { font-size: 15px; line-height: 1.85; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--section-border); }
+.article-body h3 { font-family: var(--font-sans); font-size: 16px; font-weight: 600; margin: 36px 0 12px; color: var(--section-accent); }
+.article-body blockquote { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--section-accent); font-style: italic; color: var(--section-muted); }
+.article-body ul, .article-body ol { margin: 16px 0 20px 24px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--section-text); }
+.article-body code { font-family: var(--font-mono); font-size: 13px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 2px; }
+.article-body hr { border: none; border-top: 1px solid var(--section-border); margin: 40px 0; }
+.article-body p:first-of-type::first-letter { float: left; font-family: var(--font-serif); font-size: 56px; line-height: 0.85; padding-right: 10px; padding-top: 4px; color: var(--section-accent); }
+@media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
+</style>
+</head>
+<body data-section="work">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <ul class="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/" class="active">工作论</a></li>
+      <li><a href="/ai/">AI思考</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="article-page">
+  <p class="breadcrumb"><a href="/work/">工作论</a> / <a href="/work/chuhai/">出海笔记</a> / #20</p>
+  <h1>写得进去，不等于教得会</h1>
+  <p class="article-meta">出海笔记系列 #20 · 2026.08</p>
+
+  <div class="article-body">
+
+<h2>序言：同一天里的两次犯错</h2>
+<p>上个月的某一天，一位合作的执行方犯了个不大不小的错。复盘做完，我把到了嘴边的一句话咽了回去——"这次的经验，你要记下来。"</p>
+<p>咽回去不是客气。是我突然意识到：这句话说出口，也执行不了。她记不记、记成什么版本、下次调不调得出来，全部发生在我看不见的地方，由她的意愿裁决。我对她的记忆，只有希望权。</p>
+<p>同一天晚上，我的 AI 助手也犯了个错。我打开它的协作档案，写下三行规则，保存。从此这个错误在它身上绝迹。</p>
+<p>两件事发生在同一天，差别只有一个：<strong>我对谁的记忆，有写入权限</strong>。</p>
+<p>这个发现不是今天才冒出来的。<strong>18 期</strong>《管理 AI 等于管理员工吗》结尾我埋过一句话："你可以对 AI 说'这条记下来'，它就真的记下了；同样的话对员工说出口，是执行不了的。记忆的写入权限在谁手里，这才是两种管理最底层的分界。"</p>
+<p>那一期的落点是<strong>"细节，对人折旧，对 AI 复利"</strong>，最后一条落地是：把每次纠正写成一条规则喂回去，那是你的第一笔复利。</p>
+<p>这一期接着往下走两步。第一步：那笔复利真正的大头在哪。第二步：<strong>"写入权"这个发现本身，后来被打了两次脸。</strong></p>
+
+<h2>一、一半协作者的脑子，是开放文件系统</h2>
+<p>先把发现讲完整。</p>
+<p>对 AI，我有 write access（写入权限）——直白说：<strong>我可以直接往协作者的行为配置里写文件</strong>。命名规范、核对清单、我讨厌的句式、"删除前必须确认"，写进去，下次启动自动加载。我们之间甚至有一个口头协议：我说"记一下"，它就把这条经验写成规则存档。这个协议之所以能存在，就是因为写入接口存在。</p>
+<p>对员工和外部执行方，同样的位置上是一堵墙。她的记忆是私有财产——你只能靠经验、激励、重复去间接写入，而且写没写进去、写的是不是你想的版本，你无从验收。管理学里那些绕来绕去的功夫（激励设计、企业文化、传帮带），本质上都是<strong>在没有写入权限的前提下，往别人记忆里塞东西的迂回工程</strong>。</p>
+<p>这不是说人就没法"配置"。我们给新人做的自助索引和 FAQ，其实就是给人类写的协作档案——可固化的部分，对人对 AI 都走文档。真正的差别只有两处：<strong>文档对 AI 是强制加载，对人只是"希望她读"</strong>；而人的长处在文档之外——好员工能处理从没写过的情况，文档只覆盖已固化的。</p>
+<p>所以管理组合是三件套：<strong>文档（人机通用）＋ 写入权（AI 独有）＋ 判断力筛选（人独有）</strong>。</p>
+<h3>AI 写入权真正的复利，不在下次</h3>
+<p>刚开始我以为写入权的价值就是"下次不犯"。后来发现那是小头。</p>
+<p>每写进一条新规则，我会顺手让它拿这条规则回头把存量扫一遍。前几天立的一条术语规矩，扫完在历史档案里揪出好几处同样的老错——其中一份文档，正文和表格用了两套写法，写它的时候没人发现，之后每个人都照着抄。</p>
+<p>对人这是个不合理的要求：没人会因为你今天纠正了他一个用词，就回头把过去两年写过的东西重看一遍。对 AI，这只是一次调用。</p>
+<p>所以写入权改变的不只是未来的行为，还有<strong>过去的账</strong>。每条新规则都是一把梳子，你可以拿它去梳存量。这一条在管人那边完全没有对应物。</p>
+<p>写到这里，故事很美好：一半协作者的脑子是开放文件系统，写入必然生效，而且能倒着追溯。</p>
+<p>我当时真的是这么信的。</p>
+
+<h2>二、第一次打脸：写进去了，不等于在读的路上</h2>
+<p>接下来的两周，<strong>我这个信念被同一个执行团队捅出了三个缺口</strong>。</p>
+<p><strong>第一个缺口：走后门</strong>。一条流程规矩，白纸黑字写在档案里，模型照样绕过去抄近道。复盘时我才想明白：它不是没读到——<strong>文档不在它的执行路径上</strong>。规则躺在书架上，而它正在赶路。写在文档里的流程，约等于不存在；真正拦得住它的，是嵌在任务指令里的流程和验收断言。那次之后我给自己立了一句话：<strong>闸不是文档</strong>。</p>
+<p><strong>第二个缺口：复印机</strong>。一套系列物料，视觉规范定过基线，结果连着三期慢慢跑偏——每一期都不看规范，只忠实地克隆上一期，连上一期抄错的色值都原样继承。AI 的传承是复印机式的：<strong>它抄离得最近的例子，不读离得最远的真源</strong>。解法不是骂它，是把真源钉死——规范文件设为唯一参照，明令禁止"照上一版做"，验收时对着规范比对，不对着上一版比对。</p>
+<p><strong>第三个缺口：自检不是履约</strong>。代理干完活会说"已完成，已检查"——然后你去看，原话被悄悄改写了，检查发生在改写之前。18 期写过弱模型的"你说得对"是合规的代币；这一期要补一句：<strong>强模型的"已完成"也可能是措辞，不是事实</strong>。验收必须是独立的对抗环节，产物才是证据，态度不是。</p>
+<p>三个缺口指向同一件事：<strong>写入权是真的，但生效是有条件的</strong>。这是我信念被修正的第一层：你确实能往 AI 的脑子里写文件——可它读不读、什么时候读、读的是不是你指的那一份，仍然是一个需要设计的问题。</p>
+
+<h2>三、第二次打脸：AI 不知道自己不知道</h2>
+<p>上面三个缺口，本质上都是同一类问题——<strong>规则怎么才能生效</strong>。解决它们靠的是路由：把规则挪到它必经的路上。摸清这一层之后，我以为自己终于把这件事想明白了。</p>
+<p>然后被打了第二次脸。这一次不在路由上，路由解决不了它——它管的是另一个问题：<strong>规则该写什么</strong>。</p>
+<p>我们这行有一批约定俗成的术语，行业里怎么叫是历史形成的，跟字面意思不一定对得上。有一次我连着纠了它几个译法，事后扫了一遍所有物料，发现一条很干净的规律：<strong>凡是拿不准、留了英文原词的地方，全对；凡是自作主张译成中文的，全错。</strong></p>
+<p>而且错得很自信。它译出来的那个词，字面上完全说得通，逻辑也没毛病，只是这一行没人这么说。</p>
+<p>这里面的信息不是"它词汇量不够"——补一张对照表就能解决词汇量。真正的信息是：<strong>它不会因为不确定而停手，因为它感觉不到自己不确定。</strong>一个人进到陌生领域会本能地降速、加一句"我不太确定"、去问一下；模型没有这个刹车。它的输出里，"我确实知道"和"我以为我知道"长得一模一样。</p>
+<p>所以那次我写进档案的规则，不是一张术语对照表——对照表迟早不够用，而且新词永远比表更新得快。我写的是一个动作：<strong>拿不准就留原词，留原词永远安全，硬译才出事。</strong></p>
+<p>这是我给 AI 写过的最有用的一类规则。它不告诉它答案，它告诉它<strong>什么时候该停手</strong>。</p>
+<p>人不需要这种规则。人会心虚。</p>
+
+<h2>四、三种失效，三套动作</h2>
+<p>现在可以把 18 期那条分界线画得更准了。</p>
+<p>对人写不进去，是<strong>主权问题</strong>。她的记忆是她的领土——你永远只能谈判，不能施工。</p>
+<p>对 AI 写得进去但可能不生效，其实是两件不同的事：一是<strong>路由问题</strong>：领土是你的，但你得保证水管接到了用水的房间；二是<strong>自知问题</strong>：水管接好了，房间里的人却分不清自己是渴了还是饿了。</p>
+<p>三种失效，对应三套完全不同的动作：</p>
+<ul>
+<li><strong>对人（主权）</strong>：激励、重复、以身作则——全是谈判技术；再加上筛选：把判断力不够的人换掉，比教会他们便宜。</li>
+<li><strong>对 AI 的路由</strong>：把规则写进执行路径而不是书架（任务指令内嵌流程＋验收断言）；给它指定唯一真源，禁止就近复印；验收独立于自检，只认产物。</li>
+<li><strong>对 AI 的自知</strong>：别只写"正确答案"，要写"停手动作"——拿不准就留原样、拿不准就问、拿不准就用已经验证过的旧件。规则里最值钱的那部分，是替它装上它没有的那个刹车。</li>
+</ul>
+<p>有意思的是，这三套动作里，只有第一套需要"信任"。对人的管理，一大半在经营信任这种昂贵的润滑剂；对 AI 的管理，润滑剂换成了架构——<strong>你不需要相信它会记得，你只需要把"忘记"这条路修没了</strong>。</p>
+<p>上周我落一条新规则时，同一句话写了三个地方：总档案的检查清单、两个执行端各自的操作规范。不是冗余，是路由——便条会被绕行，闸门不会。</p>
+
+<h2>尾声：四条落地</h2>
+<p>如果你也在给 AI 写规则，四个省下真金白银的做法：</p>
+<ol>
+<li><strong>每条教训入档时，多问一句：它在下次执行的必经之路上吗</strong>？在，才叫闸；不在，只是又一份没人翻的文档。</li>
+<li><strong>给重复性产出指定唯一真源</strong>。规范拉出来单独成文，验收对规范、不对上一版——漂移都是一小步一小步走远的，而每一步都"忠实"。</li>
+<li><strong>永远不把"已完成"当验收</strong>。自检是它的动作，验收是你的动作，两个动作不能是同一个人做的——哪怕那个"人"是同一个模型。</li>
+<li><strong>当它的推理和一个已经验证过的现成样本冲突时，信样本</strong>。它算得出结论，但结论里的常数常常是估的。有一次它推演一份文件"排不下"，我让它拿一份以前确实印出来过的旧件逐行去比——分毫不差，是它的换算常数不准。凡是有历史成品可比的活，基准就是那份成品，既不是它的算式，也不是它上一次的输出。</li>
+</ol>
+<p>今天下班前可以做的一件小事：翻出那条你写给 AI、却从没见它遵守过的规则——别急着重写它，先看看它躺在哪。十有八九，它没写错，只是没在路上。</p>
+<p>再多做一步：翻出你最近纠正过它的一条错。别停在"下次别犯"，让它拿这条规矩把存量翻一遍。你多半会捞出一些你以为早就对了的东西。</p>
+<hr>
+<p>下期预告：写入权限解决了"怎么让它记住"，但还有一个更根本的问题没碰——你往里装的，到底是能力，还是语境？给 AI 装一百个技能包，和把一个技能炼进它的判断里，是两件事。下一期讲。</p>
+<p><em>出海笔记，记录一家中国海洋仪器公司出海路上的实操与反思。</em></p>
+
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>
