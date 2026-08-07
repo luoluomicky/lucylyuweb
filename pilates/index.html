@@ -341,10 +341,12 @@ nav {
    LONG-FORM ARTICLE LIST
    ══════════════════════════════════════════════ */
 .articles-section {
-  max-width: 800px;
+  max-width: 1200px;          /* 与 hero/画廊/页脚同一根轴，页面只有一条左边线 */
   margin: 0 auto;
   padding: 0 40px 80px;
 }
+.article-lead { max-width: 760px; }   /* 轴变宽后单独约束正文行长，护住可读性 */
+.article-item h3 { max-width: 960px; }
 .tagrow {
   display: flex;
   flex-wrap: wrap;
