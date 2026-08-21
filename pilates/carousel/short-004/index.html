@@ -123,6 +123,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "普拉提 Roll Over 上不去，先看手", "datePublished": "2026-07-11", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/short-004/", "inLanguage": "zh-CN", "description": "体感短文 #004 · 普拉提 Roll Over 上不去，先看手。手臂向远处长、向下传力，给肩带一个支点——3张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/short004-01.png"}</script>
 </head>
@@ -131,7 +132,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -152,9 +154,9 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/short004-01.png" alt="Card 1" loading="lazy"><p class="card-num">1 / 3</p></div>
-    <div class="card-frame"><img src="../../carousel-images/short004-02.png" alt="Card 2" loading="lazy"><p class="card-num">2 / 3</p></div>
-    <div class="card-frame"><img src="../../carousel-images/short004-03.png" alt="Card 3" loading="lazy"><p class="card-num">3 / 3</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/short004-01.webp" type="image/webp"><img src="../../carousel-images/short004-01.png" alt="Roll Over 上不去 先看手" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 3</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/short004-02.webp" type="image/webp"><img src="../../carousel-images/short004-02.png" alt="一个假把手， 一个真把手" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 3</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/short004-03.webp" type="image/webp"><img src="../../carousel-images/short004-03.png" alt="上不去的重量，都挤去了哪里？" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 3</p></div>
   </div>
   </div>
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

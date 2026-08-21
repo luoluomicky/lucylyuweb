@@ -141,11 +141,14 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">跳到正文</a>
+
 <!-- ═══════════ NAVIGATION ═══════════ -->
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -155,7 +158,7 @@
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
-<header class="hero">
+<header class="hero" id="main" tabindex="-1">
   <h1>Lucy Lyu</h1>
   <p class="subtitle">古典普拉提解剖架构师 / B2B 出海操盘手</p>
   <p class="tagline">在身体与商业之间，寻找底层逻辑。</p>
@@ -190,14 +193,14 @@
 <section class="latest">
   <p class="latest-header">最近更新</p>
   <ul class="latest-list">
+    <li><a href="/pilates/articles/entry-ticket-not-outcome/"><span>沉肩沉不下去，是题出早了（长文）</span><span class="latest-date">2026.08</span></a></li>
+    <li><a href="/work/chuhai/22-found-not-reached/"><span>出海笔记 22 · 找到你，不等于到达你</span><span class="latest-date">2026.08</span></a></li>
+    <li><a href="/pilates/carousel/detail-006/"><span>普拉提小细节 #006 · 卷不起来，先看你的眼睛</span><span class="latest-date">2026.08</span></a></li>
+    <li><a href="/pilates/carousel/truth-008/"><span>普拉提真相 #008 · 侧屈抽筋，你躲开的那一下才是重点</span><span class="latest-date">2026.08</span></a></li>
     <li><a href="/pilates/articles/three-kinds-of-tight/"><span>太硬了才来练普拉提，先分清是哪一种硬（长文）</span><span class="latest-date">2026.08</span></a></li>
     <li><a href="/work/chuhai/21-context-not-capability/"><span>出海笔记 21 · 能力可以下载，语境不能</span><span class="latest-date">2026.08</span></a></li>
     <li><a href="/pilates/carousel/detail-004/"><span>普拉提小细节 #004 · 小拇指，连着你的胸椎</span><span class="latest-date">2026.08</span></a></li>
     <li><a href="/pilates/carousel/truth-003/"><span>普拉提真相 #003 · ARC 和脊柱矫正器差在哪</span><span class="latest-date">2026.08</span></a></li>
-    <li><a href="/work/chuhai/20-write-vs-teach/"><span>出海笔记 20 · 写得进去，不等于教得会</span><span class="latest-date">2026.08</span></a></li>
-    <li><a href="/pilates/articles/relax-cue/"><span>普拉提最难的口令：放松一点（长文）</span><span class="latest-date">2026.08</span></a></li>
-    <li><a href="/pilates/carousel/truth-007/"><span>普拉提真相 #007 · 桶的起源：啤酒桶传说，查无实据</span><span class="latest-date">2026.08</span></a></li>
-    <li><a href="/pilates/carousel/short-007/"><span>体感短文 · 死虫式一做快，腰先拱</span><span class="latest-date">2026.08</span></a></li>
   </ul>
 </section>
 

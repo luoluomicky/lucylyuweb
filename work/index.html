@@ -107,7 +107,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/">普拉提</a></li>
       <li><a href="/work/" class="active">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>

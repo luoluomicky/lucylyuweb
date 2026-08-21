@@ -131,7 +131,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -217,6 +218,15 @@
 
   <p class="cat-header">普拉提小细节 · 动作细节</p>
   <div class="gallery-grid">
+
+    <a href="/pilates/carousel/detail-006/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/detail006-01.png" alt="小细节 #006 眼睛" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提小细节 #006</span>
+        <p class="item-title">卷不起来，先看你的眼睛</p>
+        <p class="item-meta">9 张图版 · 2026.08</p>
+      </div>
+    </a>
 
     <a href="/pilates/carousel/detail-007/" class="carousel-item">
       <div class="card-stack"><div class="card-front"><img src="../carousel-images/detail007-01.png" alt="小细节 #007 腘绳肌" loading="lazy"></div></div>
@@ -344,6 +354,15 @@
 
   <p class="cat-header">普拉提真相 · 行业批判与底层逻辑</p>
   <div class="gallery-grid">
+
+    <a href="/pilates/carousel/truth-008/" class="carousel-item">
+      <div class="card-stack"><div class="card-front"><img src="../carousel-images/truth008-01.png" alt="真相 #008 侧屈抽筋" loading="lazy"></div></div>
+      <div class="museum-label">
+        <span class="series-tag">普拉提真相 #008</span>
+        <p class="item-title">侧屈抽筋，你躲开的那一下才是重点</p>
+        <p class="item-meta">8 张图版 · 2026.08</p>
+      </div>
+    </a>
 
     <a href="/pilates/carousel/truth-007/" class="carousel-item">
       <div class="card-stack"><div class="card-front"><img src="../carousel-images/truth007-01.png" alt="真相 #007 桶的起源" loading="lazy"></div></div>

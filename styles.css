@@ -11,7 +11,7 @@
   /* 全局壳（大厅）— 水彩纸 + 深焙咖啡 */
   --shell-bg:       #fcfaf7;
   --shell-text:     #2C2621;
-  --shell-muted:    #a39b93;
+  --shell-muted:    #726a63;
   --shell-border:   #E8E4DF;
   --font-sans:      -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
   --font-serif:     "Songti SC", "Noto Serif SC", "STSong", serif;
@@ -23,7 +23,7 @@
   --section-muted:  var(--shell-muted);
   --section-border: var(--shell-border);
   --section-accent: #8B6F5E;
-  --section-accent2: #a39b93;
+  --section-accent2: #726a63;
 }
 
 /* ── 落落米（普拉提室）— 陶土琥珀 + 档案室米白 ── */
@@ -74,6 +74,31 @@ body::before {
   z-index: 9999;
 }
 
+/* ── Accessibility: visible keyboard focus ── */
+:focus-visible {
+  outline: 2px solid var(--section-accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Accessibility: skip to content ── */
+.skip-link {
+  position: absolute; left: 8px; top: 8px;
+  z-index: 200;
+  transform: translateY(-160%);
+  padding: 10px 16px;
+  min-height: 44px; display: inline-flex; align-items: center;
+  background: var(--section-bg);
+  color: var(--section-text);
+  border: 1px solid var(--section-accent);
+  border-radius: 1px;
+  font-size: 14px; letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
 /* ── Navigation ── */
 nav {
   position: sticky; top: 0; z-index: 100;
@@ -114,6 +139,8 @@ nav {
   background-image: url('/assets/images/logo-dark.png');
 }
 .nav-links { display: flex; gap: 40px; list-style: none; }
+/* hamburger button — hidden on desktop, shown at ≤768px */
+.nav-toggle { display: none; }
 .nav-links a {
   font-size: 15px; color: var(--section-muted);
   text-decoration: none; letter-spacing: 0.03em;
@@ -135,8 +162,55 @@ footer {
 
 /* ── Responsive Nav & Footer ── */
 @media (max-width: 768px) {
-  .nav-inner { padding: 16px 20px; }
-  .nav-links { gap: 24px; }
-  .nav-links a { font-size: 14px; }
+  .nav-inner {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+  .nav-home {
+    font-size: 17px;
+    white-space: nowrap;
+    flex: 0 1 auto;
+    min-height: 44px;
+  }
+
+  /* hamburger */
+  .nav-toggle {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 5px;
+    width: 44px; height: 44px; margin-right: -8px;
+    flex: 0 0 auto;
+    background: none; border: 0; padding: 0;
+    cursor: pointer; color: inherit;
+  }
+  .nav-toggle span {
+    display: block; width: 20px; height: 1.5px;
+    background: var(--section-text);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-inner.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-inner.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .nav-inner.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* collapsed menu */
+  .nav-links {
+    display: none;
+    flex: 1 0 100%;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 6px;
+    border-top: 1px solid var(--section-border);
+  }
+  .nav-inner.open .nav-links { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--section-border); }
+  .nav-links li:last-child { border-bottom: 0; }
+  .nav-links a {
+    display: flex; align-items: center;
+    min-height: 44px;
+    font-size: 15px;
+    padding: 0 2px;
+    border-bottom: 0;
+  }
+  .nav-links a.active { color: var(--section-accent); border-bottom-color: transparent; }
+
   footer { padding: 36px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
 }

@@ -123,6 +123,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "小拇指，连着你的胸椎", "datePublished": "2026-08-10", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/detail-004/", "inLanguage": "zh-CN", "description": "普拉提小细节 #004 · 小拇指，连着你的胸椎。抬手臂就耸肩，问题不在肩、在掌心朝哪——肱骨内旋会压扁肩峰下空间，一个外旋整个肩重新有余地；而更精细的开关在小指外侧，沿后臂深线一路连到胸椎棘突。8 张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/detail004-01.png"}</script>
 </head>
@@ -131,7 +132,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -152,14 +154,14 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/detail004-01.png" alt="普拉提小细节 #004 卡1·封面：小拇指，连着你的胸椎" loading="lazy"><p class="card-num">1 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-02.png" alt="普拉提小细节 #004 卡2·问题不在肩，在掌心朝哪" loading="lazy"><p class="card-num">2 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-03.png" alt="普拉提小细节 #004 卡3·一个外旋，整个肩重新有空间" loading="lazy"><p class="card-num">3 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-04.png" alt="普拉提小细节 #004 卡4·但真正精细的开关，在小拇指" loading="lazy"><p class="card-num">4 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-05.png" alt="普拉提小细节 #004 卡5·这根线，叫后臂深线：从小鱼际连到胸椎棘突" loading="lazy"><p class="card-num">5 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-06.png" alt="普拉提小细节 #004 卡6·垫上、器械、后伸，都是这根线" loading="lazy"><p class="card-num">6 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-07.png" alt="普拉提小细节 #004 卡7·自测：3 秒，感受胸椎的差别" loading="lazy"><p class="card-num">7 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail004-08.png" alt="普拉提小细节 #004 卡8·收束：你的手，不只连着肩" loading="lazy"><p class="card-num">8 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-01.webp" type="image/webp"><img src="../../carousel-images/detail004-01.png" alt="普拉提小细节 #004 卡1·封面：小拇指，连着你的胸椎" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-02.webp" type="image/webp"><img src="../../carousel-images/detail004-02.png" alt="普拉提小细节 #004 卡2·问题不在肩，在掌心朝哪" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-03.webp" type="image/webp"><img src="../../carousel-images/detail004-03.png" alt="普拉提小细节 #004 卡3·一个外旋，整个肩重新有空间" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-04.webp" type="image/webp"><img src="../../carousel-images/detail004-04.png" alt="普拉提小细节 #004 卡4·但真正精细的开关，在小拇指" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-05.webp" type="image/webp"><img src="../../carousel-images/detail004-05.png" alt="普拉提小细节 #004 卡5·这根线，叫后臂深线：从小鱼际连到胸椎棘突" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-06.webp" type="image/webp"><img src="../../carousel-images/detail004-06.png" alt="普拉提小细节 #004 卡6·垫上、器械、后伸，都是这根线" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-07.webp" type="image/webp"><img src="../../carousel-images/detail004-07.png" alt="普拉提小细节 #004 卡7·自测：3 秒，感受胸椎的差别" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail004-08.webp" type="image/webp"><img src="../../carousel-images/detail004-08.png" alt="普拉提小细节 #004 卡8·收束：你的手，不只连着肩" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 8</p></div>
   </div>
   </div>
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

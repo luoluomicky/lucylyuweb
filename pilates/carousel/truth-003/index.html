@@ -123,6 +123,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ARC 和脊柱矫正器差在哪", "datePublished": "2026-08-07", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/truth-003/", "inLanguage": "zh-CN", "description": "普拉提真相 #003 · ARC 和脊柱矫正器差在哪。现代轻便版赢得光明正大——价格降了、门槛降了、团课用得起了；但被换掉的正好是古典 Spine Corrector 最初的精髓：稳定的身体反馈。lip 与 well 给骨盆的清晰接触，是轻便化改造里最先消失的东西。9 张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/truth003-01.png"}</script>
 </head>
@@ -131,7 +132,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -152,15 +154,15 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/truth003-01.png" alt="普拉提真相 #003 卡1·封面：普拉提 ARC，你可能一直叫错了" loading="lazy"><p class="card-num">1 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-02.png" alt="普拉提真相 #003 卡2·同一个动作，两只桶给我的答案不一样" loading="lazy"><p class="card-num">2 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-03.png" alt="普拉提真相 #003 卡3·先把话说公道：它赢的地方，是真的赢" loading="lazy"><p class="card-num">3 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-04.png" alt="普拉提真相 #003 卡4·代价出在哪：被换掉的，正好是最值钱的那部分" loading="lazy"><p class="card-num">4 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-05.png" alt="普拉提真相 #003 卡5·稳定反馈从哪里来：古典 Spine Corrector 珍贵的是稳定基准" loading="lazy"><p class="card-num">5 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-06.png" alt="普拉提真相 #003 卡6·体感证据：我在古典桶上，第一次分清两种卷" loading="lazy"><p class="card-num">6 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-07.png" alt="普拉提真相 #003 卡7·回到最初：祖师爷造它，不是为了垫高你" loading="lazy"><p class="card-num">7 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-08.png" alt="普拉提真相 #003 卡8·顺便把名字捋一下" loading="lazy"><p class="card-num">8 / 9</p></div>
-    <div class="card-frame"><img src="../../carousel-images/truth003-09.png" alt="普拉提真相 #003 卡9·结语：轻便是选择，反馈是标准" loading="lazy"><p class="card-num">9 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-01.webp" type="image/webp"><img src="../../carousel-images/truth003-01.png" alt="普拉提真相 #003 卡1·封面：普拉提 ARC，你可能一直叫错了" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-02.webp" type="image/webp"><img src="../../carousel-images/truth003-02.png" alt="普拉提真相 #003 卡2·同一个动作，两只桶给我的答案不一样" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-03.webp" type="image/webp"><img src="../../carousel-images/truth003-03.png" alt="普拉提真相 #003 卡3·先把话说公道：它赢的地方，是真的赢" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-04.webp" type="image/webp"><img src="../../carousel-images/truth003-04.png" alt="普拉提真相 #003 卡4·代价出在哪：被换掉的，正好是最值钱的那部分" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-05.webp" type="image/webp"><img src="../../carousel-images/truth003-05.png" alt="普拉提真相 #003 卡5·稳定反馈从哪里来：古典 Spine Corrector 珍贵的是稳定基准" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-06.webp" type="image/webp"><img src="../../carousel-images/truth003-06.png" alt="普拉提真相 #003 卡6·体感证据：我在古典桶上，第一次分清两种卷" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-07.webp" type="image/webp"><img src="../../carousel-images/truth003-07.png" alt="普拉提真相 #003 卡7·回到最初：祖师爷造它，不是为了垫高你" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-08.webp" type="image/webp"><img src="../../carousel-images/truth003-08.png" alt="普拉提真相 #003 卡8·顺便把名字捋一下" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 9</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/truth003-09.webp" type="image/webp"><img src="../../carousel-images/truth003-09.png" alt="普拉提真相 #003 卡9·结语：轻便是选择，反馈是标准" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">9 / 9</p></div>
   </div>
   </div>
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

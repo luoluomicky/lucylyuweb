@@ -123,6 +123,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "膝盖别锁死，练的是更高级的连接", "datePublished": "2026-07-27", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/detail-005/", "inLanguage": "zh-CN", "description": "普拉提小细节 #005 · 膝盖别锁死，练的是更高级的连接。腿伸到底那股「很满」的力，可能不是肌肉给的——锁扣机制（screw-home）让被动组织接手稳定；膝是浅背线的转换站，把「直」从膝盖分回整条腿。8 张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/detail005-01.png"}</script>
 </head>
@@ -131,7 +132,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -152,14 +154,14 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/detail005-01.png" alt="普拉提小细节 #005 卡1·封面：膝盖别锁死，练的是更高级的连接" loading="lazy"><p class="card-num">1 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-02.png" alt="普拉提小细节 #005 卡2·痛点：膝盖一松，整条腿像断线" loading="lazy"><p class="card-num">2 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-03.png" alt="普拉提小细节 #005 卡3·锁扣机制：膝盖伸到最后，会进入上锁档" loading="lazy"><p class="card-num">3 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-04.png" alt="普拉提小细节 #005 卡4·后侧线交接：小腿和大腿后侧，在这里换手" loading="lazy"><p class="card-num">4 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-05.png" alt="普拉提小细节 #005 卡5·木棍 vs 弓弦：同样是直，两种完全不同的东西" loading="lazy"><p class="card-num">5 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-06.png" alt="普拉提小细节 #005 卡6·古典解法：把直从膝盖分回整条腿" loading="lazy"><p class="card-num">6 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-07.png" alt="普拉提小细节 #005 卡7·自测：力还在吗，看看它去了哪里" loading="lazy"><p class="card-num">7 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail005-08.png" alt="普拉提小细节 #005 卡8·收束：直是结果，锁死是抢功" loading="lazy"><p class="card-num">8 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-01.webp" type="image/webp"><img src="../../carousel-images/detail005-01.png" alt="普拉提小细节 #005 卡1·封面：膝盖别锁死，练的是更高级的连接" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-02.webp" type="image/webp"><img src="../../carousel-images/detail005-02.png" alt="普拉提小细节 #005 卡2·痛点：膝盖一松，整条腿像断线" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-03.webp" type="image/webp"><img src="../../carousel-images/detail005-03.png" alt="普拉提小细节 #005 卡3·锁扣机制：膝盖伸到最后，会进入上锁档" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-04.webp" type="image/webp"><img src="../../carousel-images/detail005-04.png" alt="普拉提小细节 #005 卡4·后侧线交接：小腿和大腿后侧，在这里换手" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-05.webp" type="image/webp"><img src="../../carousel-images/detail005-05.png" alt="普拉提小细节 #005 卡5·木棍 vs 弓弦：同样是直，两种完全不同的东西" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-06.webp" type="image/webp"><img src="../../carousel-images/detail005-06.png" alt="普拉提小细节 #005 卡6·古典解法：把直从膝盖分回整条腿" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-07.webp" type="image/webp"><img src="../../carousel-images/detail005-07.png" alt="普拉提小细节 #005 卡7·自测：力还在吗，看看它去了哪里" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail005-08.webp" type="image/webp"><img src="../../carousel-images/detail005-08.png" alt="普拉提小细节 #005 卡8·收束：直是结果，锁死是抢功" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 8</p></div>
   </div>
   </div>
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

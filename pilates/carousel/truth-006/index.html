@@ -131,6 +131,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "产后修复——别让普拉提毁了你的盆底肌", "datePublished": "2026-06", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/truth-006/", "inLanguage": "zh-CN", "description": "一句Cue的解剖 #005 · 产后修复——别让普拉提毁了你的盆底肌。古典普拉提废口令拆解——8张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/006-01.png"}</script>
 </head>
@@ -139,7 +140,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -160,14 +162,14 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/006-01.png" alt="Card 1" loading="lazy"><p class="card-num">1 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-02.png" alt="Card 2" loading="lazy"><p class="card-num">2 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-03.png" alt="Card 3" loading="lazy"><p class="card-num">3 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-04.png" alt="Card 4" loading="lazy"><p class="card-num">4 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-05.png" alt="Card 5" loading="lazy"><p class="card-num">5 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-06.png" alt="Card 6" loading="lazy"><p class="card-num">6 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-07.png" alt="Card 7" loading="lazy"><p class="card-num">7 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/006-08.png" alt="Card 8" loading="lazy"><p class="card-num">8 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-01.webp" type="image/webp"><img src="../../carousel-images/006-01.png" alt="产后修复" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-02.webp" type="image/webp"><img src="../../carousel-images/006-02.png" alt="同一个教室， 完全不同的起点" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-03.webp" type="image/webp"><img src="../../carousel-images/006-03.png" alt="推一推，肚子当场 小了2cm——信吗？" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-04.webp" type="image/webp"><img src="../../carousel-images/006-04.png" alt="擦干净， 不等于修好了" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-05.webp" type="image/webp"><img src="../../carousel-images/006-05.png" alt="&quot;手法+普拉提&quot;的真相： 不是黄金组合，是商业闭环" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-06.webp" type="image/webp"><img src="../../carousel-images/006-06.png" alt="如果不想花冤枉钱， 按这个顺序来" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-07.webp" type="image/webp"><img src="../../carousel-images/006-07.png" alt="最强大的修复工具， 你已经有了" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/006-08.webp" type="image/webp"><img src="../../carousel-images/006-08.png" alt="别让恐惧 替你签合同" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 8</p></div>
   </div>
   </div><!-- /card-viewer-wrap -->
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

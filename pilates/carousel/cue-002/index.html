@@ -131,6 +131,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "收紧肚子——你以为在激活核心，其实在憋气", "datePublished": "2026-06", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/cue-002/", "inLanguage": "zh-CN", "description": "一句Cue的解剖 #002 · 收紧肚子——你以为在激活核心，其实在憋气。古典普拉提废口令拆解——8张图版完整展示。", "image": "https://lucylyu.life/pilates/carousel-images/002-1.png"}</script>
 </head>
@@ -139,7 +140,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -160,14 +162,14 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/002-1.png" alt="Card 1" loading="lazy"><p class="card-num">1 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-2.png" alt="Card 2" loading="lazy"><p class="card-num">2 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-3.png" alt="Card 3" loading="lazy"><p class="card-num">3 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-4.png" alt="Card 4" loading="lazy"><p class="card-num">4 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-5.png" alt="Card 5" loading="lazy"><p class="card-num">5 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-6.png" alt="Card 6" loading="lazy"><p class="card-num">6 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-7.png" alt="Card 7" loading="lazy"><p class="card-num">7 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/002-8.png" alt="Card 8" loading="lazy"><p class="card-num">8 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-1.webp" type="image/webp"><img src="../../carousel-images/002-1.png" alt="收紧肚子" width="720" height="959" decoding="async"></picture><p class="card-num">1 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-2.webp" type="image/webp"><img src="../../carousel-images/002-2.png" alt="&quot;收&quot;这个字 在中文里的体感是错的" width="720" height="958" decoding="async"></picture><p class="card-num">2 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-3.webp" type="image/webp"><img src="../../carousel-images/002-3.png" alt="一口气的连锁反应 ——喉咙锁死 = 盆底核打击" width="719" height="960" decoding="async"></picture><p class="card-num">3 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-4.webp" type="image/webp"><img src="../../carousel-images/002-4.png" alt="腹直肌 vs 腹横肌 你练的是哪个？" width="720" height="959" decoding="async"></picture><p class="card-num">4 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-5.webp" type="image/webp"><img src="../../carousel-images/002-5.png" alt="In and Up 三维提拉，不是平面压缩" width="719" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-6.webp" type="image/webp"><img src="../../carousel-images/002-6.png" alt="把废口令全部替换" width="719" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-7.webp" type="image/webp"><img src="../../carousel-images/002-7.png" alt="5 步激活协议 从没感觉过腹横肌也能找到" width="718" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/002-8.webp" type="image/webp"><img src="../../carousel-images/002-8.png" alt="核心不是被&quot;收紧&quot;的" width="719" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 8</p></div>
   </div>
   </div><!-- /card-viewer-wrap -->
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

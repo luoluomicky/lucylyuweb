@@ -123,6 +123,7 @@
   .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
   .caption { padding: 0 20px; }
 }
+picture { display: contents; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "腿伸不直，大腿后侧在踩刹车", "datePublished": "2026-07-31", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/detail-007/", "inLanguage": "zh-CN", "description": "普拉提小细节 #007 · 腿伸不直，大腿后侧在踩刹车。感觉到", "image": "https://lucylyu.life/pilates/carousel-images/detail007-01.png"}</script>
 </head>
@@ -131,7 +132,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -152,14 +154,14 @@
   <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
   <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
   <div class="card-viewer">
-    <div class="card-frame"><img src="../../carousel-images/detail007-01.png" alt="Card 1" loading="lazy"><p class="card-num">1 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-02.png" alt="Card 2" loading="lazy"><p class="card-num">2 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-03.png" alt="Card 3" loading="lazy"><p class="card-num">3 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-04.png" alt="Card 4" loading="lazy"><p class="card-num">4 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-05.png" alt="Card 5" loading="lazy"><p class="card-num">5 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-06.png" alt="Card 6" loading="lazy"><p class="card-num">6 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-07.png" alt="Card 7" loading="lazy"><p class="card-num">7 / 8</p></div>
-    <div class="card-frame"><img src="../../carousel-images/detail007-08.png" alt="Card 8" loading="lazy"><p class="card-num">8 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-01.webp" type="image/webp"><img src="../../carousel-images/detail007-01.png" alt="腿伸不直" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-02.webp" type="image/webp"><img src="../../carousel-images/detail007-02.png" alt="大腿后侧， 拉了这么久还是紧" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-03.webp" type="image/webp"><img src="../../carousel-images/detail007-03.png" alt="紧是感觉，短是长度 它们是两回事" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-04.webp" type="image/webp"><img src="../../carousel-images/detail007-04.png" alt="腿没动， 扯感为什么变了" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-05.webp" type="image/webp"><img src="../../carousel-images/detail007-05.png" alt="它紧， 有时是在替别人上班" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-06.webp" type="image/webp"><img src="../../carousel-images/detail007-06.png" alt="今天拉开的， 为什么明天还回来" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-07.webp" type="image/webp"><img src="../../carousel-images/detail007-07.png" alt="先给骨盆一个家， 再谈长度" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 8</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/detail007-08.webp" type="image/webp"><img src="../../carousel-images/detail007-08.png" alt="长是结果， 硬拉是抢戏" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 8</p></div>
   </div>
   </div>
   <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>

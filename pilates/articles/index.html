@@ -86,7 +86,8 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-home">Lucy Lyu</a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/" class="active">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
       <li><a href="/ai/">AI思考</a></li>
@@ -117,6 +118,16 @@
     </a>
 
     <p class="cat-header">硬核解剖</p>
+
+    <a href="/pilates/articles/entry-ticket-not-outcome/" class="article-item">
+      <p class="article-meta-top">硬核解剖 · 2026</p>
+      <h2>沉肩沉不下去，是题出早了</h2>
+      <p class="article-lead">「肩的线条很容易练出来，背怎么练都没有。」手臂上举要靠三股力合力把肩胛转上去，缺了两股，上斜方就把活儿全接了。当一个动作要求的能力超过你现在拥有的、课表又不给它降阶，它就只剩考试功能——把入场券当成产出卖。</p>
+      <div class="article-meta-bottom">
+        <span>预计阅读 10 分钟</span>
+        <span>2026.08</span>
+      </div>
+    </a>
 
     <a href="/pilates/articles/three-kinds-of-tight/" class="article-item">
       <p class="article-meta-top">硬核解剖 · 2026</p>
