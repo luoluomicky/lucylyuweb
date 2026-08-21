@@ -12,7 +12,7 @@
 <meta property="og:title" content="Lucy Lyu · 古典普拉提解剖 × B2B 出海实战">
 <meta property="og:description" content="Lucy Lyu — 古典普拉提解剖架构师 / B2B出海操盘手。在身体与商业之间，寻找底层逻辑。">
 <meta property="og:url" content="https://lucylyu.life/">
-<meta property="og:image" content="https://lucylyu.life/assets/images/logo-dark.png">
+<meta property="og:image" content="https://lucylyu.life/assets/images/og-home.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 <style>
@@ -99,6 +99,43 @@
   color: var(--shell-muted);
 }
 
+/* ── Start Here ── */
+.start-here {
+  max-width: 800px; margin: 0 auto;
+  padding: 0 40px 24px;
+}
+.start-header {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  color: var(--shell-muted); text-transform: uppercase;
+  padding-top: 32px; border-top: 1px solid var(--shell-border);
+  margin-bottom: 8px;
+}
+.start-sub {
+  font-size: 13px; color: var(--shell-muted);
+  letter-spacing: 0.03em; margin-bottom: 24px;
+}
+.start-row {
+  display: grid; grid-template-columns: 180px 1fr; gap: 24px;
+  padding: 20px 0; border-bottom: 1px solid var(--shell-border);
+}
+.start-row:last-child { border-bottom: none; padding-bottom: 0; }
+.start-label {
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--shell-text);
+  line-height: 1.6;
+}
+.start-list { list-style: none; }
+.start-list li { margin-bottom: 8px; }
+.start-list li:last-child { margin-bottom: 0; }
+.start-list a {
+  font-size: 14px; line-height: 1.7;
+  color: var(--shell-text); text-decoration: none;
+  letter-spacing: 0.02em; transition: color 0.2s;
+}
+.start-list a:hover { color: var(--section-accent); }
+
 /* ── Latest Updates ── */
 .latest {
   max-width: 800px; margin: 0 auto;
@@ -133,6 +170,8 @@
   .hero blockquote { font-size: 14px; }
   .pillars { grid-template-columns: 1fr; padding: 0 20px 48px; }
   .pillar-card { padding: 28px 24px; }
+  .start-here { padding: 0 20px 16px; }
+  .start-row { grid-template-columns: 1fr; gap: 10px; }
   .latest { padding: 0 20px 64px; }
   .latest-list li { flex-direction: column; gap: 4px; }
   .latest-list .latest-date { margin-left: 0; }
@@ -151,7 +190,6 @@
       <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/">普拉提</a></li>
       <li><a href="/work/">工作论</a></li>
-      <li><a href="/ai/">AI思考</a></li>
       <li><a href="/about/">关于</a></li>
     </ul>
   </div>
@@ -187,6 +225,37 @@
     <p class="pillar-desc">开源的个人操作手册。B2B出海的实战方法论、工具链、低熵工作流——业务解绑，能力绑定。</p>
     <span class="pillar-arrow">进入栏目 →</span>
   </a>
+</section>
+
+<!-- ═══════════ START HERE ═══════════ -->
+<section class="start-here">
+  <p class="start-header">从这里开始</p>
+  <p class="start-sub">第一次来？按你的来路挑一条线。</p>
+
+  <div class="start-row">
+    <p class="start-label">我来学普拉提</p>
+    <ul class="start-list">
+      <li><a href="/pilates/articles/dead-cues-overview/">普拉提所有的废口令，其实都在讲同一件事</a></li>
+      <li><a href="/pilates/articles/three-kinds-of-tight/">太硬了才来练普拉提，先分清是哪一种硬</a></li>
+      <li><a href="/pilates/articles/find-good-teacher/">如何找到好的普拉提老师：一个深度练习者的系统判断指南</a></li>
+    </ul>
+  </div>
+
+  <div class="start-row">
+    <p class="start-label">我做 B2B 出海</p>
+    <ul class="start-list">
+      <li><a href="/work/chuhai/19-pricing-honesty/">定价即坦白</a></li>
+      <li><a href="/work/chuhai/12-low-entropy/">把杂活交给 AI 与双链笔记，找回操盘手的"低熵"状态</a></li>
+      <li><a href="/work/chuhai/22-found-not-reached/">找到你，不等于到达你</a></li>
+    </ul>
+  </div>
+
+  <div class="start-row">
+    <p class="start-label">我想看 AI 协作的方法</p>
+    <ul class="start-list">
+      <li><a href="/ai/agent-capability-lines/">AI Agent 能力边界：从三条线长到五条</a></li>
+    </ul>
+  </div>
 </section>
 
 <!-- ═══════════ LATEST UPDATES ═══════════ -->

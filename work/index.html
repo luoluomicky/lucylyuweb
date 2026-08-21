@@ -66,7 +66,7 @@
 /* ── Featured Articles ── */
 .featured {
   max-width: 1200px; margin: 0 auto;   /* 与页面主轴一致（原 800px 比上方区块窄一截） */
-  padding: 0 40px 80px;
+  padding: 0 40px 0;
 }
 .featured .article-lead { max-width: 760px; }
 .featured-header {
@@ -93,11 +93,27 @@
   color: var(--section-muted);
 }
 
+/* ── Method Notes · AI 协作（原 AI思考 栏目收编） ── */
+.method-notes {
+  max-width: 1200px; margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+.method-notes .featured-header {
+  padding-top: 0; border-top: 0; margin-bottom: 10px;
+}
+.method-notes .method-note {
+  font-size: 12px; line-height: 1.7;
+  color: var(--section-muted); letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+.method-notes .article-lead { max-width: 760px; }
+
 @media (max-width: 768px) {
   .section-hero { padding: 48px 20px 36px; }
   .section-hero h1 { font-size: 36px; }
   .subsections { grid-template-columns: 1fr; padding: 0 20px 24px; }
-  .featured { padding: 0 20px 64px; }
+  .featured { padding: 0 20px 0; }
+  .method-notes { padding: 32px 20px 64px; }
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "工作论", "datePublished": "2026-07", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/", "inLanguage": "zh-CN", "description": "工作论 — Lucy Lyu 的开源个人操作手册。B2B出海实战方法论、工具链、低熵工作流。", "image": "https://lucylyu.life/assets/images/logo-dark.png"}</script>
@@ -111,7 +127,6 @@
       <ul class="nav-links" id="nav-links">
       <li><a href="/pilates/">普拉提</a></li>
       <li><a href="/work/" class="active">工作论</a></li>
-      <li><a href="/ai/">AI思考</a></li>
       <li><a href="/about/">关于</a></li>
     </ul>
   </div>
@@ -137,7 +152,7 @@
 
   <a href="/work/chuhai/21-context-not-capability/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
     <p class="article-meta-top">出海笔记 #21 · 2026</p>
-    <h3>能力可以下载，语境不能</h3>
+    <h4>能力可以下载，语境不能</h4>
     <p class="article-lead">那句让 AI 做出示意图的指令并不存在——起作用的是它在工作档案里待过。换模型不退化、装了没打开过的 skill，以及判断沉淀不下来的两种情况。</p>
     <div class="article-meta-bottom">
       <span>出海笔记</span>
@@ -147,7 +162,7 @@
 
   <a href="/work/chuhai/20-write-vs-teach/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
     <p class="article-meta-top">出海笔记 #20 · 2026</p>
-    <h3>写得进去，不等于教得会</h3>
+    <h4>写得进去，不等于教得会</h4>
     <p class="article-lead">对 AI 你有记忆写入权，但写入权是有条件的——路由问题、自知问题、三种失效三套动作，以及给 AI 写规则的四条落地。</p>
     <div class="article-meta-bottom">
       <span>出海笔记</span>
@@ -157,7 +172,7 @@
 
   <a href="/work/chuhai/19-pricing-honesty/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
     <p class="article-meta-top">出海笔记 #19 · 2026</p>
-    <h3>定价即坦白</h3>
+    <h4>定价即坦白</h4>
     <p class="article-lead">List 价锚定、折扣有名目、裸降必换对价——报价单说出的，比你想说的多。利基仪器出海的定价纪律。</p>
     <div class="article-meta-bottom">
       <span>出海笔记</span>
@@ -169,6 +184,23 @@
     <h4>出海笔记 18 · 管理 AI 等于管理员工吗</h4>
     <p class="article-lead">管理员工靠情商在现场重新推断，管理 AI 靠文档一次固化终身复用。细节对人折旧、对 AI 复利——管理 AI 练的从来不是领导力，是把世界说清楚的能力。</p>
     <p class="article-meta"><time datetime="2026-07">2026.07</time></p>
+  </a>
+
+</section>
+
+<section class="method-notes">
+  <p class="featured-header">方法笔记 · AI 协作</p>
+  <p class="method-note">AI 协作实践的方法笔记，暂存于此。</p>
+
+  <a href="/ai/agent-capability-lines/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
+    <h4>AI Agent 能力边界：从三条线长到五条</h4>
+    <p class="article-lead">AI Agent 能力边界五条线：文件操作可译性、验证成本、反馈环归属、规则遵循预算、记忆写入权限——一份持续生长的人机协作工作笔记。</p>
+    <p class="article-meta"><time datetime="2026-07">2026.07 · 持续更新</time></p>
+  </a>
+
+  <a href="/ai/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
+    <h4>AI思考 · 栏目存档</h4>
+    <p class="article-lead">AI思考 — 人机协作、Agent 能力边界与自动化工作流的思考。</p>
   </a>
 
 </section>
