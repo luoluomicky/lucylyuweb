@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="长篇 Word 排版工具包：一份空白模板、三个 Python 脚本、一份使用说明。把任意 Markdown 或 docx 排成你自己模板定义的格式——样式两层刷齐、图片按宽高比分档、目录页码实测两遍。出海笔记 23 附件，免费下载。">
+<title>长篇 Word 排版工具包 · Lucy Lyu</title>
+<link rel="canonical" href="https://lucylyu.life/word-toolkit/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lucy Lyu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="长篇 Word 排版工具包 · Lucy Lyu">
+<meta property="og:description" content="一份空白模板、三个 Python 脚本、一份使用说明。样式两层刷齐、图片按宽高比分档、目录页码实测两遍——出海笔记 23 附件。">
+<meta property="og:url" content="https://lucylyu.life/word-toolkit/">
+<meta property="og:image" content="https://lucylyu.life/assets/images/logo-dark.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../styles.css">
+<style>
+.article-page { max-width: 720px; margin: 0 auto; padding: 72px 40px 80px; }
+.article-page .breadcrumb { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 32px; }
+.article-page .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--section-accent); }
+.article-page h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 12px; }
+.article-page .article-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--section-muted); margin-bottom: 44px; }
+.article-body { font-size: 15px; line-height: 1.85; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.03em; margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--section-border); }
+.article-body ul { margin: 16px 0 20px 24px; }
+.article-body li { margin-bottom: 10px; }
+.article-body strong { color: var(--section-text); }
+.article-body code { font-family: var(--font-mono); font-size: 13px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 2px; }
+.dl-card { margin: 8px 0 40px; padding: 28px 30px; border: 1px solid var(--section-border); border-radius: 3px; }
+.dl-card .dl-name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--section-muted); margin-bottom: 14px; }
+.dl-btn { display: inline-block; padding: 13px 30px; background: var(--section-accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; border-radius: 2px; transition: opacity 0.2s; }
+.dl-btn:hover { opacity: 0.82; }
+.dl-note { margin-top: 16px; font-size: 13px; line-height: 1.7; color: var(--section-muted); }
+.wx-tip { margin: 0 0 40px; padding: 16px 20px; border-left: 3px solid var(--section-accent); font-size: 14px; line-height: 1.75; color: var(--section-muted); }
+.wx-tip strong { color: var(--section-text); }
+.manifest { font-family: var(--font-mono); font-size: 13px; line-height: 2; color: var(--section-muted); margin: 16px 0 20px; }
+.manifest b { color: var(--section-text); font-weight: 600; }
+@media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } .dl-card { padding: 22px 20px; } }
+</style>
+</head>
+<body data-section="work">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+      <li><a href="/pilates/">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<article class="article-page">
+  <p class="breadcrumb"><a href="/">首页</a> / <a href="/work/">工作论</a> / 工具包</p>
+  <h1>长篇 Word 排版工具包</h1>
+  <p class="article-meta">出海笔记 23 附件 · 2026.08 · 免费取用</p>
+
+  <div class="article-body">
+
+    <p>把一份长篇 Markdown 或 docx，排成<strong>你们自己模板定义的格式</strong>。它不绑任何一家公司——包里那份模板是空白的，页眉页脚都留着位置等你换上自己的。</p>
+
+    <div class="dl-card">
+      <p class="dl-name">word-toolkit.zip · 62 KB</p>
+      <a class="dl-btn" href="/assets/downloads/word-toolkit.zip" download>下载工具包</a>
+      <p class="dl-note">需要 Python 3 与 <code>python-docx</code>；不依赖任何特定的 AI 工具，任何能读文件、能跑脚本的助手都能执行。</p>
+    </div>
+
+    <p class="wx-tip"><strong>从微信里点开的话</strong>：微信内置浏览器不允许直接下载压缩包。点右上角 <strong>⋯</strong> → <strong>在浏览器中打开</strong>，再点上面的按钮。</p>
+
+    <h2>包里有什么</h2>
+
+    <p class="manifest">
+      <b>文档模板-空白版.docx</b> —— 只有样式，没有内容<br>
+      <b>scripts/apply_template_style.py</b> —— 把模板样式刷到目标文档，正文一个字不动<br>
+      <b>scripts/fit_images.py</b> —— 图片按宽高比分档缩放，横图竖图方图各有各的最大宽度<br>
+      <b>scripts/measure_toc_pages.py</b> —— 渲染后实测页码，写回目录<br>
+      <b>使用说明.md</b> —— 三种用法，从「只要格式、什么都不装」到「全流程自动化」
+    </p>
+
+    <h2>它解决的三件事</h2>
+
+    <ul>
+      <li><strong>样式要改两层。</strong>Word 里一个段落的行距可以同时来自样式表和段落自己，后者压过前者。只改样式表，导出来可能纹丝不动。</li>
+      <li><strong>图片不能给同一个宽度。</strong>三十一张图如果都设成一样宽，横图浪费版心，竖图直接把下一段顶到下一页。</li>
+      <li><strong>页码不能估，只能量。</strong>而且要量两遍——改完量一次，重新渲染后再量一次对上。改过样式的文档很可能掉页，「上次没变」不等于「这次不会变」。</li>
+    </ul>
+
+    <h2>它不做什么</h2>
+
+    <p>它不改你的文字。格式转换只动样式、尺寸与页码，改完可以逐段比对证明正文零改动。观感层的微调——这一页看着别扭、字号想再小半号、封面想挪一挪——留给人在 Word 或 WPS 里两分钟点完，不值得写进自动化。</p>
+
+    <p><strong>分界线不在难易，在返工成本。</strong></p>
+
+    <p>完整的来龙去脉写在 <a href="/work/">出海笔记 23</a> 里。</p>
+
+  </div>
+</article>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+</body>
+</html>
