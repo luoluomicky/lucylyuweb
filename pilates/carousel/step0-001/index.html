@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第 0 步 #001 · 坐上 Reformer（核心床）的那几秒，你的记忆是空白的——因为没人把它当内容教过。在古典的课程录像里，&quot;怎么坐上去&quot;被一步一步地教：转身、臀靠边、抱肘、不用手。11 张图版完整展示，含一张「扑通 vs 有控制」对照图。">
+<title>#001 普拉提的第 0 步：坐上 Reformer · 普拉提 · Lucy Lyu</title>
+<link rel="canonical" href="https://lucylyu.life/pilates/carousel/step0-001/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lucy Lyu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="#001 普拉提的第 0 步：坐上 Reformer · 普拉提 · Lucy Lyu">
+<meta property="og:description" content="第 0 步 #001 · 坐上 Reformer（核心床）的那几秒，你的记忆是空白的——因为没人把它当内容教过。在古典的课程录像里，&quot;怎么坐上去&quot;被一步一步地教：转身、臀靠边、抱肘、不用手。11 张图版完整展示，含一张「扑通 vs 有控制」对照图。">
+<meta property="og:url" content="https://lucylyu.life/pilates/carousel/step0-001/">
+<meta property="og:image" content="https://lucylyu.life/pilates/carousel-images/step0-001-01.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+.carousel-detail { padding: 60px 0 0; }
+.carousel-detail .header-area {
+  max-width: 800px; margin: 0 auto; padding: 0 40px 32px;
+}
+.carousel-detail .breadcrumb {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); margin-bottom: 24px;
+}
+.carousel-detail .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.carousel-detail .breadcrumb a:hover { color: var(--section-accent); }
+.carousel-detail h1 {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 600;
+  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 8px;
+}
+.carousel-detail .series-tag {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em;
+  color: var(--section-accent); border: 1px solid var(--section-accent);
+  padding: 3px 10px; border-radius: 1px; margin-bottom: 12px;
+}
+.carousel-detail .detail-meta {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--section-muted);
+}
+
+.card-viewer-wrap {
+  max-width: 960px; margin: 0 auto;
+  position: relative;
+}
+.card-viewer-wrap::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0; width: 60px;
+  background: linear-gradient(to right, transparent, var(--section-bg) 85%);
+  pointer-events: none; z-index: 10;
+}
+/* Arrow buttons */
+.viewer-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(250,248,245,0.85); border: 1px solid var(--section-border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 20;
+  font-size: 20px; color: var(--section-muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.viewer-arrow:hover { background: #fff; color: var(--section-accent); border-color: var(--section-accent); box-shadow: 0 2px 12px rgba(44,38,33,0.10); }
+.viewer-arrow-left  { left: 12px; }
+.viewer-arrow-right { right: 12px; }
+.card-viewer {
+  display: flex; gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--section-border) transparent;
+  padding: 0 0 32px;
+  align-items: start;
+}
+.card-viewer::-webkit-scrollbar { height: 4px; }
+.card-viewer::-webkit-scrollbar-thumb { background: var(--section-border); border-radius: 2px; }
+.card-viewer .card-frame {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  height: 68vh; max-height: 780px;
+  padding: 18px 18px 0;
+  background: #fdfaf6;
+  margin: 0 10px;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(44,38,33,0.07), 0 8px 32px rgba(44,38,33,0.05);
+  display: flex; flex-direction: column; align-items: center;
+}
+.card-viewer .card-frame:first-child { margin-left: calc(50% - 120px); }
+.card-viewer .card-frame:last-child  { margin-right: calc(50% - 120px); }
+.card-viewer .card-frame img {
+  display: block;
+  height: calc(100% - 36px);
+  width: auto;
+  border-radius: 1px;
+  object-fit: contain;
+}
+.card-viewer .card-num {
+  text-align: center; padding: 8px 0;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted);
+}
+.scroll-hint {
+  text-align: center; padding: 8px 0 40px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted);
+}
+.carousel-detail .caption {
+  max-width: 600px; margin: 0 auto 64px; padding: 0 40px;
+  font-size: 14px; line-height: 1.8; color: var(--section-muted);
+}
+.carousel-detail .caption strong { color: var(--section-text); }
+
+@media (max-width: 768px) {
+  .carousel-detail { padding: 40px 0 0; }
+  .carousel-detail .header-area { padding: 0 20px 24px; }
+  .carousel-detail h1 { font-size: 24px; }
+  .card-viewer-wrap { max-width: 100%; }
+  .card-viewer .card-frame { height: 58vh; padding: 12px 12px 0; margin: 0 6px; }
+  .card-viewer .card-frame:first-child { margin-left: calc(50% - 80px); }
+  .card-viewer .card-frame:last-child  { margin-right: calc(50% - 80px); }
+  .caption { padding: 0 20px; }
+}
+picture { display: contents; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "普拉提的第 0 步：坐上 Reformer", "datePublished": "2026-08-31", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/pilates/carousel/step0-001/", "inLanguage": "zh-CN", "description": "第 0 步 #001 · 坐上 Reformer（核心床）的那几秒，你的记忆是空白的——因为没人把它当内容教过。在古典的课程录像里，&quot;怎么坐上去&quot;被一步一步地教：转身、臀靠边、抱肘、不用手。11 张图版完整展示，含一张「扑通 vs 有控制」对照图。", "image": "https://lucylyu.life/pilates/carousel-images/step0-001-01.png"}</script>
+</head>
+<body data-section="pilates">
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Lucy Lyu</a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-links" onclick="var n=this.closest('.nav-inner');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'关闭导航菜单':'打开导航菜单')"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+      <li><a href="/pilates/" class="active">普拉提</a></li>
+      <li><a href="/work/">工作论</a></li>
+      <li><a href="/about/">关于</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="carousel-detail">
+  <div class="header-area">
+    <p class="breadcrumb"><a href="/pilates/">普拉提</a> / <a href="/pilates/carousel/">Carousel 画廊</a> / #001</p>
+    <span class="series-tag">第 0 步 #001</span>
+    <h1>普拉提的第 0 步：坐上 Reformer</h1>
+    <p class="detail-meta">第 0 步 · 11 张图版 · <time datetime="2026-08-31">2026.08.31</time></p>
+  </div>
+
+  <div class="card-viewer-wrap">
+  <button class="viewer-arrow viewer-arrow-left" aria-label="向左滚动">‹</button>
+  <button class="viewer-arrow viewer-arrow-right" aria-label="向右滚动">›</button>
+  <div class="card-viewer">
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-01.webp" type="image/webp"><img src="../../carousel-images/step0-001-01.png" alt="普拉提的第 0 步：坐上 Reformer——Reformer（核心床）上被忽略的第一道考题" width="720" height="960" decoding="async"></picture><p class="card-num">1 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-02.webp" type="image/webp"><img src="../../carousel-images/step0-001-02.png" alt="你还记得自己怎么坐上核心床吗？" width="720" height="960" decoding="async"></picture><p class="card-num">2 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-03.webp" type="image/webp"><img src="../../carousel-images/step0-001-03.png" alt="老师让学员站起来，重新坐一次" width="720" height="960" decoding="async"></picture><p class="card-num">3 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-04.webp" type="image/webp"><img src="../../carousel-images/step0-001-04.png" alt="重新坐下，拆开是四步" width="720" height="960" decoding="async"></picture><p class="card-num">4 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-05.webp" type="image/webp"><img src="../../carousel-images/step0-001-05.png" alt="指令的最后半句，才是钥匙" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">5 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-06.webp" type="image/webp"><img src="../../carousel-images/step0-001-06.png" alt="对照图：左「扑通」，右「有控制」" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">6 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-07.webp" type="image/webp"><img src="../../carousel-images/step0-001-07.png" alt="老师为什么不让学员用手撑？" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">7 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-08.webp" type="image/webp"><img src="../../carousel-images/step0-001-08.png" alt="把坐下当训练，在古典里有来路" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">8 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-09.webp" type="image/webp"><img src="../../carousel-images/step0-001-09.png" alt="坐下，只是这一层的第一道门" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">9 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-10.webp" type="image/webp"><img src="../../carousel-images/step0-001-10.png" alt="上下器械的仪式散了，训练逻辑还活着" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">10 / 11</p></div>
+    <div class="card-frame"><picture><source srcset="../../carousel-images/step0-001-11.webp" type="image/webp"><img src="../../carousel-images/step0-001-11.png" alt="下次上核心床，先观察三件事" width="720" height="960" loading="lazy" decoding="async"></picture><p class="card-num">11 / 11</p></div>
+  </div>
+  </div>
+  <p class="scroll-hint">← 左右滑动浏览全部卡片 →</p>
+
+  <div class="caption">
+    <p><strong>坐上 Reformer（核心床）的那几秒，你的记忆是空白的——因为没人把它当内容教过。</strong></p>
+    <p>我没上过古典的实体课，我的古典是网上自学的。在课程录像里我第一次看见"怎么坐上去"被一步一步地教：转身、臀靠边、抱肘、不用手。</p>
+    <p>原因写在卡片里。下次上课，你可以用 30 秒验一验自己。</p>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Lucy Lyu</span>
+  <span class="footer-right">低熵 · 极简 · 逻辑</span>
+</footer>
+
+<script>
+document.querySelectorAll(".viewer-arrow").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const viewer = btn.closest(".card-viewer-wrap").querySelector(".card-viewer");
+    const dir = btn.classList.contains("viewer-arrow-left") ? -1 : 1;
+    viewer.scrollBy({ left: dir * 420, behavior: "smooth" });
+  });
+});
+</script>
+</body>
+</html>
