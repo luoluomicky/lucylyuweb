@@ -6,6 +6,7 @@
 <meta name="description" content="出海笔记 15：从静态不跑版到动态会说话——OA2026 宣传视频实战复盘。打字机、梯次入场、节点轮替、BGM 节拍对齐，七个导演指令让 HTML 幻灯片自己讲故事。">
 <title>出海笔记 15 · 七个导演指令 · 工作论 · Lucy Lyu</title>
 <link rel="canonical" href="https://lucylyu.life/work/chuhai/15-html-directors-cues/">
+<link rel="alternate" type="application/rss+xml" title="Lucy Lyu" href="/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lucy Lyu">
 <meta property="og:locale" content="zh_CN">
@@ -37,6 +38,7 @@
 @media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "给提案注入灵魂——HTML 动态幻灯片的七个导演指令", "datePublished": "2026-07", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/chuhai/15-html-directors-cues/", "inLanguage": "zh-CN", "description": "出海笔记 15：从静态不跑版到动态会说话——OA2026 宣传视频实战复盘。打字机、梯次入场、节点轮替、BGM 节拍对齐，七个导演指令让 HTML 幻灯片自己讲故事。", "image": "https://lucylyu.life/assets/images/logo-dark.png"}</script>
+<script src="/assets/js/toc.js" defer></script>
 </head>
 <body data-section="work">
 
@@ -58,6 +60,10 @@
   <p class="article-meta">出海笔记系列 #15 · <time datetime="2026-07">2026.07</time></p>
 
   <div class="article-body">
+<!-- toc:start -->
+<aside class="article-toc" aria-label="目录"><div class="toc-inner"><span class="toc-label">目录</span><ol><li><a href="#第一部分静态幻灯片的沉默问题">第一部分：静态幻灯片的“沉默问题”</a></li><li><a href="#第二部分七个导演指令从零到一场会自己讲故事的视频">第二部分：七个导演指令，从零到一场会自己讲故事的视频</a></li><li><a href="#第三部分怎么给ai下导演指令">第三部分：怎么给 AI 下“导演指令”</a></li><li><a href="#第四部分html转视频的完整流程">第四部分：HTML 转视频的完整流程</a></li><li><a href="#第五部分bgm是被低估的第八个导演指令">第五部分：BGM 是被低估的第八个导演指令</a></li><li><a href="#结语80分的成果和它真正的价值">结语：80分的成果，和它真正的价值</a></li></ol></div></aside>
+<details class="article-toc-m"><summary>目录</summary><ol><li><a href="#第一部分静态幻灯片的沉默问题">第一部分：静态幻灯片的“沉默问题”</a></li><li><a href="#第二部分七个导演指令从零到一场会自己讲故事的视频">第二部分：七个导演指令，从零到一场会自己讲故事的视频</a></li><li><a href="#第三部分怎么给ai下导演指令">第三部分：怎么给 AI 下“导演指令”</a></li><li><a href="#第四部分html转视频的完整流程">第四部分：HTML 转视频的完整流程</a></li><li><a href="#第五部分bgm是被低估的第八个导演指令">第五部分：BGM 是被低估的第八个导演指令</a></li><li><a href="#结语80分的成果和它真正的价值">结语：80分的成果，和它真正的价值</a></li></ol></details>
+<!-- toc:end -->
 
 <p>在出海笔记 13 里，我在结尾埋了一个坑：</p>
 
@@ -69,7 +75,7 @@
 
 <p>这个需求，比 Pitch Deck 更苛刻一个量级。</p>
 
-<h2>第一部分：静态幻灯片的“沉默问题”</h2>
+<h2 id="第一部分静态幻灯片的沉默问题">第一部分：静态幻灯片的“沉默问题”</h2>
 
 <p>上期聊了 HTML 解决了 PPT 的排版跑版问题。但做过对外宣传物料就知道，“不跑版”只是及格线。</p>
 
@@ -79,7 +85,7 @@
 
 <p>动画解决的不是“好不好看”的问题，而是“谁先开口”的问题。</p>
 
-<h2>第二部分：七个导演指令，从零到一场会自己讲故事的视频</h2>
+<h2 id="第二部分七个导演指令从零到一场会自己讲故事的视频">第二部分：七个导演指令，从零到一场会自己讲故事的视频</h2>
 
 <p>我把这次 OA2026 宣传视频用到的动效整理成七个场景，每一个都是一句话需求、AI 来实现的结果。</p>
 
@@ -141,7 +147,7 @@
 
 <p>不是视觉动画，但是录屏工作流里不能少的一环。</p>
 
-<h2>第三部分：怎么给 AI 下“导演指令”</h2>
+<h2 id="第三部分怎么给ai下导演指令">第三部分：怎么给 AI 下“导演指令”</h2>
 
 <p>这是我在这个项目里学到的最重要的一件事。</p>
 
@@ -172,7 +178,7 @@
 
 <p>具体的时间、曲线、参数——那是 AI 该操心的事，不是你的。</p>
 
-<h2>第四部分：HTML 转视频的完整流程</h2>
+<h2 id="第四部分html转视频的完整流程">第四部分：HTML 转视频的完整流程</h2>
 
 <p>最终交付的是一个 .mov 文件，用于公众号发布。流程是：</p>
 
@@ -194,7 +200,7 @@
 
 <p>这才是 AI 协作真正改变的东西：不是“一次成功”，而是<strong>让收敛的速度快到不像话</strong>。</p>
 
-<h2>第五部分：BGM 是被低估的第八个导演指令</h2>
+<h2 id="第五部分bgm是被低估的第八个导演指令">第五部分：BGM 是被低估的第八个导演指令</h2>
 
 <p>视频剪完之后，我意识到有一件事情被我之前完全低估了——配乐。</p>
 
@@ -226,7 +232,7 @@
 
 <p>换页落在节拍上。就这一句话，但做到这句话以前，需要的工具和时间成本根本不值得为一个宣传视频投入。现在值得了。</p>
 
-<h2>结语：80分的成果，和它真正的价值</h2>
+<h2 id="结语80分的成果和它真正的价值">结语：80分的成果，和它真正的价值</h2>
 
 <p>做完这套东西，我给自己打了个80分。</p>
 
@@ -239,6 +245,14 @@
 <p>剩下的20分，有时间再去补。</p>
 
   </div>
+
+<!-- nextread:start -->
+<section class="article-nextread" aria-label="接着读">
+<span class="nextread-label">接着读</span>
+<p><span>上一篇</span><a href="/work/chuhai/14-card-warmth/">一张卡片的温度——当 B2B 科技公司认真做了一件“没必要”的事</a></p>
+<p><span>下一篇</span><a href="/work/chuhai/16-ai-compound-gap/">AI Agent 之后，人的差距会变成复利差距</a></p>
+</section>
+<!-- nextread:end -->
 </main>
 
 <footer>

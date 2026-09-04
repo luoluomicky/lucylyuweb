@@ -6,6 +6,7 @@
 <meta name="description" content="出海笔记 12：把杂活交给 AI 与双链笔记，找回操盘手的低熵状态。Obsidian + Notion + Claude Code 三件套工作流。">
 <title>出海笔记 12 · 低熵工作流 · 工作论 · Lucy Lyu</title>
 <link rel="canonical" href="https://lucylyu.life/work/chuhai/12-low-entropy/">
+<link rel="alternate" type="application/rss+xml" title="Lucy Lyu" href="/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lucy Lyu">
 <meta property="og:locale" content="zh_CN">
@@ -36,6 +37,7 @@
 @media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "把杂活交给 AI 与双链笔记，找回操盘手的\"低熵\"状态", "datePublished": "2026-06", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/chuhai/12-low-entropy/", "inLanguage": "zh-CN", "description": "出海笔记 12：把杂活交给 AI 与双链笔记，找回操盘手的低熵状态。Obsidian + Notion + Claude Code 三件套工作流。", "image": "https://lucylyu.life/assets/images/logo-dark.png"}</script>
+<script src="/assets/js/toc.js" defer></script>
 </head>
 <body data-section="work">
 
@@ -57,6 +59,10 @@
   <p class="article-meta">出海笔记系列 #12 · <time datetime="2026-06">2026.06</time></p>
 
   <div class="article-body">
+<!-- toc:start -->
+<aside class="article-toc" aria-label="目录"><div class="toc-inner"><span class="toc-label">目录</span><ol><li><a href="#第一部分知识的中枢神经用obsidian终结碎片化内耗">第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</a></li><li><a href="#第二部分团队的底层操作系统用notion终结跨部门内耗">第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</a></li><li><a href="#第三部分无情的工作流推土机让claudecode成为终端级超级助">第三部分：无情的工作流推土机——让 Claude Code 成为终端级超级助理</a></li><li><a href="#结语系统越精密人越自由">结语：系统越精密，人越自由</a></li></ol></div></aside>
+<details class="article-toc-m"><summary>目录</summary><ol><li><a href="#第一部分知识的中枢神经用obsidian终结碎片化内耗">第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</a></li><li><a href="#第二部分团队的底层操作系统用notion终结跨部门内耗">第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</a></li><li><a href="#第三部分无情的工作流推土机让claudecode成为终端级超级助">第三部分：无情的工作流推土机——让 Claude Code 成为终端级超级助理</a></li><li><a href="#结语系统越精密人越自由">结语：系统越精密，人越自由</a></li></ol></details>
+<!-- toc:end -->
 
 <p>做硬科技出海，最真实的工况往往不是在谈判桌上运筹帷幄，而是每天在极其琐碎的信息洪流中极限拉扯。左手是研发刚发来的几万字底层声学参数和海试报告，右手是海外代理商隔着十二个小时时差发来的邮件追问；微信里还挂着几个需要跨语言处理的展会物料群。对于一个对外界信息有着极高敏锐度、习惯深度思考的操盘手来说，这种高频的"上下文切换"，是对认知精力和情绪能量的巨大透支。</p>
 
@@ -66,7 +72,7 @@
 
 <p>就拿这周的一项核心业务落地来说：为了更好地匹配海外大客户的认知习惯，公司决定将出海主推的四款核心产品线进行全面的命名统一与品牌升级。高层的战略极其正确，但基层的落地却是一场数据灾难——这意味着七份海外技术文档必须瞬间同步更新、两版面向顶级客户的解决方案 PPT 需要紧急对齐参数。如果按照以前"人肉驱动"的工作模式，光是翻那些乱码的 PDF 找原始参数，再挨个跨部门通知研发和生产改单子，就能耗尽我一周的精力。但有了下面这套系统，这场原本兵荒马乱的"大换血"，就像流水线一样自动且极其平静地完成了。</p>
 
-<h2>第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</h2>
+<h2 id="第一部分知识的中枢神经用obsidian终结碎片化内耗">第一部分：知识的"中枢神经"——用 Obsidian 终结碎片化内耗</h2>
 
 <p>回想一下我们以前最真实的崩溃状态：竞品参数躺在一份经常找不到的 Excel 里，海外代理商的 FAQ 碎落在漫长的微信聊天记录里，而最新的产品命名规则全记在自己的脑子里——直到公司决定统一品牌线，脑子里那版瞬间作废。为了找一个关键的销售话术，你可能要在四个不同的软件里"大海捞针"。这种极其消耗电量的"信息熵增"，是拖垮一个优秀团队的罪魁祸首。</p>
 
@@ -80,7 +86,7 @@
 
 <blockquote>记忆应该存在系统里，而不是脑子里。那仅存的 0.1% 的宝贵脑力，必须毫无保留地留给"判断新命名在海外市场的接受度"，而不是去回忆"旧参数到底是多少"。</blockquote>
 
-<h2>第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</h2>
+<h2 id="第二部分团队的底层操作系统用notion终结跨部门内耗">第二部分：团队的"底层操作系统"——用 Notion 终结跨部门内耗</h2>
 
 <p>如果说 Obsidian 是我极其私人的"数字外脑"，那么 Notion，就是我为整个公司搭建的"底层操作系统"。其实在这套系统里，我扮演的并不是那个指点江山的"操盘手"（那是我老板的角色），我更像是一个被逼出来的"系统架构师"。老板需要抓业务、盯交期、看大盘，但他往往搞不定复杂的底层数据逻辑。如果我们不把这套运转机制搭好，最终团队协同的混乱和摩擦，还是会以各种形式反噬到我们自己头上。</p>
 
@@ -96,7 +102,7 @@
 
 <p><strong>"建好系统，然后隐身"</strong>，这就是我在这套协同工具里追求的最高境界。当这套庞大的齿轮开始无声且精准地自动咬合运转时，整个公司的管理熵增被降到了最低，而我也终于可以把珍贵的脑力，留给那些真正需要创造力的 Marketing 核心业务了。</p>
 
-<h2>第三部分：无情的工作流推土机——让 Claude Code 成为终端级超级助理</h2>
+<h2 id="第三部分无情的工作流推土机让claudecode成为终端级超级助">第三部分：无情的工作流推土机——让 Claude Code 成为终端级超级助理</h2>
 
 <p>如果说 Obsidian 是存储记忆的骨架，Notion 是流转跨部门业务的齿轮，那最近成了我心头好的 Claude，就是在这套系统里日夜轰鸣、任劳任怨的"无情推土机"。</p>
 
@@ -110,7 +116,7 @@
 
 <blockquote>AI 绝不是为了替代你的商业判断，它的终极使命，是把你从无脑的"人肉 grep"中彻底解放出来。你那宝贵的脑力，必须留给去思考"这个新命名的底层逻辑是什么"，而不是在废纸堆里人工校对数据。</blockquote>
 
-<h2>结语：系统越精密，人越自由</h2>
+<h2 id="结语系统越精密人越自由">结语：系统越精密，人越自由</h2>
 
 <p>B2B 硬科技出海这条路，外部环境永远处于一种无序的混乱中——老板随时可能推翻重改的需求、海外代理商跨越十二个小时时差的夺命催单、全球各个展会排期和物料的疯狂打架。作为置身其中的出海人，你控制不了这些随时爆发的外部变量。但你能绝对控制的，是自己的信息环境。</p>
 
@@ -121,6 +127,14 @@
 <p>把系统建好，剩下的交给它去运转。在这个信息极度过载的时代，工具的极致，终究是为了捍卫我们内心的低熵。</p>
 
   </div>
+
+<!-- nextread:start -->
+<section class="article-nextread" aria-label="接着读">
+<span class="nextread-label">接着读</span>
+<p><span>上一篇</span><a href="/work/chuhai/11-brazil/">跨越半个地球的深蓝巨兽，国产海工的"巴西破局战"</a></p>
+<p><span>下一篇</span><a href="/work/chuhai/13-html-as-ppt/">抛弃传统 PPT，用 HTML 和 AI 打造"永不跑版"的跨国提案</a></p>
+</section>
+<!-- nextread:end -->
 </main>
 
 <footer>

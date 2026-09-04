@@ -214,3 +214,65 @@ footer {
 
   footer { padding: 36px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
 }
+
+/* ── 长文导航：目录 · 接着读 · 首字下沉容器化（2026-09-04 前端养护批） ── */
+/* 首字下沉的浮动只许留在自己的段落里，短首段不再让第二段绕排 */
+.article-body p:first-of-type { display: flow-root; }
+.article-body h2 { scroll-margin-top: 88px; }
+
+/* 目录：小屏折叠块（标题/元信息之下） */
+.article-toc { display: none; }
+.article-body .article-toc-m {
+  margin: 0 0 40px; font-size: 13px; line-height: 1.8; color: var(--section-muted);
+}
+.article-body .article-toc-m summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--section-muted);
+}
+.article-body .article-toc-m summary::-webkit-details-marker { display: none; }
+.article-body .article-toc-m summary::after { content: " ▾"; }
+.article-body .article-toc-m[open] summary::after { content: " ▴"; }
+.article-body .article-toc-m ol,
+.article-body .article-toc ol { list-style: none; margin: 0; padding: 0; }
+.article-body .article-toc-m ol { margin-top: 10px; padding-left: 12px; border-left: 1px solid var(--section-border); }
+.article-body .article-toc-m li,
+.article-body .article-toc li { margin: 0; padding: 2px 0; }
+.article-body .article-toc-m a,
+.article-body .article-toc a { color: var(--section-muted); text-decoration: none; }
+.article-body .article-toc-m a:hover,
+.article-body .article-toc a:hover { color: var(--section-accent); }
+
+/* 目录：宽屏右侧细栏，挂在正文列右外侧，不占正文宽度 */
+@media (min-width: 1100px) {
+  .article-body { position: relative; }
+  .article-body .article-toc-m { display: none; }
+  .article-toc {
+    display: block; position: absolute; top: 0; bottom: 0;
+    left: calc(100% + 40px); width: 176px;
+  }
+  .article-toc .toc-inner {
+    position: sticky; top: 96px;
+    font-size: 12px; line-height: 1.65; color: var(--section-muted);
+  }
+  .article-toc .toc-label {
+    display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .article-body .article-toc li { padding: 3px 0; }
+  .article-body .article-toc a.is-current { color: var(--section-text); }
+}
+
+/* 接着读：文末两行纯文字链接，同栏目上一篇 / 下一篇 */
+.article-page .article-nextread {
+  margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--section-border);
+  font-size: 13px; line-height: 1.9; color: var(--section-muted);
+}
+.article-page .article-nextread .nextread-label {
+  display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; margin-bottom: 6px;
+}
+.article-page .article-nextread p { margin: 0; }
+.article-page .article-nextread p span {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; margin-right: 10px;
+}
+.article-page .article-nextread a { color: var(--section-muted); text-decoration: none; border-bottom: 1px solid var(--section-border); }
+.article-page .article-nextread a:hover { color: var(--section-accent); border-bottom-color: currentColor; }

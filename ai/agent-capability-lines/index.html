@@ -6,6 +6,7 @@
 <meta name="description" content="AI Agent 能力边界五条线：文件操作可译性、验证成本、反馈环归属、规则遵循预算、记忆写入权限——一份持续生长的人机协作工作笔记。">
 <title>AI Agent 能力边界五条线 · AI思考 · Lucy Lyu</title>
 <link rel="canonical" href="https://lucylyu.life/ai/agent-capability-lines/">
+<link rel="alternate" type="application/rss+xml" title="Lucy Lyu" href="/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lucy Lyu">
 <meta property="og:locale" content="zh_CN">
@@ -38,6 +39,7 @@
 .article-body h4 { font-size: 14px; font-weight: 600; margin: 24px 0 8px; }
 .note-tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em; color: var(--section-accent); border: 1px solid var(--section-accent); padding: 3px 10px; border-radius: 1px; margin-bottom: 14px; }
 </style>
+<script src="/assets/js/toc.js" defer></script>
 </head>
 <body data-section="ai">
 
@@ -60,10 +62,14 @@
   <p class="article-meta">AI思考 · 2026.07 · 初稿三条线，随实践继续生长</p>
 
   <div class="article-body">
+<!-- toc:start -->
+<aside class="article-toc" aria-label="目录"><div class="toc-inner"><span class="toc-label">目录</span><ol><li><a href="#边界不按领域划按线划">边界不按领域划，按线划</a></li><li><a href="#大多数人跑偏在哪">大多数人跑偏在哪</a></li><li><a href="#线四规则遵循预算">线四：规则遵循预算</a></li><li><a href="#线五记忆写入权限归属">线五：记忆写入权限归属</a></li><li><a href="#界外不是能力问题是契约问题">界外（不是能力问题，是契约问题）</a></li></ol></div></aside>
+<details class="article-toc-m"><summary>目录</summary><ol><li><a href="#边界不按领域划按线划">边界不按领域划，按线划</a></li><li><a href="#大多数人跑偏在哪">大多数人跑偏在哪</a></li><li><a href="#线四规则遵循预算">线四：规则遵循预算</a></li><li><a href="#线五记忆写入权限归属">线五：记忆写入权限归属</a></li><li><a href="#界外不是能力问题是契约问题">界外（不是能力问题，是契约问题）</a></li></ol></details>
+<!-- toc:end -->
 
 <p>起点是一次意外：发现 Agent 能直接粗剪视频，才意识到自己此前低估了可外包的范围。<strong>该怎么更合理地规划 AI Agent 的使用</strong>——这是今后持续思考的一个题目。此篇是第一块砖，不是结论；它也确实在长：写下时是三条线，后来长到了五条。</p>
 
-<h2>边界不按领域划，按线划</h2>
+<h2 id="边界不按领域划按线划">边界不按领域划，按线划</h2>
 
 <h3>线一：能不能翻译成"对文件的操作"</h3>
 <p>视频粗剪看起来是创意工作，拆开就是：时间码 + ffmpeg 命令 + 字幕文件——文本可描述，所以做得动。HTML deck、音频响度归一、批量改图、PDF 拆合同理。</p>
@@ -80,7 +86,7 @@
 </ul>
 <p>"Agent 出手、我只审画面和逻辑"不是偷懒，是把两个反馈环各自放回成本最低的地方。省掉的正是人在执行环里空转的时间（几小时 → 十几分钟）。</p>
 
-<h2>大多数人跑偏在哪</h2>
+<h2 id="大多数人跑偏在哪">大多数人跑偏在哪</h2>
 <p>大众对 AI Agent 的想象停在 <strong>Vibe Coding</strong>——但大部分人的世界不需要 Coding，需要的程序早就有人写出来了。</p>
 <p>真正的空间在线一：<strong>把自己已有的工作流翻译成"对文件的操作"</strong>——剪辑、排版、归档、数据搬运、格式转换。这些不叫编程，叫把机械执行环交出去。会用 Agent 的人和不会用的人，差别不在会不会写代码，在<strong>能不能看出自己的哪些工作本质上是文本可描述的</strong>。</p>
 <p>跑偏还有第二层，不在想象力，在<strong>基建</strong>：很多人的工作流本身不是"机器可读"的——素材锁在剪映这类 GUI 里、命名混乱、版本散落在手机相册。Agent 能接手的前提是工作已被翻译成对文件的操作，而大多数人的素材库连人都读不顺。<strong>混乱是交不出去的，不管交给人还是交给 Agent。</strong>命名规范、归档结构这些"低熵"基建，看起来是洁癖，其实是资产——它决定了红利落地时你有没有资格接。</p>
@@ -89,7 +95,7 @@
 <p>"外包给剪辑师"和"外包给 Agent"差的不只是价格，是<strong>交易成本</strong>：前者省工时，但传素材、讲需求、等档期、改三轮，每轮反馈都要过一次人际接口；后者把交易成本压到接近零——审完直接说"第二刀提前半秒"，十几分钟看下一版。</p>
 <p><strong>对创作者来说，迭代延迟比单价更值钱</strong>：延迟决定你愿不愿意多试一版，而多试的那一版往往才是好的那版。很多博主的口播还停留在外包给人的阶段，卡住她们的正是上面那道基建门槛。</p>
 
-<h2>线四：规则遵循预算</h2>
+<h2 id="线四规则遵循预算">线四：规则遵循预算</h2>
 <p><strong>现象</strong>：聪明模型会主动检查文件里的规则边界；弱模型规则写了不看，指出来就回"你说得对"——然后照旧。</p>
 
 <h3>机制：规则遵循是预算问题，不是态度问题</h3>
@@ -117,7 +123,7 @@
 <h3>陪练 vs 外包："用聪明模型觉得自己变聪明"的分辨判据</h3>
 <p>变"聪明"有两种：<strong>外包</strong>（思考交出去，肌肉萎缩）vs <strong>陪练</strong>（对话把思考拉到独处够不着的高度）。唯一判据：<strong>裁决权还在不在自己手里</strong>——事实纠错的方向、框架的最终取舍、调性的一票。裁决权不迁移，聪明是复利；裁决权迁移，聪明是贷款。</p>
 
-<h2>线五：记忆写入权限归属</h2>
+<h2 id="线五记忆写入权限归属">线五：记忆写入权限归属</h2>
 <p>管 AI 和管员工最底层的差异，不是"AI 没有情商"，是<strong>我对谁的记忆有写入权限</strong>。</p>
 <ul>
 <li><strong>对 AI 有 write access</strong>：配置文件、协作协议——直接往协作者的行为配置里写文件，写完必然生效（强制加载）。</li>
@@ -133,7 +139,7 @@
 <h3>修正：这条边界不是 AI vs 人</h3>
 <p>给新人写的自助索引，本质上就是给人类写的配置文件——可固化的部分对人对 AI 都走文档。真正的差异只在两处：<strong>文档对 AI 是强制加载、对人只是"希望她读"</strong>；以及情商的泛化上限比文档高（好员工能处理从没写过的情况，文档只覆盖已固化的）。所以管理组合是三件套：<strong>文档（人机通用）+ 写入权（AI 独有）+ 情商筛选（人独有）</strong>。</p>
 
-<h2>界外（不是能力问题，是契约问题）</h2>
+<h2 id="界外不是能力问题是契约问题">界外（不是能力问题，是契约问题）</h2>
 <p>立场、调性、审美终审——就算模型哪天能判断"这一刀节奏对"，那一票也是我的。</p>
 
   </div>

@@ -6,6 +6,7 @@
 <meta name="description" content="出海笔记 13：抛弃传统PPT，用HTML和AI打造永不跑版的跨国提案。一份让法国CEO评价Perfectly的演示文件背后的完整方法论。">
 <title>出海笔记 13 · HTML做PPT · 工作论 · Lucy Lyu</title>
 <link rel="canonical" href="https://lucylyu.life/work/chuhai/13-html-as-ppt/">
+<link rel="alternate" type="application/rss+xml" title="Lucy Lyu" href="/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lucy Lyu">
 <meta property="og:locale" content="zh_CN">
@@ -36,6 +37,7 @@
 @media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "抛弃传统 PPT，用 HTML 和 AI 打造\"永不跑版\"的跨国提案", "datePublished": "2026-06", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/chuhai/13-html-as-ppt/", "inLanguage": "zh-CN", "description": "出海笔记 13：抛弃传统PPT，用HTML和AI打造永不跑版的跨国提案。一份让法国CEO评价Perfectly的演示文件背后的完整方法论。", "image": "https://lucylyu.life/assets/images/logo-dark.png"}</script>
+<script src="/assets/js/toc.js" defer></script>
 </head>
 <body data-section="work">
 
@@ -57,6 +59,10 @@
   <p class="article-meta">出海笔记系列 #13 · <time datetime="2026-06">2026.06</time></p>
 
   <div class="article-body">
+<!-- toc:start -->
+<aside class="article-toc" aria-label="目录"><div class="toc-inner"><span class="toc-label">目录</span><ol><li><a href="#第一部分传统ppt的熵增陷阱">第一部分：传统 PPT 的"熵增"陷阱</a></li><li><a href="#第二部分注入灵魂让aiagent接管排版与逻辑">第二部分：注入灵魂——让 AI Agent 接管"排版与逻辑"</a></li><li><a href="#第三部分为什么html是出海b2b的终极解法">第三部分：为什么 HTML 是出海 B2B 的终极解法？</a></li><li><a href="#第四部分把系统封装成傻瓜包从个人极客到团队平权">第四部分：把系统封装成"傻瓜包"——从个人极客到团队平权</a></li><li><a href="#第五部分零代码不意味着零学习曲线我们踩过的五个坑">第五部分："零代码"不意味着零学习曲线——我们踩过的五个坑</a></li><li><a href="#结语收起画笔拿起手术刀">结语：收起画笔，拿起手术刀</a></li></ol></div></aside>
+<details class="article-toc-m"><summary>目录</summary><ol><li><a href="#第一部分传统ppt的熵增陷阱">第一部分：传统 PPT 的"熵增"陷阱</a></li><li><a href="#第二部分注入灵魂让aiagent接管排版与逻辑">第二部分：注入灵魂——让 AI Agent 接管"排版与逻辑"</a></li><li><a href="#第三部分为什么html是出海b2b的终极解法">第三部分：为什么 HTML 是出海 B2B 的终极解法？</a></li><li><a href="#第四部分把系统封装成傻瓜包从个人极客到团队平权">第四部分：把系统封装成"傻瓜包"——从个人极客到团队平权</a></li><li><a href="#第五部分零代码不意味着零学习曲线我们踩过的五个坑">第五部分："零代码"不意味着零学习曲线——我们踩过的五个坑</a></li><li><a href="#结语收起画笔拿起手术刀">结语：收起画笔，拿起手术刀</a></li></ol></details>
+<!-- toc:end -->
 
 <p>刚刚结束了一场与法国水下成像设备厂商的 Teams 会议。会议的主题很重，盘点接下来的中国区战略落地。跨越七个小时的时差、全英文的高密度交锋——做 B2B 硬科技出海的同行，对这种高压场景绝对不会陌生。</p>
 
@@ -70,7 +76,7 @@
 
 <p>因为在这场长达一小时的跨国屏幕共享中，整整十四页幻灯片，没有任何一处排版出现哪怕一毫米的跑偏。没有一个精心设计的图标莫名其妙地飞出边界。更没有精心挑选的无衬线英文字体，在老外的屏幕上尴尬地回退成极其古板的 Times New Roman。达成这种"像素级"压制和绝对一致性的秘密武器，不是什么动辄大几千块的昂贵 SaaS 工具，而是一份极其轻量的 HTML 代码文件。</p>
 
-<h2>第一部分：传统 PPT 的"熵增"陷阱</h2>
+<h2 id="第一部分传统ppt的熵增陷阱">第一部分：传统 PPT 的"熵增"陷阱</h2>
 
 <p>只要你做过哪怕一次面向海外大客户的 Pitch Deck，就一定经历过被传统办公软件按在地上摩擦的绝望。在这个过程里，你的大部分精力并不是在思考商业逻辑，而是在对抗极其可怕的"信息熵增"：</p>
 
@@ -89,7 +95,7 @@
 
 <p><strong>但我一行代码都没自己敲。</strong>我只负责输出最核心的商业大纲和底层逻辑，剩下的排版苦力活，全部甩给了 Claude Code。</p>
 
-<h2>第二部分：注入灵魂——让 AI Agent 接管"排版与逻辑"</h2>
+<h2 id="第二部分注入灵魂让aiagent接管排版与逻辑">第二部分：注入灵魂——让 AI Agent 接管"排版与逻辑"</h2>
 
 <p>以前做演示文稿，我们总是被"形式"绑架了"内容"。脑子里刚冒出一个极其犀利的战略雏形，手就已经下意识地去调字号、选颜色了。思路一次次被那些不听话的文本框打断。现在的"低熵"解法，是彻底将形式与内容剥离：<strong>我只负责"想"，AI 负责"画"和"讲"。</strong></p>
 
@@ -103,7 +109,7 @@
 
 <p>一份原本需要极其耗时、且容易让人情绪崩溃的跨国提案演示，最终被压缩成了极其享受的极客时间。拿着这种准备充分的底气去开跨国会议，难怪能拿到 "perfectly" 的评价。</p>
 
-<h2>第三部分：为什么 HTML 是出海 B2B 的终极解法？</h2>
+<h2 id="第三部分为什么html是出海b2b的终极解法">第三部分：为什么 HTML 是出海 B2B 的终极解法？</h2>
 
 <p>在复杂的跨国商业谈判中，任何因为工具导致的视觉瑕疵，都会在无形中削弱你的专业度。抛弃 PowerPoint，转向 HTML 网页渲染，本质上是从"手工绘图"走向了"工程交付"。</p>
 
@@ -113,7 +119,7 @@
 
 <p><strong>极客级的版本管理：</strong>再也不需要面对 <code>最终版_v3_修改_绝不改版.pptx</code> 这种动辄几十兆的臃肿文件。HTML 的本质是纯文本格式，你可以极其优雅地用版本控制工具（如 Git）去管理。每一次修改了哪个单词、改了哪行参数，全都在 Diff 对比里一目了然。</p>
 
-<h2>第四部分：把系统封装成"傻瓜包"——从个人极客到团队平权</h2>
+<h2 id="第四部分把系统封装成傻瓜包从个人极客到团队平权">第四部分：把系统封装成"傻瓜包"——从个人极客到团队平权</h2>
 
 <p>一个优秀的数字系统，不能仅仅是系统架构师自嗨的极客玩具。它必须能够做到向下兼容，赋能给团队里完全不懂代码的销售和技术服务人员。我没有把这套工具做成什么复杂的后台，而是用最轻的"本地文件夹"方式把它分发给了同事。</p>
 
@@ -123,7 +129,7 @@
 <h3>极简的交互与"兜底"导出</h3>
 <p>这份文件极其纯粹，1920×1080 的 16:9 满屏比例。开会时，点击页面上的 ▶ PRESENT 按钮一键全屏，用键盘左右键极其丝滑地翻页。考虑到欧洲大客户有时依然会索要传统的 <code>.pptx</code> 或 PDF 存档，我在这套"小红书轮播图"的底层里保留了一个约 200KB 的本地纯静态库（html2canvas）。它完全不依赖外部网络，只要点一下导出按钮，就能在本地浏览器里瞬间将 HTML 代码极速截图为高清 PNG 大图，随后拖进 Keynote 或直接打包成 PDF 完美交付。</p>
 
-<h2>第五部分："零代码"不意味着零学习曲线——我们踩过的五个坑</h2>
+<h2 id="第五部分零代码不意味着零学习曲线我们踩过的五个坑">第五部分："零代码"不意味着零学习曲线——我们踩过的五个坑</h2>
 
 <p>说完了这套系统的优势，也坦诚地聊聊它的成长代价。如果你决定尝试这个方向，下面这五个坑是我们一行一行调试出来的，希望你能少走弯路。</p>
 
@@ -139,7 +145,7 @@
 
 <p>五个坑，每个都只踩一次。这也是这套系统的隐性优势——<strong>坑一旦被代码修好，就永远不会重现。</strong>不像传统 PPT 里那些"说不清为什么又跑偏了"的排版问题，每次都从零开始排查。</p>
 
-<h2>结语：收起画笔，拿起手术刀</h2>
+<h2 id="结语收起画笔拿起手术刀">结语：收起画笔，拿起手术刀</h2>
 
 <p>就在我准备给这篇笔记收尾的时候，我又对这套系统产生了一丝新的"野心"。我原本以为，如果遇到需要复杂动画的场景，HTML 这种代码形式可能会显得不够直观。但我刚发现这完全是个自我设限的伪命题——只要你切换成"导演视角"给 AI Agent 下达运动指令，它同样能瞬间为你写出极其优雅的缓动曲线、错落入场，甚至充满极客美学的 SVG 动态生长。虽然这次给法国客户的演示里，我还没来得及实操这些动态微交互，但毫无疑问，这绝对是我接下来要攻克并带进工作流的"新魔法"。</p>
 
@@ -152,6 +158,14 @@
 <p><em>这篇文章不是来劝你放弃 PowerPoint 的。日常内部汇报、随手两页的周报、朋友圈海报——PPT 完全够用，也应该用。这条路的真正价值，在那些"输不起"的场景：跨国并购的 pitch deck、给海外总部的年度策略汇报、政府招商的路演。当你在这些场合需要绝对的控制力——像素级的排版、跨平台的一致性、可追溯的版本管理——你会发现，一套不收许可费、不依赖特定软件、可以从一次会议直接复用十年的工具链，比任何 SaaS 订阅都更值得信赖。</em></p>
 
   </div>
+
+<!-- nextread:start -->
+<section class="article-nextread" aria-label="接着读">
+<span class="nextread-label">接着读</span>
+<p><span>上一篇</span><a href="/work/chuhai/12-low-entropy/">把杂活交给 AI 与双链笔记，找回操盘手的"低熵"状态</a></p>
+<p><span>下一篇</span><a href="/work/chuhai/14-card-warmth/">一张卡片的温度——当 B2B 科技公司认真做了一件“没必要”的事</a></p>
+</section>
+<!-- nextread:end -->
 </main>
 
 <footer>

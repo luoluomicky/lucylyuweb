@@ -6,6 +6,7 @@
 <meta name="description" content="出海笔记 23：我把一份三十七页的技术手册交给 AI 排版，以为是下午的活，做了两天。难的不是改，是弄清楚这份文档有几层、我够得到哪一层——样式改了它可以纹丝不动，目录在我这儿正常，换台电脑就是空白。这期讲那几个坑，和一套可以拷走的验收方法。">
 <title>出海笔记 23 · AI Agent 重排长篇 Word，最难的不是改，是验 · 工作论 · Lucy Lyu</title>
 <link rel="canonical" href="https://lucylyu.life/work/chuhai/23-verify-not-edit/">
+<link rel="alternate" type="application/rss+xml" title="Lucy Lyu" href="/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lucy Lyu">
 <meta property="og:locale" content="zh_CN">
@@ -43,6 +44,7 @@
 @media (max-width: 768px) { .article-page { padding: 48px 20px 64px; } .article-page h1 { font-size: 28px; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Agent 重排长篇 Word，最难的不是改，是验", "datePublished": "2026-08-27", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/chuhai/23-verify-not-edit/", "inLanguage": "zh-CN", "description": "出海笔记 23：我把一份三十七页的技术手册交给 AI 排版，以为是下午的活，做了两天。难的不是改，是弄清楚这份文档有几层、我够得到哪一层——样式改了它可以纹丝不动，目录在我这儿正常，换台电脑就是空白。这期讲那几个坑，和一套可以拷走的验收方法。", "image": "https://lucylyu.life/work/chuhai/images/23-hero.png"}</script>
+<script src="/assets/js/toc.js" defer></script>
 </head>
 <body data-section="work">
 
@@ -64,13 +66,17 @@
   <p class="article-meta">出海笔记系列 #23 · 一份 37 页的技术手册，三份脚本，和一套可以拷走的验收方法 · <time datetime="2026-08-27">2026.08</time></p>
 
   <div class="article-body">
+<!-- toc:start -->
+<aside class="article-toc" aria-label="目录"><div class="toc-inner"><span class="toc-label">目录</span><ol><li><a href="#序言我把一份37页的word交给了agent">序言：我把一份 37 页的 Word 交给了 Agent</a></li><li><a href="#一长篇word里不止一种格式">一、长篇 Word 里，不止一种「格式」</a></li><li><a href="#二agent跑的不是一个按钮是一条流水线">二、Agent 跑的不是一个按钮，是一条流水线</a></li><li><a href="#三三个最反直觉的坑">三、三个最反直觉的坑</a></li><li><a href="#四什么值得交给agent">四、什么值得交给 Agent</a></li><li><a href="#尾声把一次排版留成下一次的起点">尾声：把一次排版，留成下一次的起点</a></li></ol></div></aside>
+<details class="article-toc-m"><summary>目录</summary><ol><li><a href="#序言我把一份37页的word交给了agent">序言：我把一份 37 页的 Word 交给了 Agent</a></li><li><a href="#一长篇word里不止一种格式">一、长篇 Word 里，不止一种「格式」</a></li><li><a href="#二agent跑的不是一个按钮是一条流水线">二、Agent 跑的不是一个按钮，是一条流水线</a></li><li><a href="#三三个最反直觉的坑">三、三个最反直觉的坑</a></li><li><a href="#四什么值得交给agent">四、什么值得交给 Agent</a></li><li><a href="#尾声把一次排版留成下一次的起点">尾声：把一次排版，留成下一次的起点</a></li></ol></details>
+<!-- toc:end -->
 
 <figure class="article-hero">
 <img src="../images/23-hero.png" alt="最难的不是改，是验——左边「改」是三份脚本，右边「验」是四个动作：一条命令几分钟，验收比改长得多" loading="lazy" width="2160" height="1280">
 <figcaption>最难的不是改，是验</figcaption>
 </figure>
 
-<h2>序言：我把一份 37 页的 Word 交给了 Agent</h2>
+<h2 id="序言我把一份37页的word交给了agent">序言：我把一份 37 页的 Word 交给了 Agent</h2>
 <p>上周，一份技术手册到我手里：三十七页，三十一张图，八张表，四十二条目录。</p>
 <p>任务听起来很简单：<strong>正文一个字不动，把它排成公司的样子，同时交付 docx 和 PDF。</strong></p>
 <p>我把这件事交给了 AI Agent。原稿和公司模板都给它，要求也写得很清楚：标题、正文、图注、表格全部套模板；图片不能撑破页面；目录页码要对；最后还要证明文字没有被改过。</p>
@@ -78,7 +84,7 @@
 <p>结果第一轮花了两天。最后的成品是四十四页，文字比对零改动，排版过程被收进三份脚本和一份执行说明里。</p>
 <p>这两天暴露出来的，不是 AI 会不会操作 Word。真正的问题是：<strong>一份几十页的文档，到底要改哪些东西，又凭什么说它已经改对了。</strong></p>
 
-<h2>一、长篇 Word 里，不止一种「格式」</h2>
+<h2 id="一长篇word里不止一种格式">一、长篇 Word 里，不止一种「格式」</h2>
 <p>我原来把格式理解成字体、字号、行距。拆开这份手册之后，才发现一份 Word 至少同时有四种状态。</p>
 <p><strong>第一层是样式状态。</strong> 样式表规定「这一类段落长什么样」，段落自己还可能带着一套直接格式，规定「这一个段落长什么样」。两套规则撞在一起，直接格式通常压过样式表。</p>
 <p><strong>第二层是对象状态。</strong> 图片、表格、图注不是跟着正文一起缩放的。页面左右边距一改，版心变窄，表格宽度也得跟着重算；三十一张图如果全部设成同一个宽度，横图浪费版心，竖图直接把下一段顶到下一页。</p>
@@ -87,7 +93,7 @@
 <p>所以 Agent 接到的不是一个「美化 Word」任务。它实际在做的是：<strong>把一份文档从原来的四种状态，迁移到另一套确定的状态。</strong></p>
 <p>格式不是一层皮。它是一组同时生效、还会互相牵动的规则。</p>
 
-<h2>二、Agent 跑的不是一个按钮，是一条流水线</h2>
+<h2 id="二agent跑的不是一个按钮是一条流水线">二、Agent 跑的不是一个按钮，是一条流水线</h2>
 <p>最后跑通的流程分三段。</p>
 <h3>1. 先读文档，再决定从哪里下手</h3>
 <p>Agent 先读取公司模板里的真实样式值，再扫描目标文档：正文从哪一段开始、正文主字号是什么、有几个分节、多少张表、每张图片的真实宽高比是多少。</p>
@@ -107,7 +113,7 @@
 <figcaption>整条链只有一个人工判断点在最前面（读哪份模板），其余四步都能拿成品反证自己。三份脚本的顺序不可换——样式先定版心，图片才知道自己能占多宽；页码最后量，因为前两步都会改变分页。</figcaption>
 </figure>
 
-<h2>三、三个最反直觉的坑</h2>
+<h2 id="三三个最反直觉的坑">三、三个最反直觉的坑</h2>
 <h3>1. 样式改了，文档可以纹丝不动</h3>
 <p>Word 里，一个段落的行距可以同时来自样式表和段落自己。</p>
 <p>我第一轮只改了样式表，导出来没有任何变化。因为生成这份文档时，每个标题段落自己身上已经带着行距设定，样式表里写什么，它都不看。</p>
@@ -132,7 +138,7 @@
 <p>所以页码脚本要跑两遍：第一次量完写回，重新渲染；第二次再量，逐条一致才结束。</p>
 <p><strong>打开第一眼才会出现的缺陷，只能真的打开去验。</strong></p>
 
-<h2>四、什么值得交给 Agent</h2>
+<h2 id="四什么值得交给agent">四、什么值得交给 Agent</h2>
 <p>这次之后，我不再用「难不难」判断一件事要不要自动化。我看四件事：它会不会重复，规则稳不稳定，结果能不能测，人做漏一次会牵连多大范围。</p>
 <p>套几十页样式、重算表格、给三十一张图分档、回填四十二条页码——这些动作重复、规则明确、还能验，适合交给 Agent。</p>
 <p>这一页看着有点挤、封面想往上挪一点、某个字号想再小半号——这些判断主观、例外多，人打开 Word 两分钟就能改完，没必要让整条脚本重跑一遍。</p>
@@ -140,7 +146,7 @@
 <p>这套方法最适合说明书、标书、项目书这类长文档。它们的共同点不是页数多，而是内容会换、模板相对稳定，一处格式改动又可能牵连后面几十页。相反，如果一份文件只做一次、每一页都要单独设计，先别急着给它造一套自动化。</p>
 <p>第一份手册花了两天，这不能直接叫提效。<strong>第一次是在做工具，第二次复用时才开始摊薄成本。</strong></p>
 
-<h2>尾声：把一次排版，留成下一次的起点</h2>
+<h2 id="尾声把一次排版留成下一次的起点">尾声：把一次排版，留成下一次的起点</h2>
 <p>那份三十七页的原稿，最后变成四十四页的正式手册。</p>
 <p>内容没有改，变化的是它背后的规则：标题从哪里取值，图片怎么适应版心，目录如何落成静态页码，最后由什么证据证明交付没有坏。</p>
 <p>我把这套流程整理成了一个可以拷走的<a href="/word-toolkit/">工具包</a>：<strong>一份空白模板 + 三份脚本 + 一份使用说明</strong>。空白模板里只有样式，没有我们公司的页眉、页脚、logo 和地址；把脚本指向自己的模板，刷出来的就是自己的格式。</p>
@@ -150,6 +156,13 @@
 <p><em>出海笔记，记录一家中国海洋仪器公司出海路上的实操与反思。</em></p>
 
   </div>
+
+<!-- nextread:start -->
+<section class="article-nextread" aria-label="接着读">
+<span class="nextread-label">接着读</span>
+<p><span>上一篇</span><a href="/work/chuhai/22-found-not-reached/">找到你，不等于到达你</a></p>
+</section>
+<!-- nextread:end -->
 </main>
 
 <footer>
