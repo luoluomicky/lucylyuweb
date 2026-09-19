@@ -6,7 +6,21 @@
     <description>在身体与商业之间，寻找底层逻辑。</description>
     <language>zh-CN</language>
     <atom:link href="https://lucylyu.life/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 11 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>普拉提为什么从躺着开始：顺序排的是支撑量</title>
+      <link>https://lucylyu.life/pilates/articles/start-lying-down/</link>
+      <guid isPermaLink="true">https://lucylyu.life/pilates/articles/start-lying-down/</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
+      <description>有读者这么问我：「仰卧位开始，原理就是先把前面肌肉力量搞起来，再搞后面的意思嘛。」这句话有一半是对的——古典普拉提确实从躺着开始，垫上是，Reformer 上也是。但躺着排的东西，多半理解错了单位：这张顺序表从头到尾没有按部位排过，它排的是另一件事，谁在托着你。</description>
+    </item>
+    <item>
+      <title>普拉提真相 #012 · 普拉提站直这道题，动起来再考</title>
+      <link>https://lucylyu.life/pilates/carousel/truth-012/</link>
+      <guid isPermaLink="true">https://lucylyu.life/pilates/carousel/truth-012/</guid>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0800</pubDate>
+      <description>普拉提真相 #012 · 普拉提站直这道题，动起来再考。站直本身不难，难的是站直之后还要做事。古典有一台专考这个的器械：Ped-O-Pul 用一根杆、两根弹簧把站姿带进动作里——先两手，再转头，再单腿，支撑一步步拿走。评分标准只有一个：垂直，贴哪几点是手段。9 张图版，含考题顺序与一版无杆观察。</description>
+    </item>
     <item>
       <title>解剖学系列 #010 · 普拉提说把背顶起来，顶的是哪里</title>
       <link>https://lucylyu.life/pilates/carousel/cue-010/</link>
@@ -202,20 +216,6 @@
       <guid isPermaLink="true">https://lucylyu.life/pilates/articles/pseudo-flexibility/</guid>
       <pubDate>Thu, 23 Jul 2026 00:00:00 +0800</pubDate>
       <description>极限拉伸正在透支女性的关节。从韧带塑性变形、东亚女性三重加剧因子到临床流行病学数据——柔韧性不等于活动度，最好的柔韧是你在任何位置都有回来的能力。</description>
-    </item>
-    <item>
-      <title>普拉提大师访谈全文：七个问题的一手答案</title>
-      <link>https://lucylyu.life/pilates/articles/davidson-interview/</link>
-      <guid isPermaLink="true">https://lucylyu.life/pilates/articles/davidson-interview/</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 +0800</pubDate>
-      <description>Power Pilates Master Teacher Trainer Davidson Reid，三十年教学经验，七个问题的完整文字稿——骨盆、控制、Hundred、拉长、停用的口令与基础的分量。</description>
-    </item>
-    <item>
-      <title>体感短文 #005 · 绷脚，脚趾头要用力吗</title>
-      <link>https://lucylyu.life/pilates/carousel/short-005/</link>
-      <guid isPermaLink="true">https://lucylyu.life/pilates/carousel/short-005/</guid>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0800</pubDate>
-      <description>体感短文 #005 · 绷脚，脚趾头要用力吗。抠和长是两种不同的用力：一个让脚变短，一个让整条腿继续延伸——3张图版完整展示。</description>
     </item>
   </channel>
 </rss>
