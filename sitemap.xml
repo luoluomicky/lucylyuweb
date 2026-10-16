@@ -242,6 +242,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://lucylyu.life/pilates/carousel/detail-013/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lucylyu.life/pilates/carousel/</loc>
     <priority>0.8</priority>
   </url>
@@ -293,6 +298,11 @@
   <url>
     <loc>https://lucylyu.life/pilates/carousel/step0-003/</loc>
     <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lucylyu.life/pilates/carousel/step0-004/</loc>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -442,6 +452,11 @@
   <url>
     <loc>https://lucylyu.life/work/chuhai/23-verify-not-edit/</loc>
     <lastmod>2026-08-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lucylyu.life/work/chuhai/24-rework-not-judgment/</loc>
+    <lastmod>2026-10-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
