@@ -17,6 +17,11 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
+/* 本页不引 styles.css，大屏等比放大与全站同档（2026-10-16） */
+@media (min-width: 1440px) { html { zoom: 1.1; } }
+@media (min-width: 1680px) { html { zoom: 1.2; } }
+@media (min-width: 2000px) { html { zoom: 1.3; } }
+
 /* ══════════════════════════════════════════════
    CSS RESET
    ══════════════════════════════════════════════ */
@@ -188,19 +193,19 @@ nav {
 .gallery-arrow[disabled] { opacity: .3; cursor: default; }
 
 .gallery-track {
-  --axis: max(40px, calc((100vw - 1200px) / 2 + 40px));
-  display: flex; gap: 28px;
+  --gap: 28px; --per: 5;
+  width: min(1120px, calc(100% - 80px)); margin: 0 auto;   /* 收在版心里，左右缘与正文对齐 */
+  display: flex; gap: var(--gap);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: var(--axis);
-  padding: 8px var(--axis) 28px;
+  padding: 8px 0 28px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .gallery-track::-webkit-scrollbar { display: none; }
 
 .carousel-item {
-  flex: 0 0 232px;
+  flex: 0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));   /* 一屏刚好整数张，不切半张 */
   scroll-snap-align: start;
   text-decoration: none; color: inherit;
 }
@@ -346,6 +351,9 @@ footer {
 /* ══════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════ */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .gallery-track { --per: 4; --gap: 24px; }
+}
 @media (max-width: 768px) {
   .nav-inner { padding: 10px 16px; flex-wrap: wrap; }
   .nav-home { font-size: 17px; white-space: nowrap; flex: 0 1 auto; min-height: 44px; }
@@ -392,7 +400,7 @@ footer {
   .section-desc { font-size: 15px; }
   .gallery-head { padding: 0 20px; }
   .gallery-ctrl { display: none; }
-  .gallery-track { --axis: 20px; gap: 16px; }
+  .gallery-track { width: 100%; padding: 8px 20px 24px; scroll-padding-left: 20px; --gap: 16px; }
   .carousel-item { flex-basis: 160px; }
   .museum-label .item-title { font-size: 15px; }
   .articles-section { padding: 0 20px 64px; }
@@ -1057,7 +1065,7 @@ picture { display: contents; }
   const prev = document.querySelector('.gallery-arrow-left');
   const next = document.querySelector('.gallery-arrow-right');
   if (!track || !prev) return;
-  const step = () => Math.max(260, track.clientWidth - 320);
+  const step = () => track.clientWidth + parseFloat(getComputedStyle(track).columnGap || 0);
   const paint = () => {
     prev.disabled = track.scrollLeft < 4;
     next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;

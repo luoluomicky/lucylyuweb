@@ -53,7 +53,7 @@
 picture { display: contents; }
 .card-viewer .card-frame img {
   display: block;
-  width: min(100%, calc(min(70vh, 720px) * 0.75));
+  width: min(100%, calc(min(var(--fit-h, 70vh), 720px) * 0.75));
   height: auto; aspect-ratio: 3 / 4;
   border-radius: 2px;
   background: #fdfaf6;
