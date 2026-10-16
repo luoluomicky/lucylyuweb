@@ -38,55 +38,60 @@
   font-style: italic;
 }
 
-/* ── Sub-section Cards ── */
-.subsections {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 40px 32px;
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+/* ── 出海笔记：最新六期卡片（2026-10-16 改：头图＋期号，取代单张入口卡与纯文字精选） ── */
+.chuhai {
+  max-width: 1200px; margin: 0 auto; padding: 8px 40px 24px;
 }
-.sub-card {
-  display: block; text-decoration: none;
-  padding: 32px 28px;
-  border: 1px solid var(--section-border); border-radius: 1px;
-  transition: border-color 0.25s;
+.block-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding-top: 32px; border-top: 1px solid var(--section-border); margin-bottom: 28px;
 }
-.sub-card:hover { border-color: var(--section-accent); }
-.sub-card h3 {
-  font-family: var(--font-serif); font-size: 22px; font-weight: 600;
-  letter-spacing: 0.03em; color: var(--section-text); margin-bottom: 8px;
+.block-head h2 {
+  font-family: var(--font-serif); font-size: 24px; font-weight: 600; letter-spacing: 0.04em;
 }
-.sub-card .sub-desc {
-  font-size: 14px; line-height: 1.7; color: var(--section-muted);
-  margin-bottom: 12px;
+.block-head h2 small {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 400; letter-spacing: 0.1em;
+  color: var(--section-muted); margin-left: 14px;
 }
-.sub-card .sub-count {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-  color: var(--section-accent);
+.block-head a {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  color: var(--section-accent); text-decoration: none; white-space: nowrap;
 }
-
-/* ── Featured Articles ── */
-.featured {
-  max-width: 1200px; margin: 0 auto;   /* 与页面主轴一致（原 800px 比上方区块窄一截） */
-  padding: 0 40px 0;
+.block-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.block-desc { font-size: 14px; color: var(--section-muted); line-height: 1.7; margin: -16px 0 28px; max-width: 560px; }
+.ch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+.ch-card { display: block; text-decoration: none; color: inherit; }
+.ch-pic {
+  aspect-ratio: 27 / 16; border-radius: 2px; overflow: hidden; background: #fcfaf7;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 10px 28px rgba(0,0,0,0.35);
+  transition: transform .3s ease;
 }
-.featured .article-lead { max-width: 760px; }
-.featured-header {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
-  color: var(--section-muted); text-transform: uppercase;
-  padding-top: 32px; border-top: 1px solid var(--section-border);
-  margin-bottom: 32px;
+.ch-pic img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ch-card:hover .ch-pic { transform: translateY(-3px); }
+.ch-no {
+  display: block; margin: 18px 0 8px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--section-accent);
+}
+.ch-card h3 {
+  font-family: var(--font-serif); font-size: 19px; font-weight: 600; letter-spacing: 0.03em;
+  line-height: 1.45; color: var(--section-text); margin-bottom: 8px; transition: color .2s;
+}
+.ch-card:hover h3 { color: var(--section-accent); }
+.ch-card p {
+  font-size: 13px; line-height: 1.75; color: var(--section-muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 .article-item {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--section-border);
+  display: block; text-decoration: none; color: inherit;
+  padding: 0 0 32px; border-bottom: 1px solid var(--section-border);
 }
-.article-item:first-of-type { padding-top: 0; }
 .article-item h4 {
   font-family: var(--font-serif); font-size: 22px; font-weight: 600;
-  letter-spacing: 0.03em; color: var(--section-text); margin-bottom: 8px;
+  letter-spacing: 0.03em; color: var(--section-text); margin-bottom: 8px; transition: color .2s;
 }
+.article-item:hover h4 { color: var(--section-accent); }
 .article-item .article-lead {
-  font-size: 14px; line-height: 1.7; color: var(--section-muted); max-width: 520px;
+  font-size: 14px; line-height: 1.7; color: var(--section-muted); max-width: 760px;
 }
 .article-item .article-meta {
   margin-top: 10px;
@@ -94,27 +99,19 @@
   color: var(--section-muted);
 }
 
-/* ── Method Notes · AI 协作（原 AI思考 栏目收编） ── */
-.method-notes {
-  max-width: 1200px; margin: 0 auto;
-  padding: 40px 40px 80px;
-}
-.method-notes .featured-header {
-  padding-top: 0; border-top: 0; margin-bottom: 10px;
-}
-.method-notes .method-note {
-  font-size: 12px; line-height: 1.7;
-  color: var(--section-muted); letter-spacing: 0.04em;
-  margin-bottom: 28px;
-}
-.method-notes .article-lead { max-width: 760px; }
+/* ── 方法笔记（原 AI思考 栏目 2026-10-16 并入） ── */
+.method-notes { max-width: 1200px; margin: 0 auto; padding: 40px 40px 80px; }
 
 @media (max-width: 768px) {
   .section-hero { padding: 48px 20px 36px; }
   .section-hero h1 { font-size: 36px; }
-  .subsections { grid-template-columns: 1fr; padding: 0 20px 24px; }
-  .featured { padding: 0 20px 0; }
+  .chuhai { padding: 0 20px 16px; }
+  .ch-grid { grid-template-columns: 1fr; gap: 36px; }
+  .block-head h2 small { display: block; margin: 6px 0 0; }
   .method-notes { padding: 32px 20px 64px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ch-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "工作论", "datePublished": "2026-07", "author": {"@type": "Person", "name": "Lucy Lyu", "url": "https://lucylyu.life/about/"}, "publisher": {"@type": "Person", "name": "Lucy Lyu"}, "mainEntityOfPage": "https://lucylyu.life/work/", "inLanguage": "zh-CN", "description": "工作论 — Lucy Lyu 的开源个人操作手册。B2B出海实战方法论、工具链、低熵工作流。", "image": "https://lucylyu.life/assets/images/logo-dark.png"}</script>
@@ -140,70 +137,62 @@
   <p class="section-note">不是公司宣传，不是乙方汇报，不是CEO布道。是第一人称的方法论复盘。</p>
 </header>
 
-<section class="subsections">
-  <a href="/work/chuhai/" class="sub-card" style="grid-column:1/-1;max-width:400px;justify-self:center;">
-    <h3>出海笔记</h3>
-    <p class="sub-desc">海洋科技出海实战。中东询盘、巴西破局、新加坡代理商刺刀见红——真实操盘中的经验与教训。</p>
-    <span class="sub-count">13 篇文章</span>
-  </a>
-</section>
-
-<section class="featured">
-  <p class="featured-header">精选文章</p>
-
-  <a href="/work/chuhai/21-context-not-capability/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
-    <p class="article-meta-top">出海笔记 #21 · 2026</p>
-    <h4>能力可以下载，语境不能</h4>
-    <p class="article-lead">那句让 AI 做出示意图的指令并不存在——起作用的是它在工作档案里待过。换模型不退化、装了没打开过的 skill，以及判断沉淀不下来的两种情况。</p>
-    <div class="article-meta-bottom">
-      <span>出海笔记</span>
-      <span>2026.08</span>
-    </div>
-  </a>
-
-  <a href="/work/chuhai/20-write-vs-teach/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
-    <p class="article-meta-top">出海笔记 #20 · 2026</p>
-    <h4>写得进去，不等于教得会</h4>
-    <p class="article-lead">对 AI 你有记忆写入权，但写入权是有条件的——路由问题、自知问题、三种失效三套动作，以及给 AI 写规则的四条落地。</p>
-    <div class="article-meta-bottom">
-      <span>出海笔记</span>
-      <span>2026.08</span>
-    </div>
-  </a>
-
-  <a href="/work/chuhai/19-pricing-honesty/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
-    <p class="article-meta-top">出海笔记 #19 · 2026</p>
-    <h4>定价即坦白</h4>
-    <p class="article-lead">List 价锚定、折扣有名目、裸降必换对价——报价单说出的，比你想说的多。利基仪器出海的定价纪律。</p>
-    <div class="article-meta-bottom">
-      <span>出海笔记</span>
-      <span>2026.07</span>
-    </div>
-  </a>
-
-  <a href="/work/chuhai/18-managing-ai/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
-    <h4>出海笔记 18 · 管理 AI 等于管理员工吗</h4>
-    <p class="article-lead">管理员工靠情商在现场重新推断，管理 AI 靠文档一次固化终身复用。细节对人折旧、对 AI 复利——管理 AI 练的从来不是领导力，是把世界说清楚的能力。</p>
-    <p class="article-meta"><time datetime="2026-07">2026.07</time></p>
-  </a>
-
+<section class="chuhai">
+  <div class="block-head">
+    <h2>出海笔记<small>#06 – #23</small></h2>
+    <a href="/work/chuhai/">全部文章 →</a>
+  </div>
+  <p class="block-desc">海洋科技出海实战。中东询盘、巴西破局、新加坡代理商刺刀见红——真实操盘中的经验与教训。</p>
+  <div class="ch-grid">
+    <a class="ch-card" href="/work/chuhai/23-verify-not-edit/">
+      <div class="ch-pic"><img src="/work/chuhai/images/23-card.jpg" alt="出海笔记 23 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#23 · 2026.08</span>
+      <h3>AI Agent 重排长篇 Word，最难的不是改，是验</h3>
+      <p>三十七页的技术手册交给 AI 排版，以为是下午的活，做了两天。难的不是改，是弄清楚这份文档有几层、我够得到哪一层。</p>
+    </a>
+    <a class="ch-card" href="/work/chuhai/22-found-not-reached/">
+      <div class="ch-pic"><img src="/work/chuhai/images/22-card.jpg" alt="出海笔记 22 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#22 · 2026.08</span>
+      <h3>找到你，不等于到达你</h3>
+      <p>网站上看不见的部分分两条通道：让客户找到你，和让找到你的人到达你。一张一直弹「提交成功」的询价表单，后台躺着十九条询盘。</p>
+    </a>
+    <a class="ch-card" href="/work/chuhai/21-context-not-capability/">
+      <div class="ch-pic"><img src="/work/chuhai/images/21-card.jpg" alt="出海笔记 21 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#21 · 2026.08</span>
+      <h3>能力可以下载，语境不能</h3>
+      <p>那句让 AI 做出示意图的指令并不存在——起作用的是它在工作档案里待过。换模型不退化、装了没打开过的 skill，以及判断沉淀不下来的两种情况。</p>
+    </a>
+    <a class="ch-card" href="/work/chuhai/20-write-vs-teach/">
+      <div class="ch-pic"><img src="/work/chuhai/images/20-card.jpg" alt="出海笔记 20 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#20 · 2026.08</span>
+      <h3>写得进去，不等于教得会</h3>
+      <p>对 AI 你有记忆写入权，但写入权是有条件的——路由问题、自知问题、三种失效三套动作，以及给 AI 写规则的四条落地。</p>
+    </a>
+    <a class="ch-card" href="/work/chuhai/19-pricing-honesty/">
+      <div class="ch-pic"><img src="/work/chuhai/images/19-card.jpg" alt="出海笔记 19 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#19 · 2026.07</span>
+      <h3>定价即坦白</h3>
+      <p>List 价锚定、折扣有名目、裸降必换对价——报价单说出的，比你想说的多。利基仪器出海的定价纪律。</p>
+    </a>
+    <a class="ch-card" href="/work/chuhai/18-managing-ai/">
+      <div class="ch-pic"><img src="/work/chuhai/images/18-card.jpg" alt="出海笔记 18 头图" width="960" height="569" loading="lazy" decoding="async"></div>
+      <span class="ch-no">#18 · 2026.07</span>
+      <h3>管理 AI 等于管理员工吗</h3>
+      <p>管理员工靠情商在现场重新推断，管理 AI 靠文档一次固化终身复用。细节对人折旧、对 AI 复利。</p>
+    </a>
+  </div>
 </section>
 
 <section class="method-notes">
-  <p class="featured-header">方法笔记 · AI 协作</p>
-  <p class="method-note">AI 协作实践的方法笔记，暂存于此。</p>
+  <div class="block-head">
+    <h2>方法笔记<small>AI 协作</small></h2>
+  </div>
 
-  <a href="/ai/agent-capability-lines/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
+  <a href="/ai/agent-capability-lines/" class="article-item">
     <h4>AI Agent 能力边界：从三条线长到五条</h4>
     <p class="article-lead">AI Agent 能力边界五条线：文件操作可译性、验证成本、反馈环归属、规则遵循预算、记忆写入权限——一份持续生长的人机协作工作笔记。</p>
     <p class="article-meta"><time datetime="2026-07">2026.07 · 持续更新</time></p>
   </a>
-
-  <a href="/ai/" class="article-item" style="display:block;text-decoration:none;color:inherit;">
-    <h4>AI思考 · 栏目存档</h4>
-    <p class="article-lead">AI思考 — 人机协作、Agent 能力边界与自动化工作流的思考。</p>
-  </a>
-
 </section>
 
 <footer>

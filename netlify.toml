@@ -35,7 +35,13 @@
   to = "/about/"
   status = 301
 
+# AI思考栏目 2026-10-16 并入工作论（文章 URL 不变，只撤栏目首页）
 [[redirects]]
   from = "/ai"
-  to = "/ai/"
+  to = "/work/"
+  status = 301
+
+[[redirects]]
+  from = "/ai/"
+  to = "/work/"
   status = 301

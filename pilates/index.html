@@ -162,201 +162,73 @@ nav {
 }
 
 /* ══════════════════════════════════════════════
-   HORIZONTAL SCROLL CAROUSEL GALLERY
+   CAROUSEL 书架（2026-10-16 改：左缘对齐页面主轴、右侧出血到窗口边；
+   箭头移到标题行，不压封面；去掉叠卡与描边标签）
    ══════════════════════════════════════════════ */
-.gallery-section {
-  padding: 0 0 64px;
+.gallery-section { padding: 0 0 72px; }
+.gallery-head {
+  max-width: 1200px; margin: 0 auto 20px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .gallery-label {
-  max-width: 1200px;
-  margin: 0 auto 24px;
-  padding: 0 40px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  text-transform: uppercase;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase;
 }
-
-/* ── Scroll container: constrained width forces overflow → scroll always works ── */
-.gallery-scroll-wrap {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* ── Scroll Arrow Buttons ── */
+.gallery-label a { color: var(--accent); text-decoration: none; text-transform: none; letter-spacing: 0.08em; margin-left: 10px; }
+.gallery-label a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.gallery-ctrl { display: flex; gap: 8px; }
 .gallery-arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 40px; height: 40px; border-radius: 50%;
-  background: rgba(250,248,245,0.88); border: 1px solid var(--border);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: transparent; border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 20;
-  font-size: 18px; color: var(--muted);
-  transition: all 0.2s;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer; font-size: 17px; line-height: 1; color: var(--muted);
+  transition: color .2s, border-color .2s, opacity .2s;
 }
-.gallery-arrow:hover { background: #fff; color: var(--accent); border-color: var(--accent); box-shadow: 0 2px 12px rgba(44,38,33,0.08); }
-.gallery-arrow-left  { left: 8px; }
-.gallery-arrow-right { right: 8px; }
+.gallery-arrow:hover:not([disabled]) { color: var(--accent); border-color: var(--accent); }
+.gallery-arrow[disabled] { opacity: .3; cursor: default; }
 
-/* Right-edge fade to hint more content */
-.gallery-scroll-wrap::after {
-  content: '';
-  position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 80px;
-  background: linear-gradient(to right, transparent, var(--bg) 85%);
-  pointer-events: none;
-  z-index: 10;
-}
 .gallery-track {
-  display: flex;
-  gap: 32px;
+  --axis: max(40px, calc((100vw - 1200px) / 2 + 40px));
+  display: flex; gap: 28px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--axis);
+  padding: 8px var(--axis) 28px;
   -webkit-overflow-scrolling: touch;
-  padding: 16px 40px 24px;
-  scroll-padding: 0 40px;           /* snap points respect padding */
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  scrollbar-width: none;
 }
-.gallery-track::-webkit-scrollbar {
-  height: 4px;
-}
-.gallery-track::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 2px;
-}
+.gallery-track::-webkit-scrollbar { display: none; }
 
-/* Left-edge spacer (first-item breathing room) */
-.gallery-spacer-start {
-  flex: 0 0 1px;
-  scroll-snap-align: none;
-  visibility: hidden;
-}
-.gallery-spacer-end {
-  flex: 0 0 1px;
-  scroll-snap-align: none;
-  visibility: hidden;
-}
-
-/* ── Single Carousel Item ── */
 .carousel-item {
-  flex: 0 0 auto;
+  flex: 0 0 232px;
   scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.2s;
+  text-decoration: none; color: inherit;
 }
-.carousel-item:hover { opacity: 0.85; }
-
-/* ── Card Stack Container ── */
-.card-stack {
-  position: relative;
-  width: 260px;
-  height: 347px; /* 3:4 ratio for 260px width */
-}
-
-/* Back card (bottom of stack) */
-.card-stack::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(3deg);
-  width: 248px;
-  height: 331px;
-  background: #f5f0ea;
-  border-radius: 2px;
-  box-shadow:
-    0 1px 4px rgba(44,38,33,0.10),
-    0 4px 16px rgba(44,38,33,0.07);
-  z-index: 1;
-  border: 1px solid rgba(44,38,33,0.06);
-}
-
-/* Middle card */
-.card-stack::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-2deg);
-  width: 254px;
-  height: 339px;
-  background: #f8f3ed;
-  border-radius: 2px;
-  box-shadow:
-    0 1px 4px rgba(44,38,33,0.08),
-    0 3px 12px rgba(44,38,33,0.06);
-  z-index: 2;
-  border: 1px solid rgba(44,38,33,0.05);
-}
-
-/* Front card (the actual image) */
-.card-front {
-  position: relative;
-  z-index: 3;
-  width: 260px;
-  height: 347px;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow:
-    0 2px 8px rgba(44,38,33,0.08),
-    0 8px 24px rgba(44,38,33,0.06);
-  background: var(--card-bg);
-}
-
-/* ── Passepartout (art print border) ── */
-.card-front {
-  padding: 10px;
+.ci-cover {
+  aspect-ratio: 3 / 4;
+  border-radius: 2px; overflow: hidden;
   background: #fdfaf6;
+  box-shadow: 0 1px 2px rgba(44,38,33,0.06), 0 8px 24px rgba(44,38,33,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
 }
-.card-front img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1px;
-}
+.ci-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.carousel-item:hover .ci-cover { transform: translateY(-4px); box-shadow: 0 1px 2px rgba(44,38,33,0.06), 0 14px 32px rgba(44,38,33,0.12); }
 
-/* ── Museum Label ── */
-.museum-label {
-  margin-top: 20px;
-  text-align: center;
-  max-width: 260px;
-}
+.museum-label { margin-top: 16px; }
 .museum-label .series-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-  text-transform: uppercase;
-  border: 1px solid var(--accent);
-  padding: 3px 10px;
-  border-radius: 1px;
-  margin-bottom: 10px;
+  display: block;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+  color: var(--accent); margin-bottom: 6px;
 }
 .museum-label .item-title {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  line-height: 1.35;
-  color: var(--text);
+  font-family: var(--font-serif); font-size: 16px; font-weight: 600;
+  letter-spacing: 0.02em; line-height: 1.5; color: var(--text);
   margin-bottom: 6px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
+.carousel-item:hover .item-title { color: var(--accent); }
 .museum-label .item-meta {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted);
 }
 
 /* ══════════════════════════════════════════════
@@ -431,16 +303,6 @@ nav {
   margin-bottom: 14px;
 }
 
-/* ── Drop Cap on all articles ── */
-.article-lead::first-letter {
-  float: left;
-  font-family: var(--font-serif);
-  font-size: 56px;
-  line-height: 0.85;
-  padding-right: 10px;
-  padding-top: 4px;
-  color: var(--accent);
-}
 
 .article-meta-bottom {
   display: flex;
@@ -528,13 +390,10 @@ footer {
   .section-hero { padding: 56px 20px 32px; }
   .section-title { font-size: 36px; }
   .section-desc { font-size: 15px; }
-  .gallery-track { padding: 12px 20px 20px; gap: 20px; }
-  .gallery-label { padding: 0 20px; }
-  .card-stack { width: 220px; height: 293px; }
-  .card-stack::before { width: 210px; height: 280px; top: 6px; }
-  .card-stack::after { width: 215px; height: 287px; top: 3px; }
-  .card-front { width: 220px; height: 293px; }
-  .museum-label { max-width: 220px; }
+  .gallery-head { padding: 0 20px; }
+  .gallery-ctrl { display: none; }
+  .gallery-track { --axis: 20px; gap: 16px; }
+  .carousel-item { flex-basis: 160px; }
   .museum-label .item-title { font-size: 15px; }
   .articles-section { padding: 0 20px 64px; }
   .article-item h3 { font-size: 24px; }
@@ -567,16 +426,15 @@ picture { display: contents; }
 </header>
 
 <!-- ═══════════ CAROUSEL GALLERY ═══════════ -->
-<section class="gallery-section">
-  <p class="gallery-label">Carousel 画廊 · 横向滑动浏览 · <a href="/pilates/carousel/" style="color:var(--accent);text-decoration:none;">按系列浏览全部 →</a></p>
-
-  <div class="gallery-scroll-wrap">
-  <button class="gallery-arrow gallery-arrow-left" aria-label="向左滚动">‹</button>
-  <button class="gallery-arrow gallery-arrow-right" aria-label="向右滚动">›</button>
+<section class="gallery-section" aria-label="Carousel 画廊">
+  <div class="gallery-head">
+    <p class="gallery-label">Carousel 画廊<a href="/pilates/carousel/">按系列浏览全部 →</a></p>
+    <div class="gallery-ctrl"><button class="gallery-arrow gallery-arrow-left" type="button" aria-label="向左滚动">‹</button><button class="gallery-arrow gallery-arrow-right" type="button" aria-label="向右滚动">›</button></div>
+  </div>
   <div class="gallery-track">
 
     <a href="/pilates/carousel/cant-003/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cant003-01.webp" type="image/webp"><img src="carousel-images/cant003-01.png" alt="做不到的口令 #003 吸到后背" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cant003-01.webp" type="image/webp"><img src="carousel-images/cant003-01.png" alt="做不到的口令 #003 吸到后背" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">做不到的口令 #003</span>
         <p class="item-title">普拉提吸不到后背，差在前面那一步</p>
@@ -585,7 +443,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-012/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail012-01.webp" type="image/webp"><img src="carousel-images/detail012-01.png" alt="小细节 #012 侧弯打开腋下" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail012-01.webp" type="image/webp"><img src="carousel-images/detail012-01.png" alt="小细节 #012 侧弯打开腋下" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #012</span>
         <p class="item-title">普拉提侧弯，真正打开的是腋下</p>
@@ -594,7 +452,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-014/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth014-01.webp" type="image/webp"><img src="carousel-images/truth014-01.png" alt="真相 #014 稳踏椅没把手" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth014-01.webp" type="image/webp"><img src="carousel-images/truth014-01.png" alt="真相 #014 稳踏椅没把手" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #014</span>
         <p class="item-title">普拉提稳踏椅，原版为什么没有把手</p>
@@ -603,7 +461,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/cant-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cant002-01.webp" type="image/webp"><img src="carousel-images/cant002-01.png" alt="做不到的口令 #002 大腿外旋" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cant002-01.webp" type="image/webp"><img src="carousel-images/cant002-01.png" alt="做不到的口令 #002 大腿外旋" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">做不到的口令 #002</span>
         <p class="item-title">普拉提大腿外旋做成了假胯宽，差在一步</p>
@@ -612,7 +470,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/step0-003/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/step0-003-01.webp" type="image/webp"><img src="carousel-images/step0-003-01.png" alt="第 0 步 #003 腰下垫条毛巾" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/step0-003-01.webp" type="image/webp"><img src="carousel-images/step0-003-01.png" alt="第 0 步 #003 腰下垫条毛巾" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">第 0 步 #003</span>
         <p class="item-title">普拉提腰下垫条毛巾，让肚子有东西可靠</p>
@@ -621,7 +479,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-013/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth013-01.webp" type="image/webp"><img src="carousel-images/truth013-01.png" loading="lazy" alt="真相 #013 双向延伸总纲" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth013-01.webp" type="image/webp"><img src="carousel-images/truth013-01.png" loading="lazy" alt="真相 #013 双向延伸总纲" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #013</span>
         <p class="item-title">普拉提动作记不住，其实只有一条规则</p>
@@ -630,7 +488,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-009/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail009-01.webp" type="image/webp"><img src="carousel-images/detail009-01.png" loading="lazy" alt="小细节 #009 手也有足弓" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail009-01.webp" type="image/webp"><img src="carousel-images/detail009-01.png" loading="lazy" alt="小细节 #009 手也有足弓" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #009</span>
         <p class="item-title">鼠标手做普拉提，先看手的足弓</p>
@@ -639,7 +497,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-011/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail011-01.webp" type="image/webp"><img src="carousel-images/detail011-01.png" loading="lazy" alt="小细节 #011 腋下" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail011-01.webp" type="image/webp"><img src="carousel-images/detail011-01.png" loading="lazy" alt="小细节 #011 腋下" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #011</span>
         <p class="item-title">普拉提手臂一动，先看腋下</p>
@@ -648,7 +506,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-012/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth012-01.webp" type="image/webp"><img src="carousel-images/truth012-01.png" loading="lazy" alt="真相 #012 Ped-O-Pul" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth012-01.webp" type="image/webp"><img src="carousel-images/truth012-01.png" loading="lazy" alt="真相 #012 Ped-O-Pul" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #012</span>
         <p class="item-title">普拉提站直这道题，动起来再考</p>
@@ -657,7 +515,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/cue-010/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/010-01.webp" type="image/webp"><img src="carousel-images/010-01.png" loading="lazy" alt="#010 吸气把背顶起来" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/010-01.webp" type="image/webp"><img src="carousel-images/010-01.png" loading="lazy" alt="#010 吸气把背顶起来" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">解剖学系列 #010</span>
         <p class="item-title">普拉提说把背顶起来，顶的是哪里</p>
@@ -666,7 +524,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/step0-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/step0-002-01.webp" type="image/webp"><img src="carousel-images/step0-002-01.png" loading="lazy" alt="第 0 步 #002 骨盆先往两边找" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/step0-002-01.webp" type="image/webp"><img src="carousel-images/step0-002-01.png" loading="lazy" alt="第 0 步 #002 骨盆先往两边找" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">第 0 步 #002</span>
         <p class="item-title">普拉提的第 0 步：骨盆先往两边找</p>
@@ -675,7 +533,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-011/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth011-01.webp" type="image/webp"><img src="carousel-images/truth011-01.png" loading="lazy" alt="真相 #011 平板支撑" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth011-01.webp" type="image/webp"><img src="carousel-images/truth011-01.png" loading="lazy" alt="真相 #011 平板支撑" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #011</span>
         <p class="item-title">平板支撑塌腰，普拉提先看顺序</p>
@@ -684,7 +542,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-010/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail010-01.webp" type="image/webp"><img src="carousel-images/detail010-01.png" loading="lazy" alt="小细节 #010 脖子" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail010-01.webp" type="image/webp"><img src="carousel-images/detail010-01.png" loading="lazy" alt="小细节 #010 脖子" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #010</span>
         <p class="item-title">普拉提抬头之前，还有一步</p>
@@ -693,7 +551,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/step0-001/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/step0-001-01.webp" type="image/webp"><img src="carousel-images/step0-001-01.png" loading="lazy" alt="第 0 步 #001 坐上 Reformer" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/step0-001-01.webp" type="image/webp"><img src="carousel-images/step0-001-01.png" loading="lazy" alt="第 0 步 #001 坐上 Reformer" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">第 0 步 #001</span>
         <p class="item-title">普拉提的第 0 步：坐上 Reformer</p>
@@ -702,7 +560,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-010/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth010-01.webp" type="image/webp"><img src="carousel-images/truth010-01.png" loading="lazy" alt="真相 #010 专利抽屉" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth010-01.webp" type="image/webp"><img src="carousel-images/truth010-01.png" loading="lazy" alt="真相 #010 专利抽屉" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #010</span>
         <p class="item-title">普拉提早期那台器械，挂着一摞铁块</p>
@@ -711,7 +569,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-009/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth009-01.webp" type="image/webp"><img src="carousel-images/truth009-01.png" loading="lazy" alt="真相 #009 猫式" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth009-01.webp" type="image/webp"><img src="carousel-images/truth009-01.png" loading="lazy" alt="真相 #009 猫式" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #009</span>
         <p class="item-title">最被小看的动作，是猫式</p>
@@ -720,7 +578,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-008/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth008-01.webp" type="image/webp"><img src="carousel-images/truth008-01.png" loading="lazy" alt="真相 #008 侧屈抽筋" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth008-01.webp" type="image/webp"><img src="carousel-images/truth008-01.png" loading="lazy" alt="真相 #008 侧屈抽筋" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #008</span>
         <p class="item-title">侧屈抽筋，你躲开的那一下才是重点</p>
@@ -729,7 +587,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-006/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail006-01.webp" type="image/webp"><img src="carousel-images/detail006-01.png" loading="lazy" alt="小细节 #006 眼睛" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail006-01.webp" type="image/webp"><img src="carousel-images/detail006-01.png" loading="lazy" alt="小细节 #006 眼睛" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #006</span>
         <p class="item-title">卷不起来，先看你的眼睛</p>
@@ -738,7 +596,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-004/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail004-01.webp" type="image/webp"><img src="carousel-images/detail004-01.png" loading="lazy" alt="小细节 #004 小拇指" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail004-01.webp" type="image/webp"><img src="carousel-images/detail004-01.png" loading="lazy" alt="小细节 #004 小拇指" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #004</span>
         <p class="item-title">小拇指，连着你的胸椎</p>
@@ -747,7 +605,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-003/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth003-01.webp" type="image/webp"><img src="carousel-images/truth003-01.png" loading="lazy" alt="普拉提真相 #003 ARC" width="720" height="960" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth003-01.webp" type="image/webp"><img src="carousel-images/truth003-01.png" loading="lazy" alt="普拉提真相 #003 ARC" width="720" height="960" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #003</span>
         <p class="item-title">ARC 和脊柱矫正器差在哪</p>
@@ -756,7 +614,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-007/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail007-01.webp" type="image/webp"><img src="carousel-images/detail007-01.png" alt="小细节 #007 腘绳肌" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail007-01.webp" type="image/webp"><img src="carousel-images/detail007-01.png" alt="小细节 #007 腘绳肌" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #007</span>
         <p class="item-title">腿伸不直，大腿后侧在踩刹车</p>
@@ -765,7 +623,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-005/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail005-01.webp" type="image/webp"><img src="carousel-images/detail005-01.png" alt="小细节 #005 膝盖" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail005-01.webp" type="image/webp"><img src="carousel-images/detail005-01.png" alt="小细节 #005 膝盖" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提小细节 #005</span>
         <p class="item-title">膝盖别锁死，练的是更高级的连接</p>
@@ -774,7 +632,7 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/short-006/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short006-01.webp" type="image/webp"><img src="carousel-images/short006-01.png" alt="体感短文 #006 尾骨延长" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short006-01.webp" type="image/webp"><img src="carousel-images/short006-01.png" alt="体感短文 #006 尾骨延长" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">体感短文 #006</span>
         <p class="item-title">尾骨延长，在拉长什么</p>
@@ -783,12 +641,12 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/detail-003/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail003-01.webp" type="image/webp"><img src="carousel-images/detail003-01.png" alt="小细节 #003 后脑勺" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail003-01.webp" type="image/webp"><img src="carousel-images/detail003-01.png" alt="小细节 #003 后脑勺" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">普拉提小细节 #003</span><p class="item-title">后脑勺：被忽略的第一块砖</p><p class="item-meta">8 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/short-007/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short007-01.webp" type="image/webp"><img src="carousel-images/short007-01.png" alt="体感短文 死虫式" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short007-01.webp" type="image/webp"><img src="carousel-images/short007-01.png" alt="体感短文 死虫式" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">体感短文</span>
         <p class="item-title">死虫式一做快，腰先拱</p>
@@ -797,47 +655,47 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/short-005/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short005-01.webp" type="image/webp"><img src="carousel-images/short005-01.png" alt="体感短文 绷脚" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short005-01.webp" type="image/webp"><img src="carousel-images/short005-01.png" alt="体感短文 绷脚" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">体感短文</span><p class="item-title">绷脚，脚趾头要用力吗</p><p class="item-meta">3 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/detail-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail002-01.webp" type="image/webp"><img src="carousel-images/detail002-01.png" alt="小细节 #002 脚" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail002-01.webp" type="image/webp"><img src="carousel-images/detail002-01.png" alt="小细节 #002 脚" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">普拉提小细节 #002</span><p class="item-title">勾脚和绷脚，到底在练什么</p><p class="item-meta">8 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/detail-001/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/detail001-01.webp" type="image/webp"><img src="carousel-images/detail001-01.png" alt="小细节 #001 手" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/detail001-01.webp" type="image/webp"><img src="carousel-images/detail001-01.png" alt="小细节 #001 手" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">普拉提小细节 #001</span><p class="item-title">手：最被低估的关节</p><p class="item-meta">8 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/short-004/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short004-01.webp" type="image/webp"><img src="carousel-images/short004-01.png" alt="体感短文 Roll Over" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short004-01.webp" type="image/webp"><img src="carousel-images/short004-01.png" alt="体感短文 Roll Over" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">体感短文</span><p class="item-title">普拉提 Roll Over 上不去，先看手</p><p class="item-meta">3 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/short-003/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short003-01.webp" type="image/webp"><img src="carousel-images/short003-01.png" alt="体感短文 呼吸" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short003-01.webp" type="image/webp"><img src="carousel-images/short003-01.png" alt="体感短文 呼吸" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">体感短文</span><p class="item-title">呼吸：肋骨往哪走</p><p class="item-meta">3 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-008/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-008.webp" type="image/webp"><img src="carousel-images/cover-008.png" alt="#008 屁股夹紧" width="720" height="953" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-008.webp" type="image/webp"><img src="carousel-images/cover-008.png" alt="#008 屁股夹紧" width="720" height="953" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #008</span><p class="item-title">屁股夹紧——你越用力夹，假胯宽越严重</p><p class="item-meta">9 张图版 · 2026.07</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-009/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-009.webp" type="image/webp"><img src="carousel-images/cover-009.png" alt="#009 降肋骨" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-009.webp" type="image/webp"><img src="carousel-images/cover-009.png" alt="#009 降肋骨" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #009</span><p class="item-title">比降肋骨精准一百倍的感知</p><p class="item-meta">9 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/short-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short002-01.webp" type="image/webp"><img src="carousel-images/short002-01.png" alt="体感短文 骨盆" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short002-01.webp" type="image/webp"><img src="carousel-images/short002-01.png" alt="体感短文 骨盆" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">体感短文</span><p class="item-title">坐着，骨盆在哪里？</p><p class="item-meta">3 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/truth-007/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth007-01.webp" type="image/webp"><img src="carousel-images/truth007-01.png" alt="真相 #007 桶的起源" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth007-01.webp" type="image/webp"><img src="carousel-images/truth007-01.png" alt="真相 #007 桶的起源" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label">
         <span class="series-tag">普拉提真相 #007</span>
         <p class="item-title">桶的起源：啤酒桶传说，查无实据</p>
@@ -846,47 +704,46 @@ picture { display: contents; }
     </a>
 
     <a href="/pilates/carousel/truth-006/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-006.webp" type="image/webp"><img src="carousel-images/cover-006.png" alt="#006 产后修复" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-006.webp" type="image/webp"><img src="carousel-images/cover-006.png" alt="#006 产后修复" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">普拉提真相 #006</span><p class="item-title">产后修复——别让普拉提毁了你的盆底肌</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-007/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-007.webp" type="image/webp"><img src="carousel-images/cover-007.png" alt="#007 腰贴垫子" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-007.webp" type="image/webp"><img src="carousel-images/cover-007.png" alt="#007 腰贴垫子" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #007</span><p class="item-title">普拉提腰越练越酸？别再死磕腰贴垫子了</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-005/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-005.webp" type="image/webp"><img src="carousel-images/cover-005.png" alt="#005 下巴找锁骨" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-005.webp" type="image/webp"><img src="carousel-images/cover-005.png" alt="#005 下巴找锁骨" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #005</span><p class="item-title">下巴找锁骨的力学陷阱</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-004/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-004.webp" type="image/webp"><img src="carousel-images/cover-004.png" alt="#004 沉肩" width="720" height="958" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-004.webp" type="image/webp"><img src="carousel-images/cover-004.png" alt="#004 沉肩" width="720" height="958" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #004</span><p class="item-title">别沉肩——你越沉肩膀越紧张</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/truth-001/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/truth001-01.webp" type="image/webp"><img src="carousel-images/truth001-01.png" alt="#001 四条定律" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/truth001-01.webp" type="image/webp"><img src="carousel-images/truth001-01.png" alt="#001 四条定律" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">普拉提真相 #001</span><p class="item-title">运动训练四条定律</p><p class="item-meta">7 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/short-hundred/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/short-hundred-01.webp" type="image/webp"><img src="carousel-images/short-hundred-01.png" alt="体感短文 Hundred" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/short-hundred-01.webp" type="image/webp"><img src="carousel-images/short-hundred-01.png" alt="体感短文 Hundred" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">体感短文</span><p class="item-title">Hundred 视线锚点</p><p class="item-meta">3 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-002/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/cover-002.webp" type="image/webp"><img src="carousel-images/cover-002.png" alt="#002 收紧肚子" width="720" height="959" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/cover-002.webp" type="image/webp"><img src="carousel-images/cover-002.png" alt="#002 收紧肚子" width="720" height="959" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #002</span><p class="item-title">收紧肚子——你以为在激活核心，其实在憋气</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
     <a href="/pilates/carousel/cue-001/" class="carousel-item">
-      <div class="card-stack"><div class="card-front"><picture><source srcset="carousel-images/001-01.webp" type="image/webp"><img src="carousel-images/001-01.png" alt="#001 骨盆后倾" width="720" height="960" loading="lazy" decoding="async"></picture></div></div>
+      <div class="ci-cover"><picture><source srcset="carousel-images/001-01.webp" type="image/webp"><img src="carousel-images/001-01.png" alt="#001 骨盆后倾" width="720" height="960" loading="lazy" decoding="async"></picture></div>
       <div class="museum-label"><span class="series-tag">解剖学系列 #001</span><p class="item-title">骨盆后倾——普拉提圈被滥用最多的废口令</p><p class="item-meta">8 张图版 · 2026.06</p></div>
     </a>
 
   </div>
-  </div><!-- /gallery-scroll-wrap -->
 </section>
 
 <!-- ═══════════ LONG-FORM ARTICLES ═══════════ -->
@@ -1177,13 +1034,22 @@ picture { display: contents; }
   apply('all');
 })();
 
-document.querySelectorAll('.gallery-arrow').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const track = btn.closest('.gallery-scroll-wrap').querySelector('.gallery-track');
-    const dir = btn.classList.contains('gallery-arrow-left') ? -1 : 1;
-    track.scrollBy({ left: dir * 292, behavior: 'smooth' });
-  });
-});
+(function () {
+  const track = document.querySelector('.gallery-track');
+  const prev = document.querySelector('.gallery-arrow-left');
+  const next = document.querySelector('.gallery-arrow-right');
+  if (!track || !prev) return;
+  const step = () => Math.max(260, track.clientWidth - 320);
+  const paint = () => {
+    prev.disabled = track.scrollLeft < 4;
+    next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+  };
+  prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', () => requestAnimationFrame(paint), { passive: true });
+  window.addEventListener('resize', paint);
+  paint();
+})();
 </script>
 </body>
 </html>

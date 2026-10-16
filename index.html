@@ -100,6 +100,27 @@
   color: var(--shell-muted);
 }
 
+/* ── 首屏线描（2026-10-16）：同一条线，左边躺着的脊柱，右边落成海底与地层 ── */
+.hero-art {
+  display: block; width: 100%; max-width: 680px; height: auto;
+  margin: 8px auto 4px; color: var(--shell-text); --hero-paper: var(--shell-bg);
+}
+
+/* ── 支柱卡图带：实物摆在浅色台面上 ── */
+.pillar-shelf {
+  height: 196px; margin: -40px -36px 32px;
+  background: #f3eee8;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  overflow: hidden;
+}
+.pillar-shelf img {
+  display: block; height: 152px; width: auto; border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(44,38,33,0.08), 0 8px 20px rgba(44,38,33,0.10);
+  transition: transform .3s ease;
+}
+.pillar-card:hover .pillar-shelf img { transform: translateY(-3px); }
+.pillar-card.work .pillar-shelf { background: #e9ebef; }
+
 /* ── Start Here ── */
 .start-here {
   max-width: 800px; margin: 0 auto;
@@ -152,11 +173,21 @@
 .latest-list { list-style: none; }
 .latest-list li { padding: 16px 0; border-bottom: 1px solid var(--shell-border); }
 .latest-list a {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; align-items: center; gap: 18px;
   font-size: 14px; color: var(--shell-text); text-decoration: none;
   letter-spacing: 0.02em; transition: color 0.2s;
 }
 .latest-list a:hover { color: var(--section-accent); }
+.latest-list .latest-thumb {
+  flex: 0 0 36px; height: 48px; border-radius: 1px; overflow: hidden;
+  background: #efe9e2; box-shadow: 0 1px 3px rgba(44,38,33,0.10);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 11px; color: var(--shell-muted);
+}
+.latest-list .latest-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.latest-list .latest-title { flex: 1; }
+.latest-list a:hover .latest-thumb { box-shadow: 0 2px 8px rgba(44,38,33,0.16); }
+
 .latest-list .latest-date {
   font-family: var(--font-mono);
   font-size: 10px; color: var(--shell-muted);
@@ -174,8 +205,9 @@
   .start-here { padding: 0 20px 16px; }
   .start-row { grid-template-columns: 1fr; gap: 10px; }
   .latest { padding: 0 20px 64px; }
-  .latest-list li { flex-direction: column; gap: 4px; }
-  .latest-list .latest-date { margin-left: 0; }
+  .latest-list .latest-date { display: none; }
+  .pillar-shelf { height: 168px; margin: -28px -24px 24px; }
+  .pillar-shelf img { height: 128px; }
 }
 </style>
 </head>
@@ -201,6 +233,51 @@
   <h1>Lucy Lyu</h1>
   <p class="subtitle">古典普拉提解剖架构师 / B2B 出海操盘手</p>
   <p class="tagline">在身体与商业之间，寻找底层逻辑。</p>
+  <svg class="hero-art" viewBox="0 0 760 170" role="img" aria-label="同一条线：左边是躺着的脊柱，右边落成海底与地层" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="hl-fade" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".22" stop-color="#fff"/><stop offset=".85" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="hl-m" maskUnits="userSpaceOnUse" x="360" y="0" width="380" height="170"><rect x="360" y="0" width="380" height="170" fill="url(#hl-fade)"/></mask></defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="34" y1="138" x2="352" y2="138" stroke-width="1" opacity=".22"/>
+  <path d="M24.0,72.3 L26.0,72.9 L28.0,73.4 L30.0,74.0 L32.0,74.6 L34.0,75.1 L36.0,75.7 L38.0,76.3 L40.0,76.8 L42.0,77.4 L44.0,77.9 L46.0,78.4 L48.0,79.0 L50.0,79.5 L52.0,80.0 L54.0,80.5 L56.0,81.0 L58.0,81.4 L60.0,81.9 L62.0,82.3 L64.0,82.8 L66.0,83.2 L68.0,83.6 L70.0,84.0 L72.0,84.3 L74.0,84.7 L76.0,85.0 L78.0,85.4 L80.0,85.7 L82.0,85.9 L84.0,86.2 L86.0,86.5 L88.0,86.7 L90.0,86.9 L92.0,87.1 L94.0,87.3 L96.0,87.4 L98.0,87.5 L100.0,87.6 L102.0,87.7 L104.0,87.8 L106.0,87.9 L108.0,87.9 L110.0,87.9 L112.0,87.9 L114.0,87.8 L116.0,87.8 L118.0,87.7 L120.0,87.6 L122.0,87.5 L124.0,87.4 L126.0,87.2 L128.0,87.1 L130.0,86.9 L132.0,86.7 L134.0,86.5 L136.0,86.2 L138.0,86.0 L140.0,85.7 L142.0,85.4 L144.0,85.1 L146.0,84.8 L148.0,84.4 L150.0,84.1 L152.0,83.7 L154.0,83.4 L156.0,83.0 L158.0,82.6 L160.0,82.2 L162.0,81.8 L164.0,81.3 L166.0,80.9 L168.0,80.5 L170.0,80.0 L172.0,79.5 L174.0,79.1 L176.0,78.6 L178.0,78.1 L180.0,77.6 L182.0,77.2 L184.0,76.7 L186.0,76.2 L188.0,75.7 L190.0,75.2 L192.0,74.7 L194.0,74.2 L196.0,73.8 L198.0,73.3 L200.0,72.8 L202.0,72.3 L204.0,71.8 L206.0,71.4 L208.0,70.9 L210.0,70.5 L212.0,70.0 L214.0,69.6 L216.0,69.1 L218.0,68.7 L220.0,68.3 L222.0,67.9 L224.0,67.5 L226.0,67.1 L228.0,66.8 L230.0,66.4 L232.0,66.1 L234.0,65.7 L236.0,65.4 L238.0,65.1 L240.0,64.8 L242.0,64.6 L244.0,64.3 L246.0,64.0 L248.0,63.8 L250.0,63.6 L252.0,63.4 L254.0,63.2 L256.0,63.1 L258.0,62.9 L260.0,62.8 L262.0,62.7 L264.0,62.6 L266.0,62.5 L268.0,62.4 L270.0,62.4 L272.0,62.4 L274.0,62.4 L276.0,62.4 L278.0,62.4 L280.0,62.4 L282.0,62.5 L284.0,62.6 L286.0,62.6 L288.0,62.7 L290.0,62.9 L292.0,63.0 L294.0,63.2 L296.0,63.3 L298.0,63.5 L300.0,63.7 L302.0,63.9 L304.0,64.1 L306.0,64.4 L308.0,64.6 L310.0,64.9 L312.0,65.2 L314.0,65.5 L316.0,65.8 L318.0,66.1 L320.0,66.4 L322.0,66.7 L324.0,67.0 L326.0,67.4 L328.0,67.7 L330.0,68.1 L332.0,68.5 L334.0,68.8 L336.0,69.2 L338.0,69.6 L340.0,70.0 L342.0,70.4 L344.0,70.8 L346.0,71.2 L348.0,71.6 L350.0,72.0 L352.0,72.4 L354.0,72.8 L356.0,73.2 L358.0,73.6 L360.0,74.0 L362.0,74.3 L364.0,74.7 L366.0,75.0 L368.0,75.3 L370.0,75.7 L372.0,76.0 L374.0,76.3 L376.0,76.6 L378.0,76.9 L380.0,77.2 L382.0,77.5 L384.0,77.8 L386.0,78.1 L388.0,78.4 L390.0,78.6 L392.0,78.8 L394.0,79.1 L396.0,79.3 L398.0,79.5 L400.0,79.7 L402.0,79.9 L404.0,80.0 L406.0,80.2 L408.0,80.3 L410.0,80.5 L412.0,80.6 L414.0,80.7 L416.0,80.8 L418.0,80.9 L420.0,80.9 L422.0,81.0 L424.0,81.0 L426.0,81.0 L428.0,81.1 L430.0,81.1 L432.0,81.1 L434.0,81.0 L436.0,81.0 L438.0,81.0 L440.0,81.0 L442.0,80.9 L444.0,80.9 L446.0,80.8 L448.0,80.7 L450.0,80.7 L452.0,80.6 L454.0,80.5 L456.0,80.4 L458.0,80.4 L460.0,80.3 L462.0,80.2 L464.0,80.1 L466.0,80.1 L468.0,80.0 L470.0,79.9 L472.0,79.9 L474.0,79.8 L476.0,79.7 L478.0,79.7 L480.0,79.6 L482.0,79.6 L484.0,79.5 L486.0,79.5 L488.0,79.5 L490.0,79.5 L492.0,79.5 L494.0,79.5 L496.0,79.5 L498.0,79.5 L500.0,79.5 L502.0,79.5 L504.0,79.5 L506.0,79.6 L508.0,79.6 L510.0,79.7 L512.0,79.7 L514.0,79.8 L516.0,79.9 L518.0,79.9 L520.0,80.0 L522.0,80.1 L524.0,80.2 L526.0,80.2 L528.0,80.3 L530.0,80.4 L532.0,80.5 L534.0,80.6 L536.0,80.7 L538.0,80.8 L540.0,80.9 L542.0,80.9 L544.0,81.0 L546.0,81.1 L548.0,81.2 L550.0,81.2 L552.0,81.3 L554.0,81.3 L556.0,81.4 L558.0,81.4 L560.0,81.4 L562.0,81.5 L564.0,81.5 L566.0,81.5 L568.0,81.5 L570.0,81.4 L572.0,81.4 L574.0,81.4 L576.0,81.3 L578.0,81.3 L580.0,81.2 L582.0,81.1 L584.0,81.0 L586.0,80.9 L588.0,80.8 L590.0,80.7 L592.0,80.5 L594.0,80.4 L596.0,80.2 L598.0,80.1 L600.0,79.9 L602.0,79.7 L604.0,79.5 L606.0,79.3 L608.0,79.1 L610.0,78.9 L612.0,78.7 L614.0,78.5 L616.0,78.2 L618.0,78.0 L620.0,77.8 L622.0,77.6 L624.0,77.3 L626.0,77.1 L628.0,76.9 L630.0,76.7 L632.0,76.4 L634.0,76.2 L636.0,76.0 L638.0,75.8 L640.0,75.6 L642.0,75.4 L644.0,75.2 L646.0,75.1 L648.0,74.9 L650.0,74.7 L652.0,74.6 L654.0,74.4 L656.0,74.3 L658.0,74.2 L660.0,74.1 L662.0,74.0 L664.0,74.0 L666.0,73.9 L668.0,73.9 L670.0,73.8 L672.0,73.8 L674.0,73.8 L676.0,73.8 L678.0,73.9 L680.0,73.9 L682.0,74.0 L684.0,74.0 L686.0,74.1 L688.0,74.2 L690.0,74.3 L692.0,74.5 L694.0,74.6 L696.0,74.7 L698.0,74.9 L700.0,75.1 L702.0,75.3 L704.0,75.5 L706.0,75.7 L708.0,75.9 L710.0,76.1 L712.0,76.3 L714.0,76.5 L716.0,76.8 L718.0,77.0 L720.0,77.3 L722.0,77.5 L724.0,77.8 L726.0,78.0 L728.0,78.3 L730.0,78.5 L732.0,78.8 L734.0,79.0 L736.0,79.2" stroke-width="1.1" opacity=".5"/>
+  <g mask="url(#hl-m)">
+  <path d="M360.0,91.0 L362.0,91.3 L364.0,91.7 L366.0,92.0 L368.0,92.3 L370.0,92.7 L372.0,93.0 L374.0,93.3 L376.0,93.6 L378.0,93.9 L380.0,94.2 L382.0,94.5 L384.0,94.8 L386.0,95.1 L388.0,95.4 L390.0,95.6 L392.0,95.8 L394.0,96.1 L396.0,96.3 L398.0,96.5 L400.0,96.7 L402.0,96.9 L404.0,97.0 L406.0,97.2 L408.0,97.3 L410.0,97.5 L412.0,97.6 L414.0,97.7 L416.0,97.8 L418.0,97.9 L420.0,97.9 L422.0,98.0 L424.0,98.0 L426.0,98.0 L428.0,98.1 L430.0,98.1 L432.0,98.1 L434.0,98.0 L436.0,98.0 L438.0,98.0 L440.0,98.0 L442.0,97.9 L444.0,97.9 L446.0,97.8 L448.0,97.7 L450.0,97.7 L452.0,97.6 L454.0,97.5 L456.0,97.4 L458.0,97.4 L460.0,97.3 L462.0,97.2 L464.0,97.1 L466.0,97.1 L468.0,97.0 L470.0,96.9 L472.0,96.9 L474.0,96.8 L476.0,96.7 L478.0,96.7 L480.0,96.6 L482.0,96.6 L484.0,96.5 L486.0,96.5 L488.0,96.5 L490.0,96.5 L492.0,96.5 L494.0,96.5 L496.0,96.5 L498.0,96.5 L500.0,96.5 L502.0,96.5 L504.0,96.5 L506.0,96.6 L508.0,96.6 L510.0,96.7 L512.0,96.7 L514.0,96.8 L516.0,96.9 L518.0,96.9 L520.0,97.0 L522.0,97.1 L524.0,97.2 L526.0,97.2 L528.0,97.3 L530.0,97.4 L532.0,97.5 L534.0,97.6 L536.0,97.7 L538.0,97.8 L540.0,97.9 L542.0,97.9 L544.0,98.0 L546.0,98.1 L548.0,98.2 L550.0,98.2 L552.0,98.3 L554.0,98.3 L556.0,98.4 L558.0,98.4 L560.0,98.4 L562.0,98.5 L564.0,98.5 L566.0,98.5 L568.0,98.5 L570.0,98.4 L572.0,98.4 L574.0,98.4 L576.0,98.3 L578.0,98.3 L580.0,98.2 L582.0,98.1 L584.0,98.0 L586.0,97.9 L588.0,97.8 L590.0,97.7 L592.0,97.5 L594.0,97.4 L596.0,97.2 L598.0,97.1 L600.0,96.9 L602.0,96.7 L604.0,96.5 L606.0,96.3 L608.0,96.1 L610.0,95.9 L612.0,95.7 L614.0,95.5 L616.0,95.2 L618.0,95.0 L620.0,94.8 L622.0,94.6 L624.0,94.3 L626.0,94.1 L628.0,93.9 L630.0,93.7 L632.0,93.4 L634.0,93.2 L636.0,93.0 L638.0,92.8 L640.0,92.6 L642.0,92.4 L644.0,92.2 L646.0,92.1 L648.0,91.9 L650.0,91.7 L652.0,91.6 L654.0,91.4 L656.0,91.3 L658.0,91.2 L660.0,91.1 L662.0,91.0 L664.0,91.0 L666.0,90.9 L668.0,90.9 L670.0,90.8 L672.0,90.8 L674.0,90.8 L676.0,90.8 L678.0,90.9 L680.0,90.9 L682.0,91.0 L684.0,91.0 L686.0,91.1 L688.0,91.2 L690.0,91.3 L692.0,91.5 L694.0,91.6 L696.0,91.7 L698.0,91.9 L700.0,92.1 L702.0,92.3 L704.0,92.5 L706.0,92.7 L708.0,92.9 L710.0,93.1 L712.0,93.3 L714.0,93.5 L716.0,93.8 L718.0,94.0 L720.0,94.3 L722.0,94.5 L724.0,94.8 L726.0,95.0 L728.0,95.3 L730.0,95.5 L732.0,95.8 L734.0,96.0 L736.0,96.2 L738.0,96.5 L740.0,96.7" stroke-width="1" opacity="0.32"/>
+  <path d="M360.0,106.0 L362.0,106.3 L364.0,106.7 L366.0,107.0 L368.0,107.3 L370.0,107.7 L372.0,108.0 L374.0,108.3 L376.0,108.6 L378.0,108.9 L380.0,109.2 L382.0,109.5 L384.0,109.8 L386.0,110.1 L388.0,110.4 L390.0,110.6 L392.0,110.8 L394.0,111.1 L396.0,111.3 L398.0,111.5 L400.0,111.7 L402.0,111.9 L404.0,112.0 L406.0,112.2 L408.0,112.3 L410.0,112.5 L412.0,112.6 L414.0,112.7 L416.0,112.8 L418.0,112.9 L420.0,112.9 L422.0,113.0 L424.0,113.0 L426.0,113.0 L428.0,113.1 L430.0,113.1 L432.0,113.1 L434.0,113.0 L436.0,113.0 L438.0,113.0 L440.0,113.0 L442.0,112.9 L444.0,112.9 L446.0,112.8 L448.0,112.7 L450.0,112.7 L452.0,112.6 L454.0,112.5 L456.0,112.4 L458.0,112.4 L460.0,112.3 L462.0,112.2 L464.0,112.1 L466.0,112.1 L468.0,112.0 L470.0,111.9 L472.0,111.9 L474.0,111.8 L476.0,111.7 L478.0,111.7 L480.0,111.6 L482.0,111.6 L484.0,111.5 L486.0,111.5 L488.0,111.5 L490.0,111.5 L492.0,111.5 L494.0,111.5 L496.0,111.5 L498.0,111.5 L500.0,111.5 L502.0,111.5 L504.0,111.5 L506.0,111.6 L508.0,111.6 L510.0,111.7 L512.0,111.7 L514.0,111.8 L516.0,111.9 L518.0,111.9 L520.0,112.0 L522.0,112.1 L524.0,112.2 L526.0,112.2 L528.0,112.3 L530.0,112.4 L532.0,112.5 L534.0,112.6 L536.0,112.7 L538.0,112.8 L540.0,112.9 L542.0,112.9 L544.0,113.0 L546.0,113.1 L548.0,113.2 L550.0,113.2 L552.0,113.3 L554.0,113.3 L556.0,113.4 L558.0,113.4 L560.0,113.4 L562.0,113.5 L564.0,113.5 L566.0,113.5 L568.0,113.5 L570.0,113.4 L572.0,113.4 L574.0,113.4 L576.0,113.3 L578.0,113.3 L580.0,113.2 L582.0,113.1 L584.0,113.0 L586.0,112.9 L588.0,112.8 L590.0,112.7 L592.0,112.5 L594.0,112.4 L596.0,112.2 L598.0,112.1 L600.0,111.9 L602.0,111.7 L604.0,111.5 L606.0,111.3 L608.0,111.1 L610.0,110.9 L612.0,110.7 L614.0,110.5 L616.0,110.2 L618.0,110.0 L620.0,109.8 L622.0,109.6 L624.0,109.3 L626.0,109.1 L628.0,108.9 L630.0,108.7 L632.0,108.4 L634.0,108.2 L636.0,108.0 L638.0,107.8 L640.0,107.6 L642.0,107.4 L644.0,107.2 L646.0,107.1 L648.0,106.9 L650.0,106.7 L652.0,106.6 L654.0,106.4 L656.0,106.3 L658.0,106.2 L660.0,106.1 L662.0,106.0 L664.0,106.0 L666.0,105.9 L668.0,105.9 L670.0,105.8 L672.0,105.8 L674.0,105.8 L676.0,105.8 L678.0,105.9 L680.0,105.9 L682.0,106.0 L684.0,106.0 L686.0,106.1 L688.0,106.2 L690.0,106.3 L692.0,106.5 L694.0,106.6 L696.0,106.7 L698.0,106.9 L700.0,107.1 L702.0,107.3 L704.0,107.5 L706.0,107.7 L708.0,107.9 L710.0,108.1 L712.0,108.3 L714.0,108.5 L716.0,108.8 L718.0,109.0 L720.0,109.3 L722.0,109.5 L724.0,109.8 L726.0,110.0 L728.0,110.3 L730.0,110.5 L732.0,110.8 L734.0,111.0 L736.0,111.2 L738.0,111.5 L740.0,111.7" stroke-width="1" opacity="0.24"/>
+  <path d="M360.0,123.0 L362.0,123.3 L364.0,123.7 L366.0,124.0 L368.0,124.3 L370.0,124.7 L372.0,125.0 L374.0,125.3 L376.0,125.6 L378.0,125.9 L380.0,126.2 L382.0,126.5 L384.0,126.8 L386.0,127.1 L388.0,127.4 L390.0,127.6 L392.0,127.8 L394.0,128.1 L396.0,128.3 L398.0,128.5 L400.0,128.7 L402.0,128.9 L404.0,129.0 L406.0,129.2 L408.0,129.3 L410.0,129.5 L412.0,129.6 L414.0,129.7 L416.0,129.8 L418.0,129.9 L420.0,129.9 L422.0,130.0 L424.0,130.0 L426.0,130.0 L428.0,130.1 L430.0,130.1 L432.0,130.1 L434.0,130.0 L436.0,130.0 L438.0,130.0 L440.0,130.0 L442.0,129.9 L444.0,129.9 L446.0,129.8 L448.0,129.7 L450.0,129.7 L452.0,129.6 L454.0,129.5 L456.0,129.4 L458.0,129.4 L460.0,129.3 L462.0,129.2 L464.0,129.1 L466.0,129.1 L468.0,129.0 L470.0,128.9 L472.0,128.9 L474.0,128.8 L476.0,128.7 L478.0,128.7 L480.0,128.6 L482.0,128.6 L484.0,128.5 L486.0,128.5 L488.0,128.5 L490.0,128.5 L492.0,128.5 L494.0,128.5 L496.0,128.5 L498.0,128.5 L500.0,128.5 L502.0,128.5 L504.0,128.5 L506.0,128.6 L508.0,128.6 L510.0,128.7 L512.0,128.7 L514.0,128.8 L516.0,128.9 L518.0,128.9 L520.0,129.0 L522.0,129.1 L524.0,129.2 L526.0,129.2 L528.0,129.3 L530.0,129.4 L532.0,129.5 L534.0,129.6 L536.0,129.7 L538.0,129.8 L540.0,129.9 L542.0,129.9 L544.0,130.0 L546.0,130.1 L548.0,130.2 L550.0,130.2 L552.0,130.3 L554.0,130.3 L556.0,130.4 L558.0,130.4 L560.0,130.4 L562.0,130.5 L564.0,130.5 L566.0,130.5 L568.0,130.5 L570.0,130.4 L572.0,130.4 L574.0,130.4 L576.0,130.3 L578.0,130.3 L580.0,130.2 L582.0,130.1 L584.0,130.0 L586.0,129.9 L588.0,129.8 L590.0,129.7 L592.0,129.5 L594.0,129.4 L596.0,129.2 L598.0,129.1 L600.0,128.9 L602.0,128.7 L604.0,128.5 L606.0,128.3 L608.0,128.1 L610.0,127.9 L612.0,127.7 L614.0,127.5 L616.0,127.2 L618.0,127.0 L620.0,126.8 L622.0,126.6 L624.0,126.3 L626.0,126.1 L628.0,125.9 L630.0,125.7 L632.0,125.4 L634.0,125.2 L636.0,125.0 L638.0,124.8 L640.0,124.6 L642.0,124.4 L644.0,124.2 L646.0,124.1 L648.0,123.9 L650.0,123.7 L652.0,123.6 L654.0,123.4 L656.0,123.3 L658.0,123.2 L660.0,123.1 L662.0,123.0 L664.0,123.0 L666.0,122.9 L668.0,122.9 L670.0,122.8 L672.0,122.8 L674.0,122.8 L676.0,122.8 L678.0,122.9 L680.0,122.9 L682.0,123.0 L684.0,123.0 L686.0,123.1 L688.0,123.2 L690.0,123.3 L692.0,123.5 L694.0,123.6 L696.0,123.7 L698.0,123.9 L700.0,124.1 L702.0,124.3 L704.0,124.5 L706.0,124.7 L708.0,124.9 L710.0,125.1 L712.0,125.3 L714.0,125.5 L716.0,125.8 L718.0,126.0 L720.0,126.3 L722.0,126.5 L724.0,126.8 L726.0,127.0 L728.0,127.3 L730.0,127.5 L732.0,127.8 L734.0,128.0 L736.0,128.2 L738.0,128.5 L740.0,128.7" stroke-width="1" opacity="0.16"/>
+  <path d="M360.0,142.0 L362.0,142.3 L364.0,142.7 L366.0,143.0 L368.0,143.3 L370.0,143.7 L372.0,144.0 L374.0,144.3 L376.0,144.6 L378.0,144.9 L380.0,145.2 L382.0,145.5 L384.0,145.8 L386.0,146.1 L388.0,146.4 L390.0,146.6 L392.0,146.8 L394.0,147.1 L396.0,147.3 L398.0,147.5 L400.0,147.7 L402.0,147.9 L404.0,148.0 L406.0,148.2 L408.0,148.3 L410.0,148.5 L412.0,148.6 L414.0,148.7 L416.0,148.8 L418.0,148.9 L420.0,148.9 L422.0,149.0 L424.0,149.0 L426.0,149.0 L428.0,149.1 L430.0,149.1 L432.0,149.1 L434.0,149.0 L436.0,149.0 L438.0,149.0 L440.0,149.0 L442.0,148.9 L444.0,148.9 L446.0,148.8 L448.0,148.7 L450.0,148.7 L452.0,148.6 L454.0,148.5 L456.0,148.4 L458.0,148.4 L460.0,148.3 L462.0,148.2 L464.0,148.1 L466.0,148.1 L468.0,148.0 L470.0,147.9 L472.0,147.9 L474.0,147.8 L476.0,147.7 L478.0,147.7 L480.0,147.6 L482.0,147.6 L484.0,147.5 L486.0,147.5 L488.0,147.5 L490.0,147.5 L492.0,147.5 L494.0,147.5 L496.0,147.5 L498.0,147.5 L500.0,147.5 L502.0,147.5 L504.0,147.5 L506.0,147.6 L508.0,147.6 L510.0,147.7 L512.0,147.7 L514.0,147.8 L516.0,147.9 L518.0,147.9 L520.0,148.0 L522.0,148.1 L524.0,148.2 L526.0,148.2 L528.0,148.3 L530.0,148.4 L532.0,148.5 L534.0,148.6 L536.0,148.7 L538.0,148.8 L540.0,148.9 L542.0,148.9 L544.0,149.0 L546.0,149.1 L548.0,149.2 L550.0,149.2 L552.0,149.3 L554.0,149.3 L556.0,149.4 L558.0,149.4 L560.0,149.4 L562.0,149.5 L564.0,149.5 L566.0,149.5 L568.0,149.5 L570.0,149.4 L572.0,149.4 L574.0,149.4 L576.0,149.3 L578.0,149.3 L580.0,149.2 L582.0,149.1 L584.0,149.0 L586.0,148.9 L588.0,148.8 L590.0,148.7 L592.0,148.5 L594.0,148.4 L596.0,148.2 L598.0,148.1 L600.0,147.9 L602.0,147.7 L604.0,147.5 L606.0,147.3 L608.0,147.1 L610.0,146.9 L612.0,146.7 L614.0,146.5 L616.0,146.2 L618.0,146.0 L620.0,145.8 L622.0,145.6 L624.0,145.3 L626.0,145.1 L628.0,144.9 L630.0,144.7 L632.0,144.4 L634.0,144.2 L636.0,144.0 L638.0,143.8 L640.0,143.6 L642.0,143.4 L644.0,143.2 L646.0,143.1 L648.0,142.9 L650.0,142.7 L652.0,142.6 L654.0,142.4 L656.0,142.3 L658.0,142.2 L660.0,142.1 L662.0,142.0 L664.0,142.0 L666.0,141.9 L668.0,141.9 L670.0,141.8 L672.0,141.8 L674.0,141.8 L676.0,141.8 L678.0,141.9 L680.0,141.9 L682.0,142.0 L684.0,142.0 L686.0,142.1 L688.0,142.2 L690.0,142.3 L692.0,142.5 L694.0,142.6 L696.0,142.7 L698.0,142.9 L700.0,143.1 L702.0,143.3 L704.0,143.5 L706.0,143.7 L708.0,143.9 L710.0,144.1 L712.0,144.3 L714.0,144.5 L716.0,144.8 L718.0,145.0 L720.0,145.3 L722.0,145.5 L724.0,145.8 L726.0,146.0 L728.0,146.3 L730.0,146.5 L732.0,146.8 L734.0,147.0 L736.0,147.2 L738.0,147.5 L740.0,147.7" stroke-width="1" opacity="0.1"/>
+  </g>
+  <g transform="translate(46.0,78.4) rotate(14.8)" opacity=".75"><rect x="-4.0" y="-5.4" width="7.9" height="10.8" rx="1.9" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-5.4 L-1.4,-11.2" stroke-width="1.05"/></g>
+  <g transform="translate(67.5,83.5) rotate(11.3)" opacity=".75"><rect x="-4.1" y="-5.6" width="8.3" height="11.3" rx="2.0" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-5.6 L-1.5,-11.6" stroke-width="1.05"/></g>
+  <g transform="translate(89.0,86.8) rotate(6.0)" opacity=".75"><rect x="-4.3" y="-5.9" width="8.6" height="11.7" rx="2.0" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-5.9 L-1.6,-12.1" stroke-width="1.05"/></g>
+  <g transform="translate(110.5,87.9) rotate(-0.2)" opacity=".75"><rect x="-4.5" y="-6.1" width="8.9" height="12.2" rx="2.1" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-6.1 L-1.6,-12.6" stroke-width="1.05"/></g>
+  <g transform="translate(132.0,86.7) rotate(-6.1)" opacity=".75"><rect x="-4.6" y="-6.3" width="9.3" height="12.6" rx="2.2" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-6.3 L-1.7,-13.1" stroke-width="1.05"/></g>
+  <g transform="translate(153.5,83.5) rotate(-10.7)" opacity=".75"><rect x="-4.8" y="-6.6" width="9.6" height="13.1" rx="2.3" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-6.6 L-1.7,-13.5" stroke-width="1.05"/></g>
+  <g transform="translate(175.0,78.8) rotate(-13.2)" opacity=".75"><rect x="-5.0" y="-6.8" width="10.0" height="13.6" rx="2.4" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-6.8 L-1.8,-14.0" stroke-width="1.05"/></g>
+  <g transform="translate(196.5,73.6) rotate(-13.6)" opacity=".75"><rect x="-5.1" y="-7.0" width="10.3" height="14.0" rx="2.4" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-7.0 L-1.9,-14.5" stroke-width="1.05"/></g>
+  <g transform="translate(218.0,68.7) rotate(-11.8)" opacity=".75"><rect x="-5.3" y="-7.2" width="10.6" height="14.5" rx="2.5" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-7.2 L-1.9,-15.0" stroke-width="1.05"/></g>
+  <g transform="translate(239.5,64.9) rotate(-8.1)" opacity=".75"><rect x="-5.5" y="-7.5" width="11.0" height="15.0" rx="2.6" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-7.5 L-2.0,-15.5" stroke-width="1.05"/></g>
+  <g transform="translate(261.0,62.7) rotate(-3.2)" opacity=".75"><rect x="-5.7" y="-7.7" width="11.3" height="15.4" rx="2.7" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-7.7 L-2.1,-15.9" stroke-width="1.05"/></g>
+  <g transform="translate(282.5,62.5) rotate(2.0)" opacity=".75"><rect x="-5.8" y="-7.9" width="11.6" height="15.9" rx="2.8" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-7.9 L-2.1,-16.4" stroke-width="1.05"/></g>
+  <g transform="translate(304.0,64.1) rotate(6.6)" opacity=".75"><rect x="-6.0" y="-8.2" width="12.0" height="16.3" rx="2.8" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-8.2 L-2.2,-16.9" stroke-width="1.05"/></g>
+  <g transform="translate(325.5,67.3) rotate(9.9)" opacity=".75"><rect x="-6.2" y="-8.4" width="12.3" height="16.8" rx="2.9" stroke-width="1.05" fill="var(--hero-paper, #fcfaf7)"/><path d="M0,-8.4 L-2.2,-17.4" stroke-width="1.05"/></g>
+  <line x1="110.5" y1="87.9" x2="128.5" y2="138" stroke="#B85D43" stroke-width=".8" opacity=".5"/>
+  <line x1="196.5" y1="73.6" x2="214.5" y2="138" stroke="#B85D43" stroke-width=".8" opacity=".5"/>
+  <line x1="282.5" y1="62.5" x2="300.5" y2="138" stroke="#B85D43" stroke-width=".8" opacity=".5"/>
+  </g>
+  <circle cx="110.5" cy="87.9" r="2.8" fill="#B85D43"/>
+  <circle cx="128.5" cy="138" r="2" fill="#B85D43" opacity=".6"/>
+  <circle cx="196.5" cy="73.6" r="2.8" fill="#B85D43"/>
+  <circle cx="214.5" cy="138" r="2" fill="#B85D43" opacity=".6"/>
+  <circle cx="282.5" cy="62.5" r="2.8" fill="#B85D43"/>
+  <circle cx="300.5" cy="138" r="2" fill="#B85D43" opacity=".6"/>
+  <g fill="none" stroke="#5B7FBF" stroke-linecap="round">
+  <path d="M573.1,25.2 A16,16 0 0 1 546.9,25.2" stroke-width="1.05" opacity="0.75"/>
+  <path d="M584.6,33.2 A30,30 0 0 1 535.4,33.2" stroke-width="1.05" opacity="0.55"/>
+  <path d="M596.0,41.2 A44,44 0 0 1 524.0,41.2" stroke-width="1.05" opacity="0.36"/>
+  <line x1="560" y1="16" x2="560" y2="113.4" stroke-width=".8" stroke-dasharray="2 4" opacity=".5"/>
+  </g>
+  <circle cx="560" cy="16" r="3" fill="#5B7FBF"/>
+  <circle cx="560" cy="81.4" r="2.8" fill="#5B7FBF"/>
+  <circle cx="560" cy="113.4" r="2.4" fill="#5B7FBF"/>
+  </svg>
   <hr>
   <blockquote>
     <p>欢迎来到我的数字庭院。</p>
@@ -213,6 +290,7 @@
 <!-- ═══════════ TWO PILLARS ═══════════ -->
 <section class="pillars">
   <a href="/pilates/" class="pillar-card pilates">
+    <div class="pillar-shelf" aria-hidden="true"><img src="/pilates/carousel-images/cant003-01.webp" alt="" width="114" height="152" loading="lazy" decoding="async"><img src="/pilates/carousel-images/detail012-01.webp" alt="" width="114" height="152" loading="lazy" decoding="async"><img src="/pilates/carousel-images/truth014-01.webp" alt="" width="114" height="152" loading="lazy" decoding="async"></div>
     <p class="pillar-eyebrow">Pilates Archive</p>
     <h2>普拉提</h2>
     <p class="pillar-sub">向内剥离</p>
@@ -220,6 +298,7 @@
     <span class="pillar-arrow">进入栏目 →</span>
   </a>
   <a href="/work/" class="pillar-card work">
+    <div class="pillar-shelf" aria-hidden="true"><img src="/work/chuhai/images/23-card.jpg" alt="" width="256" height="152" loading="lazy" decoding="async"></div>
     <p class="pillar-eyebrow">Work Philosophy</p>
     <h2>工作论</h2>
     <p class="pillar-sub">向外构建</p>
@@ -263,15 +342,15 @@
 <section class="latest">
   <p class="latest-header">最近更新</p>
   <ul class="latest-list">
-    <li><a href="/pilates/carousel/cant-003/"><span>做不到的口令 #003 · 普拉提吸不到后背，差在前面那一步</span><span class="latest-date">2026.10</span></a></li>
-    <li><a href="/pilates/carousel/detail-012/"><span>普拉提小细节 #012 · 普拉提侧弯，真正打开的是腋下</span><span class="latest-date">2026.10</span></a></li>
-    <li><a href="/pilates/carousel/truth-014/"><span>普拉提真相 #014 · 普拉提稳踏椅，原版为什么没有把手</span><span class="latest-date">2026.10</span></a></li>
-    <li><a href="/pilates/carousel/cant-002/"><span>做不到的口令 #002 · 普拉提大腿外旋做成了假胯宽，差在一步</span><span class="latest-date">2026.09</span></a></li>
-    <li><a href="/pilates/articles/parents-pilates/"><span>给爸妈选普拉提课，先问动作错了会怎样（长文）</span><span class="latest-date">2026.09</span></a></li>
-    <li><a href="/pilates/carousel/step0-003/"><span>第 0 步 #003 · 普拉提腰下垫条毛巾，让肚子有东西可靠</span><span class="latest-date">2026.09</span></a></li>
-    <li><a href="/pilates/carousel/truth-013/"><span>普拉提真相 #013 · 普拉提动作记不住，其实只有一条规则</span><span class="latest-date">2026.09</span></a></li>
-    <li><a href="/pilates/carousel/detail-009/"><span>普拉提小细节 #009 · 鼠标手做普拉提，先看手的足弓</span><span class="latest-date">2026.09</span></a></li>
-    <li><a href="/pilates/carousel/detail-011/"><span>普拉提小细节 #011 · 普拉提手臂一动，先看腋下</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/carousel/cant-003/"><span class="latest-thumb"><img src="/pilates/carousel-images/cant003-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">做不到的口令 #003 · 普拉提吸不到后背，差在前面那一步</span><span class="latest-date">2026.10</span></a></li>
+    <li><a href="/pilates/carousel/detail-012/"><span class="latest-thumb"><img src="/pilates/carousel-images/detail012-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">普拉提小细节 #012 · 普拉提侧弯，真正打开的是腋下</span><span class="latest-date">2026.10</span></a></li>
+    <li><a href="/pilates/carousel/truth-014/"><span class="latest-thumb"><img src="/pilates/carousel-images/truth014-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">普拉提真相 #014 · 普拉提稳踏椅，原版为什么没有把手</span><span class="latest-date">2026.10</span></a></li>
+    <li><a href="/pilates/carousel/cant-002/"><span class="latest-thumb"><img src="/pilates/carousel-images/cant002-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">做不到的口令 #002 · 普拉提大腿外旋做成了假胯宽，差在一步</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/articles/parents-pilates/"><span class="latest-thumb">长文</span><span class="latest-title">给爸妈选普拉提课，先问动作错了会怎样（长文）</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/carousel/step0-003/"><span class="latest-thumb"><img src="/pilates/carousel-images/step0-003-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">第 0 步 #003 · 普拉提腰下垫条毛巾，让肚子有东西可靠</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/carousel/truth-013/"><span class="latest-thumb"><img src="/pilates/carousel-images/truth013-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">普拉提真相 #013 · 普拉提动作记不住，其实只有一条规则</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/carousel/detail-009/"><span class="latest-thumb"><img src="/pilates/carousel-images/detail009-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">普拉提小细节 #009 · 鼠标手做普拉提，先看手的足弓</span><span class="latest-date">2026.09</span></a></li>
+    <li><a href="/pilates/carousel/detail-011/"><span class="latest-thumb"><img src="/pilates/carousel-images/detail011-01.webp" alt="" width="36" height="48" loading="lazy" decoding="async"></span><span class="latest-title">普拉提小细节 #011 · 普拉提手臂一动，先看腋下</span><span class="latest-date">2026.09</span></a></li>
   </ul>
 </section>
 

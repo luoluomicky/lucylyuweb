@@ -216,8 +216,13 @@ footer {
 }
 
 /* ── 长文导航：目录 · 接着读 · 首字下沉容器化（2026-09-04 前端养护批） ── */
-/* 首字下沉的浮动只许留在自己的段落里，短首段不再让第二段绕排 */
-.article-body p:first-of-type { display: flow-root; }
+/* 首段＝导语段（2026-10-16 取代首字下沉：中文没有下沉传统，开头是「」时连引号一起放大，读着别扭） */
+.article-body > p:first-of-type,
+.about-body > p:first-of-type { font-size: 17px; line-height: 1.85; color: var(--section-text); }
+@media (max-width: 768px) {
+  .article-body > p:first-of-type,
+  .about-body > p:first-of-type { font-size: 16px; }
+}
 .article-body h2 { scroll-margin-top: 88px; }
 
 /* 目录：小屏折叠块（标题/元信息之下） */

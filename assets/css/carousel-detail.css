@@ -1,0 +1,120 @@
+/* ══════════════════════════════════════════════
+   Carousel 单篇页（/pilates/carousel/*/）共用样式
+   2026-10-16 改版：一次一张居中、箭头在卡外、底部进度条；
+   去掉右侧半张截断卡与卡外第二层相框。原各页内联 <style> 收拢于此。
+   ══════════════════════════════════════════════ */
+
+.carousel-detail { padding: 60px 0 0; }
+.carousel-detail .header-area {
+  max-width: 720px; margin: 0 auto; padding: 0 40px 36px;
+}
+.carousel-detail .breadcrumb {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); margin-bottom: 24px;
+}
+.carousel-detail .breadcrumb a { color: var(--section-muted); text-decoration: none; }
+.carousel-detail .breadcrumb a:hover { color: var(--section-accent); }
+.carousel-detail .series-tag {
+  display: block;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+  color: var(--section-accent); margin-bottom: 10px;
+}
+.carousel-detail h1 {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 600;
+  letter-spacing: 0.04em; line-height: 1.35; margin-bottom: 10px;
+}
+.carousel-detail .detail-meta {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--section-muted);
+}
+
+/* ── 看卡器：舞台宽 100%，每张卡占满一屏宽并居中 ── */
+.card-viewer-wrap {
+  position: relative;
+  max-width: 1040px; margin: 0 auto;
+  padding: 0 72px;
+}
+.card-viewer {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  outline: none;
+}
+.card-viewer::-webkit-scrollbar { display: none; }
+.card-viewer .card-frame {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 20px 0 52px;
+}
+picture { display: contents; }
+.card-viewer .card-frame img {
+  display: block;
+  width: min(100%, calc(min(70vh, 720px) * 0.75));
+  height: auto; aspect-ratio: 3 / 4;
+  border-radius: 2px;
+  background: #fdfaf6;
+  box-shadow: 0 1px 2px rgba(44,38,33,0.06), 0 12px 32px rgba(44,38,33,0.09);
+}
+.card-viewer .card-num { display: none; }   /* 计数统一由下方进度条承担 */
+
+/* 箭头：落在卡片两侧的留白里，不压卡面 */
+.viewer-arrow {
+  position: absolute; top: calc(50% - 16px); transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: transparent; border: 1px solid var(--section-border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 2;
+  font-size: 20px; line-height: 1; color: var(--section-muted);
+  transition: color .2s, border-color .2s, opacity .2s;
+}
+.viewer-arrow:hover:not([disabled]) { color: var(--section-accent); border-color: var(--section-accent); }
+.viewer-arrow[disabled] { opacity: .3; cursor: default; }
+.viewer-arrow-left  { left: 8px; }
+.viewer-arrow-right { right: 8px; }
+
+/* 进度条：一卡一段，可点；JS 生成，无 JS 时不出现 */
+.cv-bar {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  margin-top: -24px;
+  padding: 0 20px 44px;
+}
+.cv-ticks { display: flex; gap: 6px; }
+.cv-ticks button {
+  width: 22px; height: 16px; padding: 0; border: 0; background: none; cursor: pointer;
+  position: relative;
+}
+.cv-ticks button::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 7px; height: 2px;
+  background: var(--section-border); transition: background .2s;
+}
+.cv-ticks button:hover::before { background: var(--section-muted); }
+.cv-ticks button[aria-current="true"]::before { background: var(--section-accent); }
+.cv-count {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--section-muted); min-width: 44px; text-align: right;
+}
+.scroll-hint { display: none; }
+
+.carousel-detail .caption {
+  max-width: 720px; margin: 0 auto 72px; padding: 0 40px;
+  font-size: 15px; line-height: 1.85; color: var(--section-muted);
+}
+.carousel-detail .caption p + p { margin-top: 12px; }
+.carousel-detail .caption strong { color: var(--section-text); }
+
+@media (max-width: 768px) {
+  .carousel-detail { padding: 40px 0 0; }
+  .carousel-detail .header-area { padding: 0 20px 24px; }
+  .carousel-detail h1 { font-size: 24px; }
+  .card-viewer-wrap { padding: 0; }
+  .card-viewer .card-frame { padding: 12px 20px 44px; }
+  .card-viewer .card-frame img { width: min(100%, calc(62vh * 0.75)); }
+  .viewer-arrow { display: none; }
+  .cv-ticks { gap: 4px; }
+  .cv-ticks button { width: 16px; }
+  .carousel-detail .caption { padding: 0 20px; }
+}
