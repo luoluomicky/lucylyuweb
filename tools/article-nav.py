@@ -10,12 +10,13 @@
 - h2 ≥ 3 才出目录；id 取自标题文字（已有 id 保留）
 - 「接着读」= 同栏目按发布日期的上一篇（更早）/ 下一篇（更新）
 """
+from collections import Counter
 import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sitelib import LONGFORM, scan  # noqa: E402
+from sitelib import LONGFORM, ROOT, scan  # noqa: E402
 
 H2 = re.compile(r"<h2([^>]*)>(.*?)</h2>", re.S)
 TOC_BLOCK = re.compile(r"\n?<!-- toc:start -->.*?<!-- toc:end -->\n?", re.S)
@@ -103,11 +104,34 @@ def process(pg, prev_pg, next_pg):
     return changed, len(entries)
 
 
+def update_pilates_listing(pages):
+    """用文章页的发布日期维护栏目首页，分类按钮只负责筛选。"""
+    path = ROOT / "pilates/index.html"
+    original = path.read_text(encoding="utf-8")
+    card = re.compile(r'<a\b(?=[^>]* class="article-item")(?=[^>]* data-cat="([^"]+)")'
+                      r'(?=[^>]* href="([^"]+)")[^>]*>.*?</a>', re.S)
+    entries = list(card.finditer(original))
+    dates = {page.url: page.date for page in pages}
+    urls = [entry[2] for entry in entries]
+    if set(urls) != set(dates) or len(urls) != len(dates):
+        raise ValueError("长文列表与文章页不一致，请核对漏项或重复项")
+    ordered = sorted(entries, key=lambda entry: dates[entry[2]], reverse=True)
+    replacements = iter(entry[0] for entry in ordered)
+    updated = card.sub(lambda _: next(replacements), original)
+    counts = Counter(entry[1] for entry in entries)
+    counts["all"] = len(entries)
+    badge = r'(data-filter="([^"]+)">[^<]*<span class="tc-n">)\d+'
+    updated = re.sub(badge, lambda m: m[1] + str(counts[m[2]]), updated)
+    if updated != original:
+        path.write_text(updated, encoding="utf-8")
+
+
 def main():
     pages = [p for p in scan(LONGFORM)]
     by_sec = {}
     for p in pages:
         by_sec.setdefault(p.section, []).append(p)
+    update_pilates_listing(by_sec["pilates-articles"])
     touched = toc_count = 0
     for sec, lst in by_sec.items():
         lst.sort(key=lambda p: (p.date, p.url))  # 旧 → 新
